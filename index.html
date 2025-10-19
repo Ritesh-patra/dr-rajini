@@ -1,0 +1,1021 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dr. Muthineni Rajini - Obstetrician & Gynecologist</title>
+    <link rel="shortcut icon" href="images/owner.jpg" type="image/x-icon">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'primary': '#be123c',
+                        'accent': '#ec4899',
+                        'soft-pink': '#fdf2f8',
+                        'slate-text': '#475569'
+                    },
+                    fontFamily: {
+                        'heading': ['Montserrat', 'sans-serif'],
+                        'body': ['Open Sans', 'sans-serif']
+                    }
+                }
+            }
+        }
+    </script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;900&family=Open+Sans:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.7.0/fonts/remixicon.css" rel="stylesheet" />
+</head>
+
+<body class="bg-soft-pink text-slate-text font-body overflow-x-hidden">
+    <!-- Completely new mobile-first header design -->
+    <header class="bg-white/95 backdrop-blur-md shadow-lg sticky top-0 z-50 border-b border-pink-100">
+        <div class="container mx-auto px-4 py-3">
+            <div class="flex items-center justify-between">
+                <div class="flex items-center space-x-3">
+                    <div
+                        class="w-12 h-12 bg-gradient-to-br from-primary to-accent rounded-2xl flex items-center justify-center shadow-lg">
+                        <i class="fas fa-heartbeat text-white text-xl"></i>
+                    </div>
+                    <div>
+                        <h1 class="text-lg font-heading font-bold text-slate-text">Dr. Muthineni Rajini</h1>
+                        <p class="text-xs text-accent font-medium">Obstetrician & Gynecologist</p>
+                    </div>
+                </div>
+                <button id="mobile-menu-btn" class="lg:hidden bg-primary text-white p-2 rounded-xl">
+                    <i class="fas fa-bars text-lg"></i>
+                </button>
+                <nav class="hidden lg:flex space-x-8">
+                    <a href="#home" class="text-slate-text hover:text-primary transition-colors font-medium">Home</a>
+                    <a href="#about" class="text-slate-text hover:text-primary transition-colors font-medium">About</a>
+                    <a href="#services"
+                        class="text-slate-text hover:text-primary transition-colors font-medium">Services</a>
+                    <a href="#contact"
+                        class="text-slate-text hover:text-primary transition-colors font-medium">Contact</a>
+                </nav>
+            </div>
+            <!-- Mobile Menu -->
+            <div id="mobile-menu" class="hidden lg:hidden mt-4 pb-4 border-t border-pink-100 pt-4">
+                <div class="flex flex-col space-y-3">
+                    <a href="#home"
+                        class="flex items-center gap-2 text-slate-text hover:text-primary transition-colors font-medium py-2">
+                        <i class="ri-home-4-line text-lg"></i>
+                        Home
+                    </a>
+                    <a href="#about"
+                        class="flex items-center gap-2 text-slate-text hover:text-primary transition-colors font-medium py-2">
+                        <i class="ri-user-3-line text-lg"></i>
+                        About
+                    </a>
+                    <a href="#services"
+                        class="flex items-center gap-2 text-slate-text hover:text-primary transition-colors font-medium py-2">
+                        <i class="ri-hospital-line text-lg"></i>
+                        Services
+                    </a>
+                    <a href="#contact"
+                        class="flex items-center gap-2 text-slate-text hover:text-primary transition-colors font-medium py-2">
+                        <i class="ri-phone-line text-lg"></i>
+                        Contact
+                    </a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- New mobile-optimized hero section with multiple images -->
+    <section id="home" class="relative min-h-screen flex items-center justify-center overflow-hidden">
+        <div class="absolute inset-0 bg-gradient-to-br from-primary/10 via-accent/5 to-soft-pink"></div>
+        <div class="absolute top-10 left-10 w-20 h-20 bg-accent/20 rounded-full blur-xl animate-pulse"></div>
+        <div class="absolute bottom-20 right-10 w-32 h-32 bg-primary/20 rounded-full blur-2xl animate-pulse delay-1000">
+        </div>
+
+        <div class="container mx-auto px-4 pt-20 py-5 relative z-10">
+            <div class="text-center max-w-4xl mx-auto">
+                <!-- Doctor Image -->
+                <div class="mb-8 flex justify-center">
+                    <div class="relative">
+                        <div class="w-48 h-48 md:w-56 overflow-hidden md:h-56 rounded-full object-cover shadow-2xl border-4 border-white float-animation"
+                            role="img" aria-label="Dr. Muthineni Rajini portrait placeholder"
+                            style="background: linear-gradient(135deg, #be123c 0%, #ec4899 100%);">
+                            <img src="images/owner.jpg" class="w-full h-full object-top object-cover " alt="">
+                        </div>
+                        <div
+                            class="absolute -bottom-4 -right-4 w-16 h-16 bg-gradient-to-br from-primary to-accent rounded-full flex items-center justify-center shadow-lg pulse-glow">
+                            <i class="ri-stethoscope-fill text-white text-3xl"></i>
+                        </div>
+                    </div>
+                </div>
+
+                <h1
+                    class="text-4xl md:text-6xl lg:text-7xl font-heading font-black text-slate-text mb-6 text-balance leading-tight">
+                    Women's Health
+                    <span
+                        class="text-transparent bg-gradient-to-r from-primary to-accent bg-clip-text">Excellence</span>
+                </h1>
+
+                <p
+                    class="text-lg md:text-xl lg:text-2xl text-slate-text/80 mb-8 text-pretty font-light leading-relaxed max-w-3xl mx-auto">
+                    Laparoscopic & Robotic Surgeon · Cosmetic Gynecology · Infertility Specialist with 15+ years of
+                    expertise in women's healthcare
+                </p>
+
+                <div class="flex flex-col sm:flex-row gap-4 justify-center items-center mb-12">
+                    <button
+                        class="bg-gradient-to-r from-primary to-accent text-white px-8 py-4 rounded-2xl font-heading font-bold text-lg shadow-xl hover:shadow-2xl transform hover:scale-105 transition-all duration-300 w-full sm:w-auto">
+                        <i class="ri-calendar-event-line mr-2"></i>
+                        Book Consultation
+                    </button>
+                    <button
+                        class="border-2 border-primary text-primary px-8 py-4 rounded-2xl font-heading font-bold text-lg hover:bg-primary hover:text-white transition-all duration-300 w-full sm:w-auto">
+                        <i class="fas fa-phone mr-2"></i>
+                        Emergency Call
+                    </button>
+                </div>
+
+                <!-- Stats -->
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-6 max-w-2xl mx-auto">
+                    <div class="text-center">
+                        <div class="text-2xl md:text-3xl font-heading font-black text-primary mb-1">15+</div>
+                        <div class="text-sm text-slate-text/70 font-medium">Years Experience</div>
+                    </div>
+                    <div class="text-center">
+                        <div class="text-2xl md:text-3xl font-heading font-black text-accent mb-1">24/7</div>
+                        <div class="text-sm text-slate-text/70 font-medium">Available</div>
+                    </div>
+                    <div class="text-center">
+                        <div class="text-2xl md:text-3xl font-heading font-black text-primary mb-1">2000+</div>
+                        <div class="text-sm text-slate-text/70 font-medium">Patients Treated</div>
+                    </div>
+                    <div class="text-center">
+                        <div class="text-2xl md:text-3xl font-heading font-black text-accent mb-1">99%</div>
+                        <div class="text-sm text-slate-text/70 font-medium">Success Rate</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- New about section with medical images -->
+    <section id="about" class="py-20 bg-white relative overflow-hidden">
+        <div class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-primary via-accent to-primary"></div>
+
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-5xl font-heading font-black text-slate-text mb-4">
+                    Meet Your <span
+                        class="text-transparent bg-gradient-to-r from-primary to-accent bg-clip-text">Healthcare
+                        Partner</span>
+                </h2>
+                <p class="text-lg text-slate-text/70 max-w-2xl mx-auto text-pretty">
+                    Dedicated to providing exceptional women's healthcare with advanced surgical expertise
+                </p>
+            </div>
+
+            <div class="grid lg:grid-cols-2 gap-12 items-center max-w-6xl mx-auto">
+                <div class="space-y-6">
+                    <div class="bg-gradient-to-br from-soft-pink to-white p-8 rounded-3xl shadow-xl">
+                        <h3 class="text-2xl font-heading font-bold text-slate-text mb-4">
+                            <i class="fas fa-graduation-cap text-primary mr-3"></i>
+                            Professional Qualifications
+                        </h3>
+                        <p class="text-slate-text/80 leading-relaxed mb-6">
+                            MBBS, DGO, DNB, FICOG. Dr. Muthineni Rajini is a Senior Consultant Obstetrician &
+                            Gynecologist specializing in laparoscopic and robotic surgeries, cosmetic gynecology, and
+                            infertility care. She combines advanced surgical techniques with patient-centered care to
+                            deliver safe and effective outcomes.
+                        </p>
+
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                            <div class="flex items-center space-x-3">
+                                <div class="w-8 h-8 bg-primary/20 rounded-full flex items-center justify-center">
+                                    <i class="fas fa-check text-primary text-sm"></i>
+                                </div>
+                                <span class="text-sm font-medium text-slate-text">15+ Years Experience</span>
+                            </div>
+                            <div class="flex items-center space-x-3">
+                                <div class="w-8 h-8 bg-accent/20 rounded-full flex items-center justify-center">
+                                    <i class="fas fa-check text-accent text-sm"></i>
+                                </div>
+                                <span class="text-sm font-medium text-slate-text">Certified Specialist</span>
+                            </div>
+                            <div class="flex items-center space-x-3">
+                                <div class="w-8 h-8 bg-primary/20 rounded-full flex items-center justify-center">
+                                    <i class="fas fa-check text-primary text-sm"></i>
+                                </div>
+                                <span class="text-sm font-medium text-slate-text">Robotic Surgery</span>
+                            </div>
+                            <div class="flex items-center space-x-3">
+                                <div class="w-8 h-8 bg-accent/20 rounded-full flex items-center justify-center">
+                                    <i class="fas fa-check text-accent text-sm"></i>
+                                </div>
+                                <span class="text-sm font-medium text-slate-text">Infertility Expert</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="grid grid-cols-2 gap-4">
+                    <div class="space-y-4">
+                        <div class="w-full h-48 object-cover rounded-2xl shadow-lg hover:shadow-xl transition-shadow"
+                            role="img" aria-label="Clinic interior placeholder"
+                            style="background: linear-gradient(135deg, #fdf2f8 0%, #ec4899 100%);"></div>
+                        <div class="w-full h-36 object-cover rounded-2xl shadow-lg hover:shadow-xl transition-shadow"
+                            role="img" aria-label="Medical equipment placeholder"
+                            style="background: linear-gradient(135deg, #be123c 0%, #fdf2f8 100%);"></div>
+                    </div>
+                    <div class="space-y-4 mt-8">
+                        <div class="w-full h-36 object-cover rounded-2xl shadow-lg hover:shadow-xl transition-shadow"
+                            role="img" aria-label="Consultation room placeholder"
+                            style="background: linear-gradient(135deg, #ec4899 0%, #be123c 100%);"></div>
+                        <div class="w-full h-48 object-cover rounded-2xl shadow-lg hover:shadow-xl transition-shadow"
+                            role="img" aria-label="Surgical suite placeholder"
+                            style="background: linear-gradient(135deg, #fdf2f8 0%, #be123c 100%);"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- New expertise section with medical specialty images -->
+    <section class="py-20 bg-gradient-to-br from-soft-pink via-white to-soft-pink">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-5xl font-heading font-black text-slate-text mb-4">
+                    Medical <span
+                        class="text-transparent bg-gradient-to-r from-primary to-accent bg-clip-text">Specializations</span>
+                </h2>
+                <p class="text-lg text-slate-text/70 max-w-2xl mx-auto text-pretty">
+                    Comprehensive women's healthcare across multiple specialties
+                </p>
+            </div>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-7xl mx-auto">
+                <!-- Normal Delivery -->
+                <div
+                    class="bg-white rounded-3xl p-8 shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 group">
+                    <div class="mb-6">
+                        <div class="w-full h-52 overflow-hidden object-cover rounded-2xl mb-4" role="img"
+                            aria-label="Normal delivery placeholder"
+                            style="background: linear-gradient(135deg, #fdf2f8 0%, #ec4899 100%);">
+                            <img src="https://i.pinimg.com/736x/0c/5c/20/0c5c20420858ba48f6331fcf699bf6a9.jpg" alt="">
+                        </div>
+                        <div
+                            class="w-16 h-16 bg-gradient-to-br from-red-400 to-red-600 rounded-2xl flex items-center justify-center mx-auto -mt-8 shadow-lg group-hover:scale-110 transition-transform">
+                            <i class="fas fa-heart text-white text-2xl"></i>
+                        </div>
+                    </div>
+                    <h3 class="text-xl font-heading font-bold text-slate-text mb-4 text-center">Normal Delivery</h3>
+                    <p class="text-slate-text/70 text-center leading-relaxed">Safe and natural childbirth with
+                        comprehensive prenatal and postnatal care support.</p>
+                </div>
+
+                <!-- Cesarean -->
+                <div
+                    class="bg-white rounded-3xl p-8 shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 group">
+                    <div class="mb-6">
+                        <div class="w-full h-52  overflow-hidden object-cover object-top rounded-2xl mb-4" role="img"
+                            aria-label="Cesarean surgery placeholder"
+                            style="background: linear-gradient(135deg, #be123c 0%, #fdf2f8 100%);">
+                            <img class="w-full h-full object-cover"
+                                src="https://i.pinimg.com/1200x/ec/b4/55/ecb4559753c7d38c1ac070a8858887b7.jpg" alt="">
+                        </div>
+                        <div
+                            class="w-16 h-16 bg-gradient-to-br from-blue-400 to-blue-600 rounded-2xl flex items-center justify-center mx-auto -mt-8 shadow-lg group-hover:scale-110 transition-transform">
+                            <i class="ri-syringe-line text-white text-2xl"></i>
+                        </div>
+                    </div>
+                    <h3 class="text-xl font-heading font-bold text-slate-text mb-4 text-center">Cesarean</h3>
+                    <p class="text-slate-text/70 text-center leading-relaxed">Advanced surgical delivery with minimal
+                        invasiveness and optimal recovery protocols.</p>
+                </div>
+
+                <!-- Infertility Workup -->
+                <div
+                    class="bg-white rounded-3xl p-8 shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 group">
+                    <div class="mb-6">
+                        <div class="w-full h-52 overflow-hidden object-cover rounded-2xl mb-4" role="img"
+                            aria-label="Infertility treatment placeholder"
+                            style="background: linear-gradient(135deg, #ec4899 0%, #be123c 100%);">
+                            <img class="w-full h-full object-cover"
+                                src="https://i.pinimg.com/736x/2e/14/cf/2e14cf05149116bc67e7cf6e0728982e.jpg" alt="">
+                        </div>
+                        <div
+                            class="w-16 h-16 bg-gradient-to-br from-purple-400 to-purple-600 rounded-2xl flex items-center justify-center mx-auto -mt-8 shadow-lg group-hover:scale-110 transition-transform">
+                            <i class="fas fa-microscope text-white text-2xl"></i>
+                        </div>
+                    </div>
+                    <h3 class="text-xl font-heading font-bold text-slate-text mb-4 text-center">Infertility Workup</h3>
+                    <p class="text-slate-text/70 text-center leading-relaxed">Comprehensive diagnostic and treatment
+                        services for fertility concerns and family planning.</p>
+                </div>
+
+                <!-- Cosmetic Gynecology -->
+                <div
+                    class="bg-white rounded-3xl p-8 shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 group">
+                    <div class="mb-6">
+                        <div class="w-full h-52 overflow-hidden object-cover rounded-2xl mb-4" role="img"
+                            aria-label="Cosmetic gynecology placeholder"
+                            style="background: linear-gradient(135deg, #fdf2f8 0%, #be123c 100%);">
+                            <img class="w-full h-full object-cover"
+                                src="https://i.pinimg.com/736x/83/7b/df/837bdfd1012297154e794458769e5ea9.jpg" alt="">
+                        </div>
+                        <div
+                            class="w-16 h-16 bg-gradient-to-br from-green-400 to-green-600 rounded-2xl flex items-center justify-center mx-auto -mt-8 shadow-lg group-hover:scale-110 transition-transform">
+                            <i class="fas fa-spa text-white text-2xl"></i>
+                        </div>
+                    </div>
+                    <h3 class="text-xl font-heading font-bold text-slate-text mb-4 text-center">Cosmetic Gynecology</h3>
+                    <p class="text-slate-text/70 text-center leading-relaxed">Specialized cosmetic procedures with focus
+                        on patient comfort and natural results.</p>
+                </div>
+
+                <!-- Laparoscopic Surgeries -->
+                <div
+                    class="bg-white rounded-3xl p-8 shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 group">
+                    <div class="mb-6">
+                        <div class="w-full h-52 overflow-hidden object-cover rounded-2xl mb-4" role="img"
+                            aria-label="Laparoscopic surgery placeholder"
+                            style="background: linear-gradient(135deg, #be123c 0%, #ec4899 100%);">
+                            <img class="w-full h-full object-cover"
+                                src="https://i.pinimg.com/1200x/8d/93/f6/8d93f6a5bf07328d9150d7fee931b409.jpg" alt="">
+                        </div>
+                        <div
+                            class="w-16 h-16 bg-gradient-to-br from-yellow-400 to-yellow-600 rounded-2xl flex items-center justify-center mx-auto -mt-8 shadow-lg group-hover:scale-110 transition-transform">
+                            <i class="fas fa-microscope text-white text-2xl"></i>
+                        </div>
+                    </div>
+                    <h3 class="text-xl font-heading font-bold text-slate-text mb-4 text-center">Laparoscopic Surgeries
+                    </h3>
+                    <p class="text-slate-text/70 text-center leading-relaxed">Minimally invasive surgical procedures
+                        with faster recovery and reduced complications.</p>
+                </div>
+
+                <!-- Robotic Surgeries -->
+                <div
+                    class="bg-white rounded-3xl p-8 shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 group">
+                    <div class="mb-6">
+                        <div class="w-full h-52 overflow-hidden object-cover rounded-2xl mb-4" role="img"
+                            aria-label="Robotic surgery placeholder"
+                            style="background: linear-gradient(135deg, #ec4899 0%, #fdf2f8 100%);">
+                            <img class="w-full h-full object-cover"
+                                src="https://i.pinimg.com/736x/ec/62/52/ec6252f388051c5dd2f841aaaca8495c.jpg" alt="">
+                        </div>
+                        <div
+                            class="w-16 h-16 bg-gradient-to-br from-indigo-400 to-indigo-600 rounded-2xl flex items-center justify-center mx-auto -mt-8 shadow-lg group-hover:scale-110 transition-transform">
+                            <i class="fas fa-robot text-white text-2xl"></i>
+                        </div>
+                    </div>
+                    <h3 class="text-xl font-heading font-bold text-slate-text mb-4 text-center">Robotic Surgeries</h3>
+                    <p class="text-slate-text/70 text-center leading-relaxed">State-of-the-art robotic-assisted
+                        procedures for precision and optimal patient outcomes.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- New services section with service images -->
+    <section id="services" class="py-20 bg-white relative">
+        <div class="absolute inset-0 bg-gradient-to-br from-primary/5 via-transparent to-accent/5"></div>
+
+        <div class="container mx-auto px-4 relative z-10">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-5xl font-heading font-black text-slate-text mb-4">
+                    Healthcare <span
+                        class="text-transparent bg-gradient-to-r from-primary to-accent bg-clip-text">Services</span>
+                </h2>
+                <p class="text-lg text-slate-text/70 max-w-2xl mx-auto text-pretty">
+                    Comprehensive women's healthcare services available 24/7
+                </p>
+            </div>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8 max-w-7xl mx-auto">
+                <!-- Obstetric Care -->
+                <div
+                    class="bg-gradient-to-br from-white to-soft-pink rounded-3xl p-8 shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 group text-center">
+                    <div class="w-full relative overflow-hidden h-60 object-cover rounded-2xl mb-6" role="img"
+                        aria-label="Obstetric care placeholder"
+                        style="background: linear-gradient(135deg, #fdf2f8 0%, #ec4899 100%);">
+                        <img class="w-full h-full object-cover"
+                            src="https://i.pinimg.com/736x/37/46/a0/3746a095009c1ae6d505daf52fffdffb.jpg" alt="">
+                    </div>
+                    <h3 class="text-xl font-heading font-bold text-slate-text mb-4">Obstetric Care</h3>
+                    <p class="text-slate-text/70 mb-6 leading-relaxed">Comprehensive prenatal, delivery, and postnatal
+                        care for expectant mothers.</p>
+
+                </div>
+
+                <!-- Gynecological Services -->
+                <div
+                    class="bg-gradient-to-br from-white to-soft-pink rounded-3xl p-8 shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 group text-center">
+                    <div class="w-full h-60 object-cover overflow-hidden rounded-2xl mb-6" role="img"
+                        aria-label="Gynecological services placeholder"
+                        style="background: linear-gradient(135deg, #be123c 0%, #fdf2f8 100%);">
+                        <img class="w-full h-full object-cover"
+                            src="https://i.pinimg.com/736x/d9/93/d7/d993d737e5b8a34cad44643ee6fa3c1e.jpg" alt="">
+                    </div>
+                    <h3 class="text-xl font-heading font-bold text-slate-text mb-4">Gynecological Services</h3>
+                    <p class="text-slate-text/70 mb-6 leading-relaxed">Expert diagnosis and treatment of gynecological
+                        conditions and women's health issues.</p>
+
+                </div>
+
+                <!-- Surgical Services -->
+                <div
+                    class="bg-gradient-to-br from-white to-soft-pink rounded-3xl p-8 shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 group text-center">
+                    <div class="w-full h-60 object-cover overflow-hidden rounded-2xl mb-6" role="img"
+                        aria-label="Surgical services placeholder"
+                        style="background: linear-gradient(135deg, #ec4899 0%, #be123c 100%);">
+                        <img class="w-full h-full object-cover"
+                            src="https://i.pinimg.com/1200x/07/d0/3a/07d03afc11b1dd96d84c5dc7821ef61d.jpg" alt="">
+                    </div>
+                    <h3 class="text-xl font-heading font-bold text-slate-text mb-4">Surgical Services</h3>
+                    <p class="text-slate-text/70 mb-6 leading-relaxed">Advanced laparoscopic and robotic surgical
+                        procedures with minimal invasiveness.</p>
+
+                </div>
+
+                <!-- Fertility Services -->
+                <div
+                    class="bg-gradient-to-br from-white to-soft-pink rounded-3xl p-8 shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 group text-center">
+                    <div class="w-full h-60 object-cover overflow-hidden rounded-2xl mb-6" role="img"
+                        aria-label="Fertility services placeholder"
+                        style="background: linear-gradient(135deg, #fdf2f8 0%, #be123c 100%);">
+                        <img class="w-full h-full object-cover"
+                            src="https://i.pinimg.com/736x/11/2b/ec/112becd8d2c7d34ed8b592aa1e8bd4e8.jpg" alt="">
+                    </div>
+                    <h3 class="text-xl font-heading font-bold text-slate-text mb-4">Fertility Services</h3>
+                    <p class="text-slate-text/70 mb-6 leading-relaxed">Comprehensive infertility evaluation and
+                        treatment for family planning goals.</p>
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- New health camp section with community images -->
+    <section class="py-20 bg-gradient-to-br from-primary via-accent to-primary text-white relative overflow-hidden">
+        <div class="absolute inset-0 bg-black/20"></div>
+        <div class="absolute top-10 left-10 w-32 h-32 bg-white/10 rounded-full blur-2xl"></div>
+        <div class="absolute bottom-10 right-10 w-40 h-40 bg-white/10 rounded-full blur-3xl"></div>
+
+        <div class="container mx-auto px-4 relative z-10">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-5xl font-heading font-black mb-4">
+                    Women's Health <span class="text-yellow-300">Programs</span>
+                </h2>
+                <p class="text-xl text-white/90 max-w-2xl mx-auto text-pretty">
+                    Regular health camps and wellness initiatives for women's healthcare
+                </p>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+                <div
+                    class="bg-white/10 backdrop-blur-md rounded-3xl p-8 border border-white/20 hover:bg-white/20 transition-all duration-300">
+                    <div class="w-full h-32 object-cover rounded-2xl mb-6" role="img"
+                        aria-label="Health camp placeholder"
+                        style="background: linear-gradient(135deg, #fdf2f8 0%, #ec4899 100%);"></div>
+                    <div class="flex items-center mb-6">
+                        <div class="w-16 h-16 bg-white/20 rounded-2xl flex items-center justify-center mr-4">
+                            <i class="fas fa-calendar-check text-white text-2xl"></i>
+                        </div>
+                        <h3 class="text-2xl font-heading font-bold">Health Camp Offers</h3>
+                    </div>
+                    <p class="text-white/90 leading-relaxed">
+                        Regular women's health screening camps with comprehensive check-ups, consultations, and health
+                        awareness programs at affordable rates.
+                    </p>
+                </div>
+
+                <div
+                    class="bg-white/10 backdrop-blur-md rounded-3xl p-8 border border-white/20 hover:bg-white/20 transition-all duration-300">
+                    <div class="w-full h-32 object-cover rounded-2xl mb-6" role="img"
+                        aria-label="Health enquiry placeholder"
+                        style="background: linear-gradient(135deg, #be123c 0%, #fdf2f8 100%);"></div>
+                    <div class="flex items-center mb-6">
+                        <div class="w-16 h-16 bg-white/20 rounded-2xl flex items-center justify-center mr-4">
+                            <i class="fas fa-question-circle text-white text-2xl"></i>
+                        </div>
+                        <h3 class="text-2xl font-heading font-bold">Health Camp Enquiry</h3>
+                    </div>
+                    <p class="text-white/90 leading-relaxed">
+                        Get information about upcoming women's health camps, register for wellness programs, and
+                        participate in community health initiatives.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- New testimonials section with patient images -->
+    <section class="py-20 bg-soft-pink">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-5xl font-heading font-black text-slate-text mb-4">
+                    Patient <span
+                        class="text-transparent bg-gradient-to-r from-primary to-accent bg-clip-text">Testimonials</span>
+                </h2>
+                <p class="text-lg text-slate-text/70 max-w-2xl mx-auto text-pretty">
+                    Real stories from patients who experienced exceptional care
+                </p>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+                <div class="bg-white rounded-3xl p-8 shadow-xl hover:shadow-2xl transition-all duration-300">
+                    <div class="flex items-center mb-6">
+                        <div class="w-16 h-16 overflow-hidden rounded-full object-cover mr-4" role="img"
+                            aria-label="Patient testimonial placeholder"
+                            style="background: linear-gradient(135deg, #fdf2f8 0%, #ec4899 100%);">
+                            <img class="w-full h-full object-cover object-top" src="https://i.pinimg.com/1200x/12/92/13/129213f7cb25f899e6019e6912c51f67.jpg" alt="">
+                        </div>
+                        <div>
+                            <h4 class="font-heading font-bold text-slate-text">Anjali Verma</h4>
+                            <p class="text-sm text-slate-text/70">Obstetric Patient</p>
+                        </div>
+                    </div>
+                    <div class="flex mb-4">
+                        <i class="fas fa-star text-yellow-400"></i>
+                        <i class="fas fa-star text-yellow-400"></i>
+                        <i class="fas fa-star text-yellow-400"></i>
+                        <i class="fas fa-star text-yellow-400"></i>
+                        <i class="fas fa-star text-yellow-400"></i>
+                    </div>
+                    <p class="text-slate-text/80 leading-relaxed">
+                        "Dr. Rajini's compassionate care and expertise made my pregnancy journey smooth and safe. Her
+                        attention to detail and patient approach is exceptional."
+                    </p>
+                </div>
+
+                <div class="bg-white rounded-3xl p-8 shadow-xl hover:shadow-2xl transition-all duration-300">
+                    <div class="flex items-center mb-6">
+                      <div class="w-16 h-16 overflow-hidden rounded-full object-cover mr-4" role="img"
+                            aria-label="Patient testimonial placeholder"
+                            style="background: linear-gradient(135deg, #fdf2f8 0%, #ec4899 100%);">
+                            <img class="w-full h-full object-cover object-top" src="https://i.pinimg.com/736x/3e/4c/a2/3e4ca22606a361d032f2ea1bc4975b96.jpg" alt="">
+                        </div>
+                        <div>
+                            <h4 class="font-heading font-bold text-slate-text">Priya Sharma</h4>
+                            <p class="text-sm text-slate-text/70">Infertility Patient</p>
+                        </div>
+                    </div>
+                    <div class="flex mb-4">
+                        <i class="fas fa-star text-yellow-400"></i>
+                        <i class="fas fa-star text-yellow-400"></i>
+                        <i class="fas fa-star text-yellow-400"></i>
+                        <i class="fas fa-star text-yellow-400"></i>
+                        <i class="fas fa-star text-yellow-400"></i>
+                    </div>
+                    <p class="text-slate-text/80 leading-relaxed">
+                        "Dr. Rajini's expertise in infertility treatment gave us hope. Her comprehensive approach and
+                        support made our dream of parenthood come true."
+                    </p>
+                </div>
+
+                <div class="bg-white rounded-3xl p-8 shadow-xl hover:shadow-2xl transition-all duration-300">
+                    <div class="flex items-center mb-6">
+                         <div class="w-16 h-16 overflow-hidden rounded-full object-cover mr-4" role="img"
+                            aria-label="Patient testimonial placeholder"
+                            style="background: linear-gradient(135deg, #fdf2f8 0%, #ec4899 100%);">
+                            <img class="w-full h-full object-cover object-top" src="https://i.pinimg.com/736x/c4/e9/78/c4e978e1a055dd417779750ecb07c66a.jpg" alt="">
+                        </div>
+                        <div>
+                            <h4 class="font-heading font-bold text-slate-text">Meera Patel</h4>
+                            <p class="text-sm text-slate-text/70">Surgical Patient</p>
+                        </div>
+                    </div>
+                    <div class="flex mb-4">
+                        <i class="fas fa-star text-yellow-400"></i>
+                        <i class="fas fa-star text-yellow-400"></i>
+                        <i class="fas fa-star text-yellow-400"></i>
+                        <i class="fas fa-star text-yellow-400"></i>
+                        <i class="fas fa-star text-yellow-400"></i>
+                    </div>
+                    <p class="text-slate-text/80 leading-relaxed">
+                        "The robotic surgery was minimally invasive and my recovery was remarkably fast. Dr. Rajini's
+                        surgical expertise is outstanding."
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- New contact section with clinic images -->
+    <section id="contact" class="py-20 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-5xl font-heading font-black text-slate-text mb-4">
+                    Get In <span
+                        class="text-transparent bg-gradient-to-r from-primary to-accent bg-clip-text">Touch</span>
+                </h2>
+                <p class="text-lg text-slate-text/70 max-w-2xl mx-auto text-pretty">
+                    Ready for expert women's healthcare? Contact us today for consultation
+                </p>
+            </div>
+
+            <div class="grid lg:grid-cols-2 gap-12 max-w-6xl mx-auto">
+                <!-- Contact Info -->
+                <div class="space-y-8">
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+
+                        <!-- Consultation Room -->
+                        <div class="w-full h-40 rounded-2xl shadow-lg relative overflow-hidden">
+                            <iframe
+                                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3806.950569039324!2d78.44363365811081!3d17.414159701276944!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bcb9730a996204d%3A0xb363d9d7937ee566!2sCARE%20Hospitals%20Outpatient%20Centre%2C%20Banjara%20Hills%20%7C%20Best%20Hospital%20in%20Banjara%20Hills!5e0!3m2!1sen!2sin!4v1760860530670!5m2!1sen!2sin"
+                                class="absolute top-0 left-0 w-full h-full" style="border:0;" allowfullscreen=""
+                                loading="lazy" referrerpolicy="no-referrer-when-downgrade">
+                            </iframe>
+                        </div>
+
+                        <!-- Clinic Reception -->
+                        <div class="w-full h-40 rounded-2xl shadow-lg relative overflow-hidden">
+                            <iframe
+                                src="https://www.google.com/maps/embed?pb=!1m16!1m12!1m3!1d243576.29340247865!2d78.04298079453127!3d17.465476599999995!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!2m1!1s%20IKIGAI%20Clinic!5e0!3m2!1sen!2sin!4v1760860378189!5m2!1sen!2sin"
+                                class="absolute top-0 left-0 w-full h-full" style="border:0;" allowfullscreen=""
+                                loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                        </div>
+
+
+                    </div>
+
+
+                    <div class="space-y-6">
+                        <div
+                            class="flex items-center p-6 bg-gradient-to-r from-soft-pink to-white rounded-2xl shadow-lg">
+                            <div
+                                class="w-16 h-16 bg-gradient-to-br from-primary to-accent rounded-2xl flex items-center justify-center mr-6">
+                                <i class="fas fa-map-marker-alt text-white text-xl"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-heading font-bold text-slate-text text-lg mb-1">Care Hospital</h4>
+                                <p class="text-slate-text/70">Banjara Hills, Hyderabad</p>
+                            </div>
+                        </div>
+
+                        <div
+                            class="flex items-center p-6 bg-gradient-to-r from-soft-pink to-white rounded-2xl shadow-lg">
+                            <div class="flex items-start">
+                                <div
+                                    class="w-16 h-16 bg-gradient-to-br from-[#A02745] to-[#B7772A] rounded-2xl flex items-center justify-center mr-6 shrink-0">
+                                    <i class="ri-map-pin-2-fill text-white text-2xl"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-heading font-bold text-slate-800 text-lg mb-1">IKIGAI Clinic</h4>
+                                    <p class="text-slate-600 text-sm">
+                                        Plot No.60, 4th Floor, Prasad Enclave, Camelot Layout,<br>
+                                        Masjid Band, Kondapur, Hyderabad, Telangana - 500084
+                                    </p>
+                                </div>
+                            </div>
+
+                        </div>
+
+                        <div
+                            class="flex items-center p-6 bg-gradient-to-r from-soft-pink to-white rounded-2xl shadow-lg">
+                            <div
+                                class="w-16 h-16 bg-gradient-to-br from-green-400 to-green-600 rounded-2xl flex items-center justify-center mr-6">
+                                <i class="fas fa-phone text-white text-xl"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-heading font-bold text-slate-text text-lg mb-1">Phone</h4>
+                                <p class="text-slate-text/70">+91-9437955843</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Contact Form -->
+                <div class="bg-gradient-to-br from-white to-soft-pink rounded-3xl p-8 shadow-2xl">
+                    <h3 class="text-2xl font-heading font-bold text-slate-text mb-8 text-center">Quick Consultation
+                        Request</h3>
+                    <form class="space-y-6" id="contact-form">
+                        <div class="grid md:grid-cols-2 gap-4">
+                            <input type="text" placeholder="Your Name" required
+                                class="w-full px-6 py-4 border-2 border-pink-100 rounded-2xl focus:ring-2 focus:ring-primary focus:border-primary transition-all duration-300 font-body">
+                            <input type="email" placeholder="Your Email" required
+                                class="w-full px-6 py-4 border-2 border-pink-100 rounded-2xl focus:ring-2 focus:ring-primary focus:border-primary transition-all duration-300 font-body">
+                        </div>
+                        <input type="tel" placeholder="Phone Number" required
+                            class="w-full px-6 py-4 border-2 border-pink-100 rounded-2xl focus:ring-2 focus:ring-primary focus:border-primary transition-all duration-300 font-body">
+                        <select required
+                            class="w-full px-6 py-4 border-2 border-pink-100 rounded-2xl focus:ring-2 focus:ring-primary focus:border-primary transition-all duration-300 font-body">
+                            <option value="">Select Service</option>
+                            <option value="obstetric">Obstetric Care</option>
+                            <option value="gynecology">Gynecological Services</option>
+                            <option value="infertility">Infertility Treatment</option>
+                            <option value="cosmetic">Cosmetic Gynecology</option>
+                            <option value="surgery">Surgical Services</option>
+                            <option value="health-camp">Health Camp Enquiry</option>
+                            <option value="other">Other</option>
+                        </select>
+                        <textarea placeholder="Describe your health concern..." rows="4" required
+                            class="w-full px-6 py-4 border-2 border-pink-100 rounded-2xl focus:ring-2 focus:ring-primary focus:border-primary transition-all duration-300 font-body resize-none"></textarea>
+                        <button type="submit"
+                            class="w-full bg-gradient-to-r from-primary to-accent text-white py-4 rounded-2xl font-heading font-bold text-lg shadow-xl hover:shadow-2xl transform hover:scale-105 transition-all duration-300">
+                            <i class="fas fa-paper-plane mr-2"></i>
+                            Send Consultation Request
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- New footer with medical imagery -->
+    <footer class="bg-gradient-to-br from-slate-800 to-slate-900 text-white py-16 relative overflow-hidden">
+        <div class="absolute inset-0 bg-gradient-to-br from-primary/10 via-transparent to-accent/10"></div>
+
+        <div class="container mx-auto px-4 relative z-10">
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
+                <!-- Doctor Info -->
+                <div class="lg:col-span-2">
+                    <div class="flex items-center space-x-4 mb-6">
+                        <div
+                            class="w-16 h-16 bg-gradient-to-br from-primary to-accent rounded-2xl flex items-center justify-center">
+                            <i class="fas fa-heartbeat text-white text-2xl"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-2xl font-heading font-bold">Dr. Muthineni Rajini</h3>
+                            <p class="text-white/70">Women's Healthcare Excellence</p>
+                        </div>
+                    </div>
+                    <p class="text-white/80 leading-relaxed mb-6 max-w-md">
+                        Senior Consultant Obstetrician & Gynecologist with 15+ years of medical experience. Specializing
+                        in laparoscopic and robotic surgeries, cosmetic gynecology, and infertility care. Committed to
+                        women's health and wellness with personalized care and advanced treatment approaches.
+                    </p>
+                    <div class="flex space-x-4">
+                        <a href="https://www.facebook.com/profile.php?id=100069708578331"
+                            class="w-12 h-12 bg-primary/20 rounded-xl flex items-center justify-center hover:bg-primary transition-colors">
+                            <i class="fab fa-facebook-f text-white"></i>
+                        </a>
+                     
+                        <a href="https://www.linkedin.com/company/109303179/admin/dashboard/"
+                            class="w-12 h-12 bg-primary/20 rounded-xl flex items-center justify-center hover:bg-primary transition-colors">
+                            <i class="fab fa-linkedin-in text-white"></i>
+                        </a>
+                        <a href="https://www.instagram.com/dr.rajini.muthineni.official/"
+                            class="w-12 h-12 bg-primary/20 rounded-xl flex items-center justify-center hover:bg-primary transition-colors">
+                            <i class="fab fa-instagram text-white"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Services -->
+                <div>
+                    <h4 class="text-xl font-heading font-bold mb-6">Medical Services</h4>
+                    <ul class="space-y-3 text-white/80">
+                        <li><a href="#" class="hover:text-accent transition-colors flex items-center"><i
+                                    class="fas fa-chevron-right text-xs mr-2"></i>Obstetric Care</a></li>
+                        <li><a href="#" class="hover:text-accent transition-colors flex items-center"><i
+                                    class="fas fa-chevron-right text-xs mr-2"></i>Gynecology</a></li>
+                        <li><a href="#" class="hover:text-accent transition-colors flex items-center"><i
+                                    class="fas fa-chevron-right text-xs mr-2"></i>Infertility</a></li>
+                        <li><a href="#" class="hover:text-accent transition-colors flex items-center"><i
+                                    class="fas fa-chevron-right text-xs mr-2"></i>Cosmetic Surgery</a></li>
+                        <li><a href="#" class="hover:text-accent transition-colors flex items-center"><i
+                                    class="fas fa-chevron-right text-xs mr-2"></i>Robotic Surgery</a></li>
+                    </ul>
+                </div>
+
+                <!-- Quick Links -->
+                <div>
+                    <h4 class="text-xl font-heading font-bold mb-6">Quick Links</h4>
+                    <ul class="space-y-3 text-white/80">
+                        <li><a href="#home" class="hover:text-accent transition-colors flex items-center"><i
+                                    class="fas fa-chevron-right text-xs mr-2"></i>Home</a></li>
+                        <li><a href="#about" class="hover:text-accent transition-colors flex items-center"><i
+                                    class="fas fa-chevron-right text-xs mr-2"></i>About Doctor</a></li>
+                        <li><a href="#services" class="hover:text-accent transition-colors flex items-center"><i
+                                    class="fas fa-chevron-right text-xs mr-2"></i>Services</a></li>
+                        <li><a href="#contact" class="hover:text-accent transition-colors flex items-center"><i
+                                    class="fas fa-chevron-right text-xs mr-2"></i>Contact</a></li>
+                        <li><a href="#" class="hover:text-accent transition-colors flex items-center"><i
+                                    class="fas fa-chevron-right text-xs mr-2"></i>Health Camps</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Bottom Footer -->
+            <div class="border-t border-white/20 pt-8 text-center">
+                <p class="text-white/70 mb-4">
+                    © 2025 Dr. Muthineni Rajini. All rights reserved. | Professional Medical Services
+                </p>
+                <p class="text-white/60 text-sm">
+                    Licensed Medical Practitioner | MBBS, DGO, DNB, FICOG | 15+ Years Experience
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Mobile-first bottom navigation for easy access -->
+    <div class="fixed bottom-0 left-0 right-0 bg-white/95 backdrop-blur-md border-t border-pink-100 lg:hidden z-50">
+        <div class="grid grid-cols-4 gap-1 p-2">
+            <a href="#home"
+                class="flex flex-col items-center py-2 px-1 text-slate-text hover:text-primary transition-colors">
+                <i class="fas fa-home text-lg mb-1"></i>
+                <span class="text-xs font-medium">Home</span>
+            </a>
+            <a href="#services"
+                class="flex flex-col items-center py-2 px-1 text-slate-text hover:text-primary transition-colors">
+                <i class="fas fa-stethoscope text-lg mb-1"></i>
+                <span class="text-xs font-medium">Services</span>
+            </a>
+            <a href="#contact"
+                class="flex flex-col items-center py-2 px-1 text-slate-text hover:text-primary transition-colors">
+                <i class="fas fa-calendar-plus text-lg mb-1"></i>
+                <span class="text-xs font-medium">Book</span>
+            </a>
+            <a href="tel:+919437955843"
+                class="flex flex-col items-center py-2 px-1 text-slate-text hover:text-primary transition-colors">
+                <i class="fas fa-phone text-lg mb-1"></i>
+                <span class="text-xs font-medium">Call</span>
+            </a>
+        </div>
+    </div>
+
+    <!-- Enhanced JavaScript with mobile optimizations -->
+    <script>
+        // Mobile menu toggle
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        mobileMenuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+            const icon = mobileMenuBtn.querySelector('i');
+            icon.classList.toggle('fa-bars');
+            icon.classList.toggle('fa-times');
+        });
+
+        // Smooth scrolling for all navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    const headerHeight = 80;
+                    const targetPosition = target.offsetTop - headerHeight;
+
+                    window.scrollTo({
+                        top: targetPosition,
+                        behavior: 'smooth'
+                    });
+
+                    // Close mobile menu if open
+                    mobileMenu.classList.add('hidden');
+                    const icon = mobileMenuBtn.querySelector('i');
+                    icon.classList.add('fa-bars');
+                    icon.classList.remove('fa-times');
+                }
+            });
+        });
+
+        // Enhanced form submission with validation
+        document.getElementById('contact-form').addEventListener('submit', function (e) {
+            e.preventDefault();
+
+            // Simple form validation
+            const inputs = this.querySelectorAll('input[required], select[required], textarea[required]');
+            let isValid = true;
+
+            inputs.forEach(input => {
+                if (!input.value.trim()) {
+                    isValid = false;
+                    input.classList.add('border-red-400');
+                    input.classList.remove('border-pink-100');
+                } else {
+                    input.classList.remove('border-red-400');
+                    input.classList.add('border-pink-100');
+                }
+            });
+
+            if (isValid) {
+                // Show success message
+                const button = this.querySelector('button[type="submit"]');
+                const originalText = button.innerHTML;
+                button.innerHTML = '<i class="fas fa-check mr-2"></i>Request Sent Successfully!';
+                button.classList.add('bg-green-500');
+
+                setTimeout(() => {
+                    button.innerHTML = originalText;
+                    button.classList.remove('bg-green-500');
+                    this.reset();
+                }, 3000);
+            } else {
+                alert('Please fill in all required fields.');
+            }
+        });
+
+        // Intersection Observer for animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+
+        // Observe all animated elements
+        document.querySelectorAll('.bg-white.rounded-3xl, .bg-gradient-to-br').forEach(element => {
+            element.style.opacity = '0';
+            element.style.transform = 'translateY(30px)';
+            element.style.transition = 'opacity 0.8s ease, transform 0.8s ease';
+            observer.observe(element);
+        });
+
+        // Header scroll effect
+        let lastScrollY = window.scrollY;
+        window.addEventListener('scroll', () => {
+            const header = document.querySelector('header');
+            const currentScrollY = window.scrollY;
+
+            if (currentScrollY > 100) {
+                header.classList.add('shadow-2xl');
+            } else {
+                header.classList.remove('shadow-2xl');
+            }
+
+            // Hide/show header on mobile based on scroll direction
+            if (window.innerWidth <= 1024) {
+                if (currentScrollY > lastScrollY && currentScrollY > 200) {
+                    header.style.transform = 'translateY(-100%)';
+                } else {
+                    header.style.transform = 'translateY(0)';
+                }
+            }
+
+            lastScrollY = currentScrollY;
+        });
+
+        // Add loading animation
+        window.addEventListener('load', () => {
+            document.body.classList.add('loaded');
+        });
+
+        // Touch-friendly interactions for mobile
+        if ('ontouchstart' in window) {
+            document.querySelectorAll('.hover\\:shadow-2xl').forEach(element => {
+                element.addEventListener('touchstart', function () {
+                    this.classList.add('shadow-2xl');
+                });
+                element.addEventListener('touchend', function () {
+                    setTimeout(() => {
+                        this.classList.remove('shadow-2xl');
+                    }, 150);
+                });
+            });
+        }
+
+        // Performance optimization: Lazy load images
+        if ('IntersectionObserver' in window) {
+            const imageObserver = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        const img = entry.target;
+                        img.src = img.dataset.src || img.src;
+                        img.classList.remove('opacity-0');
+                        imageObserver.unobserve(img);
+                    }
+                });
+            });
+
+            document.querySelectorAll('img').forEach(img => {
+                img.classList.add('opacity-0', 'transition-opacity', 'duration-500');
+                setTimeout(() => img.classList.remove('opacity-0'), 100);
+            });
+        }
+
+        console.log('[v0] Women\'s healthcare website for Dr. Muthineni Rajini loaded successfully');
+
+        document.getElementById('contact-form').addEventListener('submit', function (e) {
+            e.preventDefault(); // Default form submission prevent
+
+            // Form fields
+            const name = encodeURIComponent(this.querySelector('input[type="text"]').value);
+            const email = encodeURIComponent(this.querySelector('input[type="email"]').value);
+            const phone = encodeURIComponent(this.querySelector('input[type="tel"]').value);
+            const service = encodeURIComponent(this.querySelector('select').value);
+            const message = encodeURIComponent(this.querySelector('textarea').value);
+
+            // WhatsApp number (without +, country code first)
+            const whatsappNumber = "919866430994";
+
+            // WhatsApp message template
+            const whatsappMessage = `Hello! I want to book a consultation.\n\nName: ${name}\nEmail: ${email}\nPhone: ${phone}\nService: ${service}\nMessage: ${message}`;
+
+            // Open WhatsApp chat
+            window.open(`https://wa.me/${whatsappNumber}?text=${whatsappMessage}`, "_blank");
+        });
+    </script>
+</body>
+
+</html>
