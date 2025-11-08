@@ -4,9 +4,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dr. Rajini Muthineni - Gynecologist & Obstetrician</title>
-    <script src="https://cdn.tailwindcss.com"></script>
+    <title>Dr. Rajini - Obstetrician & Gynecologist | Women's Health Services</title>
+    <!-- Remix Icon CDN -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.0.0/remixicon.min.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- GSAP CDN -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
     <style>
         * {
             margin: 0;
@@ -14,696 +18,1539 @@
             box-sizing: border-box;
         }
 
-        html,
-        body {
-            width: 100%;
-            height: 100%;
-            overflow-x: hidden;
-            padding: 0;
+        :root {
+            --primary-blue: #0ea5e9;
+            --primary-purple: #a855f7;
+            --primary-pink: #ec4899;
+            --primary-red: #ef4444;
+            --primary-green: #10b981;
+            --primary-orange: #f97316;
+            --primary-indigo: #6366f1;
+            --primary-violet: #8b5cf6;
+
+            /* Light Mode */
+            --light-bg: #ffffff;
+            --light-bg2: #89b0f0;
+            --light-bg-secondary: #f8fafc;
+            --light-card-bg: #f1f5f9;
+            --light-text: #1e293b;
+            --light-text-muted: #64748b;
+            --light-border: rgba(226, 232, 240, 0.8);
+
+            /* Dark Mode */
+            --dark-bg: #0f172a;
+            --darker-bg: #020617;
+            --dark-card-bg: rgba(30, 41, 59, 0.8);
+            --dark-text: #1b1a1a;
+            --dark-text-muted: #cbd5e1;
+            --dark-border: rgba(148, 163, 184, 0.1);
+        }
+
+        body.light-mode {
+            --bg: var(--light-bg);
+            --bg-secondary: var(--light-bg-secondary);
+            --card-bg: var(--light-card-bg);
+            --text: var(--light-text);
+            --text-muted: var(--light-text-muted);
+            --border: var(--light-border);
+        }
+
+        body.dark-mode {
+            --bg: var(--dark-bg);
+            --bg-secondary: var(--darker-bg);
+            --card-bg: var(--dark-card-bg);
+            --text: var(--dark-text);
+            --text-muted: var(--dark-text-muted);
+            --border: var(--dark-border);
+        }
+
+        html {
+            scroll-behavior: smooth;
         }
 
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background: #fafafa;
+            background: var(--bg);
+            color: var(--text);
+            line-height: 1.6;
+            overflow-x: hidden;
+            transition: background 0.3s ease, color 0.3s ease;
         }
 
-        .gradient-blue-purple {
-            background: linear-gradient(135deg, #1e3a8a 0%, #7c3aed 100%);
+        /* Navigation */
+        nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            padding: 1rem 2rem;
+            z-index: 1000;
+            border-bottom: 1px solid var(--border);
+            transition: background 0.3s ease;
         }
 
-        .gradient-purple-pink {
-            background: linear-gradient(135deg, #c026d3 0%, #ec4899 100%);
+        body.dark-mode nav {
+            background: rgba(15, 23, 42, 0.95);
         }
 
-        .nav-active {
-            color: #c026d3;
-            font-weight: 600;
+        .nav-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
         }
 
-        .smooth-scroll {
-            scroll-behavior: smooth;
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+            background: linear-gradient(135deg, var(--primary-blue), var(--primary-purple));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
         }
 
-        .fade-in {
-            animation: fadeIn 0.8s ease-in;
+        .nav-center {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
         }
 
-        .slide-in-left {
-            animation: slideInLeft 0.8s ease-out;
+        .nav-center a {
+            color: var(--text-muted);
+            text-decoration: none;
+            transition: all 0.3s ease;
+            font-weight: 500;
         }
 
-        .slide-in-right {
-            animation: slideInRight 0.8s ease-out;
+        .nav-center a:hover {
+            color: var(--primary-blue);
+            transform: translateY(-2px);
         }
 
-        @keyframes fadeIn {
-            from {
-                opacity: 0;
+        .nav-right {
+            display: flex;
+            gap: 1rem;
+            align-items: center;
+        }
+
+        .theme-toggle {
+            background: transparent;
+            border: none;
+            cursor: pointer;
+            font-size: 1.5rem;
+            color: var(--primary-blue);
+            transition: all 0.3s ease;
+        }
+
+        .theme-toggle:hover {
+            transform: rotate(20deg);
+            color: var(--primary-blue);
+        }
+
+        .menu-toggle {
+            display: none;
+            background: transparent;
+            border: none;
+            font-size: 1.5rem;
+            color: var(--primary-blue);
+            cursor: pointer;
+        }
+
+        @media (max-width: 768px) {
+            .nav-center {
+                display: none;
+                position: absolute;
+                top: 60px;
+                left: 0;
+                right: 0;
+                flex-direction: column;
+                gap: 0;
+                background: var(--bg);
+                border-bottom: 1px solid var(--border);
+                padding: 1rem 2rem;
             }
 
-            to {
-                opacity: 1;
+            .nav-center.active {
+                display: flex;
+            }
+
+            .nav-center a {
+                padding: 0.75rem 0;
+            }
+
+            .menu-toggle {
+                display: block;
+            }
+
+            .logo {
+                font-size: 1.2rem;
             }
         }
 
-        @keyframes slideInLeft {
-            from {
-                opacity: 0;
-                transform: translateX(-50px);
-            }
-
-            to {
-                opacity: 1;
-                transform: translateX(0);
-            }
-        }
-
-        @keyframes slideInRight {
-            from {
-                opacity: 0;
-                transform: translateX(50px);
-            }
-
-            to {
-                opacity: 1;
-                transform: translateX(0);
-            }
-        }
-
-        .nav-menu {
-            max-height: 0;
+        /* Hero Section */
+        .hero {
+            margin-top: 80px;
+            padding: 4rem 2rem;
+            text-align: center;
+            position: relative;
             overflow: hidden;
-            transition: max-height 0.3s ease-out;
+            background: var(--bg);
         }
 
-        .nav-menu.active {
-            max-height: 400px;
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: radial-gradient(circle at 20% 50%, rgba(14, 165, 233, 0.1) 0%, transparent 50%),
+                radial-gradient(circle at 80% 80%, rgba(168, 85, 247, 0.1) 0%, transparent 50%);
+            pointer-events: none;
         }
 
-        .hover-lift {
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        .hero-content {
+            max-width: 800px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 1;
         }
 
-        .hover-lift:hover {
-            transform: translateY(-8px);
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+        .hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+            background: linear-gradient(135deg, var(--primary-blue), var(--primary-purple), var(--primary-pink));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            font-weight: 800;
+        }
+
+        .hero p {
+            font-size: 1.25rem;
+            color: var(--text-muted);
+            margin-bottom: 2rem;
+        }
+
+        .cta-buttons {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            padding: 1rem 2rem;
+            border: none;
+            border-radius: 0.75rem;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            display: inline-block;
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, var(--primary-blue), var(--primary-purple));
+            color: white;
+            box-shadow: 0 8px 20px rgba(14, 165, 233, 0.3);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 12px 30px rgba(14, 165, 233, 0.4);
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: var(--primary-blue);
+            border: 2px solid var(--primary-blue);
+        }
+
+        .btn-secondary:hover {
+            background: var(--primary-blue);
+            color: white;
+            transform: translateY(-3px);
+        }
+
+        /* About Section */
+        .about {
+            padding: 4rem 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+            background: var(--bg);
+        }
+
+        .section-title {
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+            background: linear-gradient(135deg, var(--primary-blue), var(--primary-purple));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            text-align: center;
+        }
+
+        .section-subtitle {
+            text-align: center;
+            color: var(--text-muted);
+            margin-bottom: 3rem;
+            font-size: 1.1rem;
+        }
+
+        .about-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            align-items: center;
+        }
+
+        .about-text h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            color: var(--primary-blue);
+        }
+
+        .about-text p {
+            margin-bottom: 1rem;
+            color: var(--text-muted);
+            line-height: 1.8;
+        }
+
+        .stats {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+
+        .stat-card {
+            background: var(--card-bg);
+            padding: 1.5rem;
+            border-radius: 0.75rem;
+            border: 1px solid var(--border);
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+
+        .stat-card:hover {
+            background: var(--bg-secondary);
+            transform: translateY(-5px);
+            border-color: rgba(14, 165, 233, 0.3);
+        }
+
+        .stat-number {
+            font-size: 2rem;
+            font-weight: bold;
+            background: linear-gradient(135deg, var(--primary-blue), var(--primary-purple));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 0.5rem;
+        }
+
+        .stat-label {
+            color: var(--text-muted);
+            font-size: 0.9rem;
+        }
+
+        .credentials {
+            margin-top: 2rem;
+        }
+
+        .credentials h4 {
+            color: var(--primary-pink);
+            margin-bottom: 0.5rem;
+            font-size: 0.9rem;
+        }
+
+        .credentials p {
+            color: var(--text);
+            font-weight: 500;
+        }
+
+        @media (max-width: 768px) {
+            .about-content {
+                grid-template-columns: 1fr;
+            }
+
+            .hero h1 {
+                font-size: 2rem;
+            }
+        }
+
+        /* Service Categories Sections */
+        .services-wrapper {
+            padding: 4rem 2rem;
+            max-width: 1400px;
+            margin: 0 auto;
+            background: var(--bg);
+        }
+
+        .main-services-title {
+            font-size: 2.5rem;
+            text-align: center;
+            margin-bottom: 3rem;
+            background: linear-gradient(135deg, var(--primary-blue), var(--primary-purple));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .service-category {
+            margin-bottom: 4rem;
+        }
+
+        .category-header {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin-bottom: 2rem;
+            padding: 1.5rem;
+            border-radius: 0.75rem;
+            background: var(--card-bg);
+            border-left: 4px solid;
+        }
+
+        .category-header.obstetrics {
+            border-left-color: var(--primary-blue);
+            background: linear-gradient(90deg, rgba(14, 165, 233, 0.1), transparent);
+        }
+
+        .category-header.gynecology {
+            border-left-color: var(--primary-pink);
+            background: linear-gradient(90deg, rgba(236, 72, 153, 0.1), transparent);
+        }
+
+        .category-header.laparoscopic {
+            border-left-color: var(--primary-purple);
+            background: linear-gradient(90deg, rgba(168, 85, 247, 0.1), transparent);
+        }
+
+        .category-header.hysteroscopic {
+            border-left-color: var(--primary-red);
+            background: linear-gradient(90deg, rgba(239, 68, 68, 0.1), transparent);
+        }
+
+        .category-header.general {
+            border-left-color: var(--primary-green);
+            background: linear-gradient(90deg, rgba(16, 185, 129, 0.1), transparent);
+        }
+
+        .category-header.emergency {
+            border-left-color: var(--primary-orange);
+            background: linear-gradient(90deg, rgba(249, 115, 22, 0.1), transparent);
+        }
+
+        .category-header.infertility {
+            border-left-color: var(--primary-indigo);
+            background: linear-gradient(90deg, rgba(99, 102, 241, 0.1), transparent);
+        }
+
+        .category-icon {
+            font-size: 2rem;
+        }
+
+        .category-title {
+            font-size: 1.75rem;
+            font-weight: bold;
+            background: linear-gradient(135deg, var(--primary-blue), var(--primary-purple));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .services-scroll-container {
+            position: relative;
+            overflow: hidden;
+        }
+
+        .services-scroll {
+            display: flex;
+            gap: 1.5rem;
+            overflow-x: auto;
+            padding: 1rem 0;
+            scroll-behavior: smooth;
+            scrollbar-width: thin;
+            scrollbar-color: rgba(14, 165, 233, 0.3) transparent;
+        }
+
+        .services-scroll::-webkit-scrollbar {
+            height: 6px;
+        }
+
+        .services-scroll::-webkit-scrollbar-track {
+            background: transparent;
+        }
+
+        .services-scroll::-webkit-scrollbar-thumb {
+            background: rgba(14, 165, 233, 0.3);
+            border-radius: 3px;
+        }
+
+        .services-scroll::-webkit-scrollbar-thumb:hover {
+            background: rgba(14, 165, 233, 0.5);
+        }
+
+        .scroll-button {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background: rgba(14, 165, 233, 0.8);
+            color: white;
+            border: none;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+            transition: all 0.3s ease;
+            z-index: 10;
+        }
+
+        .scroll-button:hover {
+            background: var(--primary-blue);
+            transform: translateY(-50%) scale(1.1);
+        }
+
+        .scroll-left {
+            left: 0;
+        }
+
+        .scroll-right {
+            right: 0;
+        }
+
+        .service-card {
+            flex: 0 0 280px;
+            background: var(--card-bg);
+            border: 1px solid var(--border);
+            border-radius: 0.75rem;
+            overflow: hidden;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            transform-style: preserve-3d;
+            display: flex;
+            flex-direction: column;
+            /* Enhanced premium styling */
+            height: 420px;
+            position: relative;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+        }
+
+        .service-card:hover {
+            transform: translateY(-15px) scale(1.02);
+            background: var(--bg-secondary);
+            border-color: rgba(14, 165, 233, 0.5);
+            box-shadow: 0 25px 50px rgba(14, 165, 233, 0.15);
+        }
+
+        /* Premium card image styling */
+        .card-image {
+            width: 100%;
+            height: 250px;
+            background: linear-gradient(135deg, var(--primary-blue), var(--primary-purple));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 3.5rem;
+            font-weight: bold;
+            color: white;
+            text-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+            overflow: hidden;
+            position: relative;
+            transition: all 0.5s ease;
+        }
+
+
+        .service-card:hover .card-image {
+            height: 250px;
+            font-size: 4rem;
+        }
+
+        .card-image::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(45deg, transparent 30%, rgba(255, 255, 255, 0.1) 50%, transparent 70%);
+        }
+
+        /* Enhanced content section with better spacing */
+        .card-content {
+            padding: 1.75rem 1.5rem;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            justify-content: space-between;
+            position: relative;
+        }
+
+        /* Premium title styling */
+        .card-title {
+            font-size: 1.15rem;
+            font-weight: 700;
+            color: var(--text);
+            transition: all 0.3s ease;
+            text-align: left;
+            line-height: 1.4;
+            margin-bottom: 0.75rem;
+        }
+
+        .service-card:hover .card-title {
+            background: linear-gradient(135deg, var(--primary-blue), var(--primary-purple));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        /* New description text styling */
+        .card-description {
+            font-size: 0.875rem;
+            color: var(--text-muted);
+            line-height: 1.5;
+            margin-bottom: 1rem;
+            flex-grow: 1;
+        }
+
+        /* New learn more button styling */
+        .card-button {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: linear-gradient(135deg, var(--primary-blue), var(--primary-purple));
+            color: white;
+            border: none;
+            padding: 0.65rem 1.25rem;
+            border-radius: 0.5rem;
+            font-size: 0.85rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            width: 100%;
+            justify-content: center;
+        }
+
+        .card-button:hover {
+            transform: translateX(3px);
+            box-shadow: 0 8px 16px rgba(14, 165, 233, 0.3);
+        }
+
+        .card-button i {
+            transition: all 0.3s ease;
+        }
+
+        .card-button:hover i {
+            transform: translateX(2px);
+        }
+
+        /* New service category badge */
+        .card-badge {
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            background: rgba(14, 165, 233, 0.15);
+            color: var(--primary-blue);
+            padding: 0.35rem 0.75rem;
+            border-radius: 2rem;
+            font-size: 0.7rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(14, 165, 233, 0.2);
+        }
+
+        /* Contact Section */
+        .contact {
+            padding: 4rem 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+            background: var(--bg);
+        }
+
+        .contact-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+        }
+
+        .contact-info {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+        }
+
+        .contact-card {
+            background: var(--card-bg);
+            padding: 1.5rem;
+            border-radius: 0.75rem;
+            border: 1px solid var(--border);
+            transition: all 0.3s ease;
+        }
+
+        .contact-card:hover {
+            background: var(--bg-secondary);
+            transform: translateY(-5px);
+            border-color: rgba(14, 165, 233, 0.3);
+        }
+
+        .contact-card h4 {
+            color: var(--primary-blue);
+            margin-bottom: 0.75rem;
+            font-size: 1rem;
+        }
+
+        .contact-card p {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+        }
+
+        .contact-form {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+
+        .form-group {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .form-group label {
+            color: var(--text);
+            margin-bottom: 0.5rem;
+            font-weight: 500;
+            font-size: 0.95rem;
+        }
+
+        .form-group input,
+        .form-group textarea,
+        .form-group select {
+            background: var(--card-bg);
+            border: 1px solid var(--border);
+            color: var(--text);
+            padding: 0.75rem 1rem;
+            border-radius: 0.5rem;
+            font-family: inherit;
+            transition: all 0.3s ease;
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus,
+        .form-group select:focus {
+            outline: none;
+            background: var(--bg-secondary);
+            border-color: var(--primary-blue);
+            box-shadow: 0 0 10px rgba(14, 165, 233, 0.2);
+        }
+
+        .form-group textarea {
+            resize: vertical;
+            min-height: 120px;
+        }
+
+        @media (max-width: 768px) {
+            .contact-content {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* Footer */
+        footer {
+            background: var(--card-bg);
+            padding: 3rem 2rem;
+            text-align: center;
+            border-top: 1px solid var(--border);
+            margin-top: 4rem;
+        }
+
+        footer p {
+            color: var(--text-muted);
+            font-size: 0.9rem;
+            margin-bottom: 1rem;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 1.5rem;
+            justify-content: center;
+            margin: 1.5rem 0;
+        }
+
+        .social-links a {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: rgba(14, 165, 233, 0.2);
+            color: var(--primary-blue);
+            text-decoration: none;
+            transition: all 0.3s ease;
+            font-size: 1.3rem;
+        }
+
+        .social-links a:hover {
+            background: var(--primary-blue);
+            color: white;
+            transform: translateY(-3px);
         }
     </style>
 </head>
 
-<body class="smooth-scroll">
+<body class="light-mode">
     <!-- Navigation -->
-    <nav class="fixed top-0 left-0 right-0 bg-white shadow-lg z-50">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex justify-between items-center h-20">
-                <!-- Logo -->
-                <div class="flex items-center gap-3">
-                    <div
-                        class="w-12 h-12 gradient-blue-purple rounded-full flex items-center justify-center text-white">
-                        <i class="ri-heart-fill text-xl"></i>
-                    </div>
-                    <div class="hidden sm:block">
-                        <h1 class="text-lg font-bold text-blue-900">Dr. Rajeshwari</h1>
-                        <p class="text-xs text-gray-600">Gynecologist & Obstetrician</p>
-                    </div>
-                </div>
-
-                <!-- Desktop Navigation -->
-                <div class="hidden md:flex items-center gap-8">
-                    <a href="#home" class="text-gray-700 hover:text-purple-600 transition-colors font-medium">Home</a>
-                    <a href="#about" class="text-gray-700 hover:text-purple-600 transition-colors font-medium">About</a>
-                    <a href="#services"
-                        class="text-gray-700 hover:text-purple-600 transition-colors font-medium">Services</a>
-                    <a href="#expertise"
-                        class="text-gray-700 hover:text-purple-600 transition-colors font-medium">Expertise</a>
-                    <a href="#testimonials"
-                        class="text-gray-700 hover:text-purple-600 transition-colors font-medium">Testimonials</a>
-                    <a href="#contact"
-                        class="text-gray-700 hover:text-purple-600 transition-colors font-medium">Contact</a>
-                </div>
-
-                <!-- CTA Button (Desktop) -->
-                <button
-                    class="hidden md:block gradient-purple-pink text-white px-8 py-2 rounded-full font-semibold hover:shadow-lg transition-shadow">
-                    Book Appointment
+    <nav>
+        <div class="nav-container">
+            <div class="logo">👨‍⚕️ Dr. Rajini</div>
+            <ul class="nav-center">
+                <li><a href="#about">About</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+            <div class="nav-right">
+                <!-- Added theme toggle button and menu toggle for mobile -->
+                <button class="theme-toggle" id="themeToggle" title="Toggle Dark Mode">
+                    <i class="ri-sun-line"></i>
                 </button>
-
-                <!-- Mobile Menu Button -->
-                <button id="menuToggle" class="md:hidden text-gray-700 text-2xl">
+                <button class="menu-toggle" id="menuToggle">
                     <i class="ri-menu-line"></i>
-                </button>
-            </div>
-
-            <!-- Mobile Navigation Menu -->
-            <div id="navMenu" class="nav-menu md:hidden bg-white border-t border-gray-200">
-                <a href="#home"
-                    class="block px-4 py-3 text-gray-700 hover:bg-purple-50 hover:text-purple-600 transition-colors">Home</a>
-                <a href="#about"
-                    class="block px-4 py-3 text-gray-700 hover:bg-purple-50 hover:text-purple-600 transition-colors">About</a>
-                <a href="#services"
-                    class="block px-4 py-3 text-gray-700 hover:bg-purple-50 hover:text-purple-600 transition-colors">Services</a>
-                <a href="#expertise"
-                    class="block px-4 py-3 text-gray-700 hover:bg-purple-50 hover:text-purple-600 transition-colors">Expertise</a>
-                <a href="#testimonials"
-                    class="block px-4 py-3 text-gray-700 hover:bg-purple-50 hover:text-purple-600 transition-colors">Testimonials</a>
-                <a href="#contact"
-                    class="block px-4 py-3 text-gray-700 hover:bg-purple-50 hover:text-purple-600 transition-colors">Contact</a>
-                <button class="w-full mx-4 my-3 gradient-purple-pink text-white px-6 py-2 rounded-full font-semibold">
-                    Book Appointment
                 </button>
             </div>
         </div>
     </nav>
 
     <!-- Hero Section -->
-    <section id="home" class="pt-12 pb-20 px-0  sm:px-6 lg:px-8">
-        <div class="w-full h-screen">
-            <img src="images/hero.png" class="w-full h-full object-top object-cover" alt="">
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Welcome to Excellence in Women's Healthcare</h1>
+            <p>Comprehensive obstetric and gynecological services with over 15 years of expert experience</p>
+            <div class="cta-buttons">
+                <button class="btn btn-primary">Book Consultation</button>
+                <button class="btn btn-secondary">View Services</button>
+            </div>
         </div>
     </section>
 
-    <!-- About Page Section -->
-    <section id="about" class="pb-20 px-4 sm:px-6 lg:px-8 bg-white">
-        <div class="max-w-7xl mx-auto">
-            <div class="text-center mb-16">
-                <h2 class="text-4xl sm:text-5xl font-bold text-blue-900 mb-4">
-                    About Dr. Rajeshwari Reddy
-                </h2>
-                <div class="slide-in-right mb-2">
-                    <div class="relative">
-                        <div class="absolute inset-0 gradient-blue-purple rounded-3xl opacity-10 blur-3xl"></div>
-                        <img src="images/owner.jpg" alt="Dr. Rajeshwari" class="rounded-3xl shadow-2xl relative z-10">
+    <!-- About Section -->
+    <section class="about py-16 px-4 sm:px-6 lg:px-8" id="about">
+        <div class="max-w-6xl mx-auto">
+            <h2 class="section-title text-3xl sm:text-4xl font-bold mb-2">About Dr. Rajini</h2>
+            <p class="section-subtitle text-lg text-slate-600 mb-8">Trusted by thousands of patients for compassionate,
+                expert care</p>
+
+            <div class="about-content grid grid-cols-1 lg:grid-cols-2  gap-10 items-start">
+                <!-- Right: Image + Stats -->
+                <div class="stats flex flex-col items-stretch gap-6">
+
+                    <div class="relative rounded-2xl overflow-hidden shadow-lg">
+                        <img src="images/owner.jpg" alt="Dr. Rajini"
+                            class="w-full h-80 sm:h-80 lg:h-[420px] object-cover object-top">
+                        <div class="absolute inset-0 bg-gradient-to-b from-transparent to-black/10"></div>
                     </div>
+
                 </div>
 
-                <p class="text-xl text-gray-600 max-w-3xl mx-auto">
-                    With over a decade of excellence in women's healthcare, Dr. Rajeshwari combines advanced medical
-                    expertise with genuine compassion
-                </p>
-            </div>
-
-
-
-            <div class="grid md:grid-cols-3 gap-8 mb-16">
-                <div class="hover-lift bg-gradient-to-br from-blue-50 to-purple-50 p-8 rounded-2xl">
-                    <div class="text-4xl gradient-purple-pink bg-clip-text text-transparent mb-4">
-                        <i class="ri-medal-line"></i> 15+
-                    </div>
-                    <h3 class="text-2xl font-bold text-gray-900 mb-3">Years Experience</h3>
-                    <p class="text-gray-600">Dedicated to providing exceptional gynecological and obstetric care</p>
-                </div>
-
-                <div class="hover-lift bg-gradient-to-br from-purple-50 to-pink-50 p-8 rounded-2xl">
-                    <div class="text-4xl gradient-purple-pink bg-clip-text text-transparent mb-4">
-                        <i class="ri-team-line"></i> 5000+
-                    </div>
-                    <h3 class="text-2xl font-bold text-gray-900 mb-3">Happy Patients</h3>
-                    <p class="text-gray-600">Building trust through compassionate care and positive outcomes</p>
-                </div>
-
-                <div class="hover-lift bg-gradient-to-br from-pink-50 to-red-50 p-8 rounded-2xl">
-                    <div class="text-4xl gradient-purple-pink bg-clip-text text-transparent mb-4">
-                        <i class="ri-trophy-line"></i> Board Certified
-                    </div>
-                    <h3 class="text-2xl font-bold text-gray-900 mb-3">Expert Credentials</h3>
-                    <p class="text-gray-600">MBBS, MS (OBG), DES, FAMS, PGPmax certifications</p>
-                </div>
-            </div>
-
-            <div class="bg-gradient-to-r from-blue-900 via-purple-900 to-pink-900 text-white rounded-3xl p-12 mb-16">
-                <h3 class="text-3xl font-bold mb-6">Professional Journey</h3>
-                <div class="grid md:grid-cols-2 gap-8">
+                <!-- Left: Text Content -->
+                <div class="about-text space-y-6">
                     <div>
-                        <h4 class="text-xl font-semibold mb-3 flex items-center gap-2">
-                            <i class="ri-hospital-line"></i> Current Position
-                        </h4>
-                        <p class="text-purple-100 leading-relaxed">
-                            Senior Consultant Obstetrician & Gynecologist at Continental Hospital, Hyderabad.
-                            Specializing in minimal invasive laparoscopic procedures and comprehensive women's
-                            healthcare solutions.
+                        <h3 class="text-2xl font-semibold">Professional Excellence</h3>
+                        <p class="text-base text-slate-700 leading-relaxed">
+                            Dr. Rajini is a highly qualified Obstetrician and Gynecologist with extensive experience in
+                            both
+                            routine and complex obstetric and gynecological conditions. With a patient-centered
+                            approach, she
+                            ensures the highest quality of care for every patient.
+                        </p>
+                        <p class="text-base text-slate-700 leading-relaxed">
+                            Specializing in high-risk pregnancies, infertility treatments, and advanced minimally
+                            invasive
+                            procedures, Dr. Rajini combines cutting-edge medical knowledge with compassionate patient
+                            care.
                         </p>
                     </div>
-                    <div>
-                        <h4 class="text-xl font-semibold mb-3 flex items-center gap-2">
-                            <i class="ri-book-line"></i> Specializations
-                        </h4>
-                        <ul class="space-y-2 text-purple-100">
-                            <li><i class="ri-check-line text-green-400"></i> Advanced Laparoscopic Surgery</li>
-                            <li><i class="ri-check-line text-green-400"></i> High-Risk Pregnancy Management</li>
-                            <li><i class="ri-check-line text-green-400"></i> Infertility Treatment</li>
-                            <li><i class="ri-check-line text-green-400"></i> Cosmetic Gynecology</li>
-                        </ul>
+
+                    <div class=" bg-slate-900 p-4 rounded-lg ">
+                        <h4 class="text-lg text-white font-medium mb-2">QUALIFICATIONS</h4>
+                        <p class="text-sm text-slate-600 leading-relaxed">
+                            MBBS, MS (Obstetrics & Gynecology)<br>
+                            Fellowship in Advanced Laparoscopic Surgery<br>
+                            Certified in Fetal Medicine
+                        </p>
                     </div>
                 </div>
-            </div>
 
 
-
-
-
-
-
-
-
-
-            <div class="grid md:grid-cols-2 gap-12 items-center">
-                <div>
-                    <h3 class="text-3xl font-bold text-blue-900 mb-6">Philosophy of Care</h3>
-                    <p class="text-gray-700 text-lg leading-relaxed mb-6">
-                        Dr. Rajeshwari believes in treating every patient as a unique individual with specific needs and
-                        concerns. Her approach combines cutting-edge medical technology with the warmth of traditional
-                        compassionate care.
-                    </p>
-                    <p class="text-gray-700 text-lg leading-relaxed">
-                        She is committed to empowering women through education, ensuring they are informed participants
-                        in their healthcare decisions. Her mission extends beyond clinical excellence to creating a
-                        supportive environment where every patient feels valued and heard.
-                    </p>
-                </div>
-                <div>
-                    <img src="/placeholder.svg?height=400&width=400" alt="Philosophy" class="rounded-2xl shadow-lg">
-                </div>
             </div>
         </div>
     </section>
-
-    <section class="w-full h-auto md:h-screen grid grid-cols-1 md:grid-cols-2">
-
-        <!-- Left Image -->
-        <div class="w-full min-h-[50vh] md:h-full bg-cover bg-center" style="background-image: url('images/img2.png');">
-        </div>
-
-        <!-- Right Content -->
-        <div class="w-full h-full text-white px-8 py-10 flex items-center justify-center"
-            style="background: linear-gradient(180deg, #AD2A82 0%, #4F0035 100%);">
-
-            <div class="max-w-md space-y-4">
-
-                <h2 class="text-3xl font-bold leading-tight">
-                    The Expertise of <br>
-                    <span class="text-white font-extrabold">Dr. T. Rajeshwari Reddy</span>
-                </h2>
-
-                <ul class="space-y-2 text-base leading-relaxed list-none">
-
-                    <li class="flex items-start gap-2">
-                        <i class="ri-checkbox-circle-line text-white text-xl"></i>
-                        Laparoscopic Hysterectomy, Myomectomy
-                    </li>
-
-                    <li class="flex items-start gap-2">
-                        <i class="ri-checkbox-circle-line text-white text-xl"></i>
-                        Laparoscopic Ovarian Cyst Removal, Laparoscopic Ectopic
-                    </li>
-
-                    <li class="flex items-start gap-2">
-                        <i class="ri-checkbox-circle-line text-white text-xl"></i>
-                        All Major Hysteroscopic Procedures
-                    </li>
-
-                    <li class="flex items-start gap-2">
-                        <i class="ri-checkbox-circle-line text-white text-xl"></i>
-                        No Hole Surgeries (Natural Orifice Surgery)
-                    </li>
-
-                    <li class="flex items-start gap-2">
-                        <i class="ri-checkbox-circle-line text-white text-xl"></i>
-                        Non-descent Vaginal Hysterectomy
-                    </li>
-
-                    <li class="flex items-start gap-2">
-                        <i class="ri-checkbox-circle-line text-white text-xl"></i>
-                        Prolapse Surgeries
-                    </li>
-
-                    <li class="flex items-start gap-2">
-                        <i class="ri-checkbox-circle-line text-white text-xl"></i>
-                        High-risk Pregnancies
-                    </li>
-
-                    <li class="flex items-start gap-2">
-                        <i class="ri-checkbox-circle-line text-white text-xl"></i>
-                        PCOS
-                    </li>
-
-                    <li class="flex items-start gap-2">
-                        <i class="ri-checkbox-circle-line text-white text-xl"></i>
-                        Endometriosis
-                    </li>
-
-                    <li class="flex items-start gap-2">
-                        <i class="ri-checkbox-circle-line text-white text-xl"></i>
-                        Breast Diseases
-                    </li>
-
-                    <li class="flex items-start gap-2">
-                        <i class="ri-checkbox-circle-line text-white text-xl"></i>
-                        Menopause
-                    </li>
-
-                    <li class="flex items-start gap-2">
-                        <i class="ri-checkbox-circle-line text-white text-xl"></i>
-                        Water Birthing & Normal Delivery
-                    </li>
-
-                </ul>
-
-            </div>
-
-
-        </div>
-
-    </section>
-
 
     <!-- Services Section -->
-    <section id="services" class="py-20 px-4 sm:px-6 lg:px-8">
-        <div class="max-w-7xl mx-auto">
-            <h2 class="text-4xl sm:text-5xl font-bold text-center text-blue-900 mb-16">
-                Our Services
-            </h2>
+    <section class="services-wrapper" id="services">
+        <h2 class="main-services-title text-2xl font-bold">Comprehensive Women's Healthcare Services</h2>
 
-            <div class="grid md:grid-cols-3 gap-8">
-                <div class="hover-lift bg-white rounded-2xl p-8 shadow-lg">
-                    <div
-                        class="w-14 h-14 gradient-purple-pink rounded-full flex items-center justify-center text-white text-2xl mb-6">
-                        <i class="ri-heart-pulse-line"></i>
+        <!-- Obstetrics Services -->
+        <div class="service-category">
+            <div class="category-header obstetrics">
+                <div class="category-icon">🤰</div>
+                <div class="category-title">Obstetrics Services</div>
+            </div>
+            <div class="services-scroll-container">
+                <button class="scroll-button scroll-left" onclick="scrollServices(this, -300)">
+                    <i class="ri-arrow-left-s-line"></i>
+                </button>
+                <div class="services-scroll" id="obstetrics">
+                    <div class="service-card">
+                        <!-- <div class="card-badge">Delivery</div> -->
+                        <div class="relative overflow-hidden shadow-lg">
+                            <img src="https://i.pinimg.com/736x/8f/e4/7b/8fe47bf8ac1cb409926dd1a22b603e58.jpg"
+                                alt="Dr. Rajini"
+                                class="w-full h-64 sm:h-80 lg:h-[360px] xl:h-[420px] object-cover object-top" />
+                            <div class="absolute inset-0 bg-gradient-to-b from-transparent to-black/10"></div>
+                        </div>
+                        <div class="card-content">
+                            <div>
+                                <h3 class="card-title text-lg">Normal Delivery <br> Management</h3>
+                                <p class="card-description">Expert care and support for natural childbirth with
+                                    personalized approach</p>
+                            </div>
+                        </div>
                     </div>
-                    <h3 class="text-2xl font-bold text-gray-900 mb-4">Obstetrics</h3>
-                    <p class="text-gray-600 leading-relaxed">Comprehensive prenatal care, delivery, and postnatal
-                        support for expecting mothers</p>
-                </div>
+                    <div class="service-card shadow-lg">
+                        <div class="card-badge">Surgery</div>
+                        <div class="relative overflow-hidden shadow-lg">
+                            <img src="https://i.pinimg.com/736x/b1/8e/d7/b18ed7f1192b0cc5663fa105883e8674.jpg"
+                                alt="Dr. Rajini"
+                                class="w-full h-64 sm:h-80 lg:h-[360px] xl:h-[420px] object-cover object-top" />
+                            <div class="absolute inset-0 bg-gradient-to-b from-transparent to-black/10"></div>
+                        </div>
 
-                <div class="hover-lift bg-white rounded-2xl p-8 shadow-lg">
-                    <div
-                        class="w-14 h-14 gradient-purple-pink rounded-full flex items-center justify-center text-white text-2xl mb-6">
-                        <i class="ri-hospital-line"></i>
+                        <div class="card-content">
+                            <div>
+                                <h3 class="card-title">Cesarean Section</h3>
+                                <p class="card-description">Safe and advanced surgical delivery with minimal recovery
+                                    time</p>
+                            </div>
+                        </div>
                     </div>
-                    <h3 class="text-2xl font-bold text-gray-900 mb-4">Gynecology</h3>
-                    <p class="text-gray-600 leading-relaxed">Expert management of hormonal imbalances, infections, and
-                        reproductive health</p>
+                    <div class="service-card">
+                        <div class="card-badge">Screening</div>
+                        <div class="relative overflow-hidden shadow-lg">
+                            <img src="https://i.pinimg.com/1200x/aa/bc/4d/aabc4d11f21c87230047bd8d00f3e4e4.jpg"
+                                alt="Dr. Rajini"
+                                class="w-full h-64 sm:h-80 lg:h-[360px] xl:h-[420px] object-cover object-top" />
+                            <div class="absolute inset-0 bg-gradient-to-b from-transparent to-black/10"></div>
+                        </div>
+                        <div class="card-content">
+                            <div>
+                                <h3 class="card-title">Prenatal Screening</h3>
+                                <p class="card-description">Comprehensive tests to ensure fetal health and early
+                                    detection</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="service-card">
+                        <div class="card-badge">Prenatal</div>
+                        <div class="relative overflow-hidden shadow-lg">
+                            <img src="https://i.pinimg.com/736x/23/08/ac/2308ac14accec271fe55726d64b474c4.jpg"
+                                alt="Dr. Rajini"
+                                class="w-full h-64 sm:h-80 lg:h-[360px] xl:h-[420px] object-cover object-top" />
+                            <div class="absolute inset-0 bg-gradient-to-b from-transparent to-black/10"></div>
+                        </div>
+                        <div class="card-content">
+                            <div>
+                                <h3 class="card-title">High-Risk Pregnancy Care</h3>
+                                <p class="card-description">Specialized management for complex pregnancies with expert
+                                    monitoring</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="service-card">
+                        <div class="card-badge">Postpartum</div>
+                        <div class="relative overflow-hidden shadow-lg">
+                            <img src="https://i.pinimg.com/736x/23/08/ac/2308ac14accec271fe55726d64b474c4.jpg"
+                                alt="Dr. Rajini"
+                                class="w-full h-64 sm:h-80 lg:h-[360px] xl:h-[420px] object-cover object-top" />
+                            <div class="absolute inset-0 bg-gradient-to-b from-transparent to-black/10"></div>
+                        </div>
+                        <div class="card-content">
+                            <div>
+                                <h3 class="card-title">Postpartum Care</h3>
+                                <p class="card-description">Comprehensive recovery support and maternal health
+                                    management</p>
+                            </div>
+                        </div>
+                    </div>
                 </div>
+                <button class="scroll-button scroll-right" onclick="scrollServices(this, 300)">
+                    <i class="ri-arrow-right-s-line"></i>
+                </button>
+            </div>
+        </div>
 
-                <div class="hover-lift bg-white rounded-2xl p-8 shadow-lg">
-                    <div
-                        class="w-14 h-14 gradient-purple-pink rounded-full flex items-center justify-center text-white text-2xl mb-6">
-                        <i class="ri-microscope-line"></i>
+        <!-- Gynecology Services -->
+        <div class="service-category">
+            <div class="category-header gynecology">
+                <div class="category-icon">♀️</div>
+                <div class="category-title">Gynecology Services</div>
+            </div>
+            <div class="services-scroll-container">
+                <button class="scroll-button scroll-left" onclick="scrollServices(this, -300)">
+                    <i class="ri-arrow-left-s-line"></i>
+                </button>
+                <div class="services-scroll">
+                    <div class="service-card">
+                        <div class="card-badge">Checkup</div>
+                        <div class="relative overflow-hidden shadow-lg">
+                            <img src="https://i.pinimg.com/736x/58/13/61/581361bd8317a30e1c1a11d390656320.jpg" alt="Dr. Rajini"
+                                class="w-full h-64 sm:h-80 lg:h-[360px] xl:h-[420px] object-cover object-top" />
+                            <div class="absolute inset-0 bg-gradient-to-b from-transparent to-black/10"></div>
+                        </div>
+                        <div class="card-content">
+                            <div>
+                                <h3 class="card-title">Regular Check-ups</h3>
+                                <p class="card-description">Preventive wellness examinations for ongoing health
+                                    monitoring</p>
+                            </div>
+                        </div>
                     </div>
-                    <h3 class="text-2xl font-bold text-gray-900 mb-4">Infertility Treatment</h3>
-                    <p class="text-gray-600 leading-relaxed">Advanced reproductive solutions including IVF and
-                        laparoscopic surgery</p>
+                    <div class="service-card">
+                        <div class="card-badge">Disorder</div>
+                        <div class="relative overflow-hidden shadow-lg">
+                            <img src="https://i.pinimg.com/1200x/c9/74/65/c97465c98fc81f50ab79d7fbdf86ee2c.jpg" alt="Dr. Rajini"
+                                class="w-full h-64 sm:h-80 lg:h-[360px] xl:h-[420px] object-cover object-top" />
+                            <div class="absolute inset-0 bg-gradient-to-b from-transparent to-black/10"></div>
+                        </div>
+                        <div class="card-content">
+                            <div>
+                                <h3 class="card-title">Menstrual Disorders</h3>
+                                <p class="card-description">Treatment for irregular periods and related complications
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="service-card">
+                        <div class="card-badge">Hormonal</div>
+                        <div class="relative overflow-hidden shadow-lg">
+                            <img src="https://i.pinimg.com/736x/0b/1c/4a/0b1c4a81464846e5c8e27da2aa1a4aa1.jpg" alt="Dr. Rajini"
+                                class="w-full h-64 sm:h-80 lg:h-[360px] xl:h-[420px] object-cover object-top" />
+                            <div class="absolute inset-0 bg-gradient-to-b from-transparent to-black/10"></div>
+                        </div>
+                        <div class="card-content">
+                            <div>
+                                <h3 class="card-title">Hormonal Disorders</h3>
+                                <p class="card-description">Expert diagnosis and management of endocrine imbalances</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="service-card">
+                        <div class="card-badge">Menopause</div>
+                        <div class="relative overflow-hidden shadow-lg">
+                            <img src="https://i.pinimg.com/1200x/c8/87/a9/c887a9e4ab116f8e803d2c5083932f96.jpg" alt="Dr. Rajini"
+                                class="w-full h-64 sm:h-80 lg:h-[360px] xl:h-[420px] object-cover object-top" />
+                            <div class="absolute inset-0 bg-gradient-to-b from-transparent to-black/10"></div>
+                        </div>
+                        <div class="card-content">
+                            <div>
+                                <h3 class="card-title">Menopausal Transition</h3>
+                                <p class="card-description">Supportive care for symptom management during menopause</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="service-card">
+                        <div class="card-badge">Prevention</div>
+                        <div class="relative overflow-hidden shadow-lg">
+                            <img src="https://i.pinimg.com/1200x/c8/e2/d7/c8e2d76022751ee2df6715dc8c2384be.jpg" alt="Dr. Rajini"
+                                class="w-full h-64 sm:h-80 lg:h-[360px] xl:h-[420px] object-cover object-top" />
+                            <div class="absolute inset-0 bg-gradient-to-b from-transparent to-black/10"></div>
+                        </div>
+                        <div class="card-content">
+                            <div>
+                                <h3 class="card-title">Cancer Screening & Prevention</h3>
+                                <p class="card-description">Advanced screening programs with early detection protocols
+                                </p>
+                            </div>
+                        </div>
+                    </div>
                 </div>
+                <button class="scroll-button scroll-right" onclick="scrollServices(this, 300)">
+                    <i class="ri-arrow-right-s-line"></i>
+                </button>
+            </div>
+        </div>
+        
 
-                <div class="hover-lift bg-white rounded-2xl p-8 shadow-lg">
-                    <div
-                        class="w-14 h-14 gradient-purple-pink rounded-full flex items-center justify-center text-white text-2xl mb-6">
-                        <i class="ri-scissors-line"></i>
+        <!-- Laparoscopic Procedures -->
+        <div class="service-category">
+            <div class="category-header laparoscopic">
+                <div class="category-icon">🔬</div>
+                <div class="category-title">Laparoscopic Procedures</div>
+            </div>
+            <div class="services-scroll-container">
+                <button class="scroll-button scroll-left" onclick="scrollServices(this, -300)">
+                    <i class="ri-arrow-left-s-line"></i>
+                </button>
+                <div class="services-scroll">
+                    <div class="service-card">
+                        <div class="card-badge">Minimally Invasive</div>
+                        <div class="card-image" style="background: linear-gradient(135deg, #a855f7, #9333ea);">✂️</div>
+                        <div class="card-content">
+                            <div>
+                                <h3 class="card-title">Fibroid Removal</h3>
+                                <p class="card-description">Precision removal with minimal scarring and quick recovery
+                                </p>
+                            </div>
+                        </div>
                     </div>
-                    <h3 class="text-2xl font-bold text-gray-900 mb-4">Laparoscopic Surgery</h3>
-                    <p class="text-gray-600 leading-relaxed">Minimal invasive procedures with faster recovery and
-                        reduced complications</p>
+                    <div class="service-card">
+                        <div class="card-badge">Advanced</div>
+                        <div class="card-image" style="background: linear-gradient(135deg, #9333ea, #7e22ce);">🌺</div>
+                        <div class="card-content">
+                            <div>
+                                <h3 class="card-title">Endometriosis Treatment</h3>
+                                <p class="card-description">Surgical intervention with advanced pain relief techniques
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="service-card">
+                        <div class="card-badge">Procedure</div>
+                        <div class="card-image" style="background: linear-gradient(135deg, #7e22ce, #6d28d9);">🪬</div>
+                        <div class="card-content">
+                            <div>
+                                <h3 class="card-title">Ovarian Cyst Management</h3>
+                                <p class="card-description">Safe removal and management of ovarian abnormalities</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="service-card">
+                        <div class="card-badge">Surgery</div>
+                        <div class="card-image" style="background: linear-gradient(135deg, #6d28d9, #5b21b6);">🔗</div>
+                        <div class="card-content">
+                            <div>
+                                <h3 class="card-title">Adhesion Lysis</h3>
+                                <p class="card-description">Tissue separation for improved fertility and pain relief</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="service-card">
+                        <div class="card-badge">Surgery</div>
+                        <div class="card-image" style="background: linear-gradient(135deg, #5b21b6, #4c1d95);">🏥</div>
+                        <div class="card-content">
+                            <div>
+                                <h3 class="card-title">Hysterectomy (Laparoscopic)</h3>
+                                <p class="card-description">Minimally invasive uterine removal with reduced recovery</p>
+                            </div>
+                        </div>
+                    </div>
                 </div>
+                <button class="scroll-button scroll-right" onclick="scrollServices(this, 300)">
+                    <i class="ri-arrow-right-s-line"></i>
+                </button>
+            </div>
+        </div>
 
-                <div class="hover-lift bg-white rounded-2xl p-8 shadow-lg">
-                    <div
-                        class="w-14 h-14 gradient-purple-pink rounded-full flex items-center justify-center text-white text-2xl mb-6">
-                        <i class="ri-emotion-smile-line"></i>
+        <!-- Hysteroscopic Procedures -->
+        <div class="service-category">
+            <div class="category-header hysteroscopic">
+                <div class="category-icon">🩺</div>
+                <div class="category-title">Hysteroscopic Procedures</div>
+            </div>
+            <div class="services-scroll-container">
+                <button class="scroll-button scroll-left" onclick="scrollServices(this, -300)">
+                    <i class="ri-arrow-left-s-line"></i>
+                </button>
+                <div class="services-scroll">
+                    <div class="service-card">
+                        <div class="card-badge">Diagnostic</div>
+                        <div class="card-image" style="background: linear-gradient(135deg, #ef4444, #dc2626);">🔍</div>
+                        <div class="card-content">
+                            <div>
+                                <h3 class="card-title">Diagnostic Hysteroscopy</h3>
+                                <p class="card-description">Visual examination of the uterine cavity for precise
+                                    diagnosis</p>
+                            </div>
+                        </div>
                     </div>
-                    <h3 class="text-2xl font-bold text-gray-900 mb-4">Cosmetic Gynecology</h3>
-                    <p class="text-gray-600 leading-relaxed">Enhancing confidence through safe and professional cosmetic
-                        procedures</p>
+                    <div class="service-card">
+                        <div class="card-badge">Surgical</div>
+                        <div class="card-image" style="background: linear-gradient(135deg, #dc2626, #b91c1c);">🌀</div>
+                        <div class="card-content">
+                            <div>
+                                <h3 class="card-title">Septate Uterus Correction</h3>
+                                <p class="card-description">Surgical correction for improved fertility outcomes</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="service-card">
+                        <div class="card-badge">Fertility</div>
+                        <div class="card-image" style="background: linear-gradient(135deg, #b91c1c, #991b1b);">✨</div>
+                        <div class="card-content">
+                            <div>
+                                <h3 class="card-title">Intrauterine Adhesion Lysis</h3>
+                                <p class="card-description">Removal of scar tissue to restore uterine function</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="service-card">
+                        <div class="card-badge">Procedure</div>
+                        <div class="card-image" style="background: linear-gradient(135deg, #991b1b, #7f1d1d);">🧹</div>
+                        <div class="card-content">
+                            <div>
+                                <h3 class="card-title">Uterine Polyp Removal</h3>
+                                <p class="card-description">Precision removal to relieve symptoms and improve fertility
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="service-card">
+                        <div class="card-badge">Advanced</div>
+                        <div class="card-image" style="background: linear-gradient(135deg, #7f1d1d, #5f0f0f);">⚡</div>
+                        <div class="card-content">
+                            <div>
+                                <h3 class="card-title">Fibroid Resection</h3>
+                                <p class="card-description">Advanced technique for submucosal fibroid management</p>
+                            </div>
+                        </div>
+                    </div>
                 </div>
+                <button class="scroll-button scroll-right" onclick="scrollServices(this, 300)">
+                    <i class="ri-arrow-right-s-line"></i>
+                </button>
+            </div>
+        </div>
 
-                <div class="hover-lift bg-white rounded-2xl p-8 shadow-lg">
-                    <div
-                        class="w-14 h-14 gradient-purple-pink rounded-full flex items-center justify-center text-white text-2xl mb-6">
-                        <i class="ri-guidance-line"></i>
+        <!-- General Gynecology -->
+        <div class="service-category">
+            <div class="category-header general">
+                <div class="category-icon">🩹</div>
+                <div class="category-title">General Gynecology</div>
+            </div>
+            <div class="services-scroll-container">
+                <button class="scroll-button scroll-left" onclick="scrollServices(this, -300)">
+                    <i class="ri-arrow-left-s-line"></i>
+                </button>
+                <div class="services-scroll">
+                    <div class="service-card">
+                        <div class="card-badge">Counseling</div>
+                        <div class="card-image" style="background: linear-gradient(135deg, #10b981, #059669);">🌿</div>
+                        <div class="card-content">
+                            <div>
+                                <h3 class="card-title">Contraceptive Counseling</h3>
+                                <p class="card-description">Personalized guidance for family planning options</p>
+                            </div>
+                        </div>
                     </div>
-                    <h3 class="text-2xl font-bold text-gray-900 mb-4">Counseling</h3>
-                    <p class="text-gray-600 leading-relaxed">Compassionate guidance for all women's health concerns and
-                        transitions</p>
+                    <div class="service-card">
+                        <div class="card-badge">Testing</div>
+                        <div class="card-image" style="background: linear-gradient(135deg, #059669, #047857);">🛡️</div>
+                        <div class="card-content">
+                            <div>
+                                <h3 class="card-title">STI Testing & Treatment</h3>
+                                <p class="card-description">Confidential testing and comprehensive treatment protocols
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="service-card">
+                        <div class="card-badge">Prevention</div>
+                        <div class="card-image" style="background: linear-gradient(135deg, #047857, #065f46);">💉</div>
+                        <div class="card-content">
+                            <div>
+                                <h3 class="card-title">HPV Vaccination</h3>
+                                <p class="card-description">Preventive vaccine program for cancer protection</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="service-card">
+                        <div class="card-badge">Therapy</div>
+                        <div class="card-image" style="background: linear-gradient(135deg, #065f46, #064e3b);">🧴</div>
+                        <div class="card-content">
+                            <div>
+                                <h3 class="card-title">Pelvic Floor Therapy</h3>
+                                <p class="card-description">Specialized treatment for pelvic dysfunction and pain</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="service-card">
+                        <div class="card-badge">Wellness</div>
+                        <div class="card-image" style="background: linear-gradient(135deg, #064e3b, #053633);">🧘</div>
+                        <div class="card-content">
+                            <div>
+                                <h3 class="card-title">Women's Sexual Health</h3>
+                                <p class="card-description">Holistic approach to sexual wellness and intimacy</p>
+                            </div>
+                        </div>
+                    </div>
                 </div>
+                <button class="scroll-button scroll-right" onclick="scrollServices(this, 300)">
+                    <i class="ri-arrow-right-s-line"></i>
+                </button>
+            </div>
+        </div>
+
+        <!-- Emergency Services -->
+        <div class="service-category">
+            <div class="category-header emergency">
+                <div class="category-icon">🚨</div>
+                <div class="category-title">Emergency Services</div>
+            </div>
+            <div class="services-scroll-container">
+                <button class="scroll-button scroll-left" onclick="scrollServices(this, -300)">
+                    <i class="ri-arrow-left-s-line"></i>
+                </button>
+                <div class="services-scroll">
+                    <div class="service-card">
+                        <div class="card-badge">Emergency</div>
+                        <div class="card-image" style="background: linear-gradient(135deg, #ea580c, #d97706);">💔</div>
+                        <div class="card-content">
+                            <div>
+                                <h3 class="card-title">Miscarriage Management</h3>
+                                <p class="card-description">Compassionate care and medical support during loss</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="service-card">
+                        <div class="card-badge">Critical</div>
+                        <div class="card-image" style="background: linear-gradient(135deg, #d97706, #b45309);">🚑</div>
+                        <div class="card-content">
+                            <div>
+                                <h3 class="card-title">Ectopic Pregnancy Management</h3>
+                                <p class="card-description">Urgent intervention and comprehensive post-care</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="service-card">
+                        <div class="card-badge">Emergency</div>
+                        <div class="card-image" style="background: linear-gradient(135deg, #b45309, #92400e);">⚠️</div>
+                        <div class="card-content">
+                            <div>
+                                <h3 class="card-title">Postpartum Hemorrhage</h3>
+                                <p class="card-description">Life-saving intervention and rapid stabilization</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="service-card">
+                        <div class="card-badge">Crisis Care</div>
+                        <div class="card-image" style="background: linear-gradient(135deg, #92400e, #6b2e0b);">🏥</div>
+                        <div class="card-content">
+                            <div>
+                                <h3 class="card-title">Gynecological Emergencies</h3>
+                                <p class="card-description">Immediate response for acute gynecological conditions</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <button class="scroll-button scroll-right" onclick="scrollServices(this, 300)">
+                    <i class="ri-arrow-right-s-line"></i>
+                </button>
+            </div>
+        </div>
+
+        <!-- Infertility & Specialized Care -->
+        <div class="service-category">
+            <div class="category-header infertility">
+                <div class="category-icon">🤝</div>
+                <div class="category-title">Infertility & Specialized Care</div>
+            </div>
+            <div class="services-scroll-container">
+                <button class="scroll-button scroll-left" onclick="scrollServices(this, -300)">
+                    <i class="ri-arrow-left-s-line"></i>
+                </button>
+                <div class="services-scroll">
+                    <div class="service-card">
+                        <div class="card-badge">Fertility</div>
+                        <div class="card-image" style="background: linear-gradient(135deg, #6366f1, #4f46e5);">🔬</div>
+                        <div class="card-content">
+                            <div>
+                                <h3 class="card-title">Fertility Evaluation</h3>
+                                <p class="card-description">Comprehensive assessment for optimal fertility outcomes</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="service-card">
+                        <div class="card-badge">Advanced</div>
+                        <div class="card-image" style="background: linear-gradient(135deg, #4f46e5, #4338ca);">💉</div>
+                        <div class="card-content">
+                            <div>
+                                <h3 class="card-title">IVF & Embryo Transfer</h3>
+                                <p class="card-description">Cutting-edge reproductive technology with high success rates
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="service-card">
+                        <div class="card-badge">Specialized</div>
+                        <div class="card-image" style="background: linear-gradient(135deg, #4338ca, #3730a3);">🔄</div>
+                        <div class="card-content">
+                            <div>
+                                <h3 class="card-title">ICSI & Advanced Techniques</h3>
+                                <p class="card-description">Specialized fertilization methods for difficult cases</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="service-card">
+                        <div class="card-badge">Genetic</div>
+                        <div class="card-image" style="background: linear-gradient(135deg, #3730a3, #312e81);">🧬</div>
+                        <div class="card-content">
+                            <div>
+                                <h3 class="card-title">Genetic Counseling & PGD</h3>
+                                <p class="card-description">Advanced genetic screening for healthy embryo selection</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="service-card">
+                        <div class="card-badge">Support</div>
+                        <div class="card-image" style="background: linear-gradient(135deg, #312e81, #1e1b4b);">❤️</div>
+                        <div class="card-content">
+                            <div>
+                                <h3 class="card-title">Infertility Counseling & Support</h3>
+                                <p class="card-description">Emotional support and guidance throughout fertility journey
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <button class="scroll-button scroll-right" onclick="scrollServices(this, 300)">
+                    <i class="ri-arrow-right-s-line"></i>
+                </button>
             </div>
         </div>
     </section>
 
-    <!-- Expertise Section -->
-    <section id="expertise" class="py-20 px-4 sm:px-6 lg:px-8 bg-white">
-        <div class="max-w-7xl mx-auto">
-            <h2 class="text-4xl sm:text-5xl font-bold text-center text-blue-900 mb-16">
-                Areas of Expertise
-            </h2>
-
-            <div class="bg-gradient-to-r from-purple-600 to-pink-600 text-white rounded-3xl p-12 mb-16">
-                <h3 class="text-3xl font-bold mb-8">Specialized Procedures</h3>
-                <div class="grid md:grid-cols-2 gap-6">
-                    <div class="flex items-start gap-4">
-                        <i class="ri-check-double-line text-2xl text-green-300 flex-shrink-0 mt-1"></i>
-                        <span class="text-lg">Laparoscopic Hysterectomy & Myomectomy</span>
-                    </div>
-                    <div class="flex items-start gap-4">
-                        <i class="ri-check-double-line text-2xl text-green-300 flex-shrink-0 mt-1"></i>
-                        <span class="text-lg">Ovarian Cyst Removal & Ectopic Surgery</span>
-                    </div>
-                    <div class="flex items-start gap-4">
-                        <i class="ri-check-double-line text-2xl text-green-300 flex-shrink-0 mt-1"></i>
-                        <span class="text-lg">No Hole Surgeries (Natural Orifice Surgery)</span>
-                    </div>
-                    <div class="flex items-start gap-4">
-                        <i class="ri-check-double-line text-2xl text-green-300 flex-shrink-0 mt-1"></i>
-                        <span class="text-lg">High-Risk Pregnancy Management</span>
-                    </div>
-                    <div class="flex items-start gap-4">
-                        <i class="ri-check-double-line text-2xl text-green-300 flex-shrink-0 mt-1"></i>
-                        <span class="text-lg">PCOS & Endometriosis Treatment</span>
-                    </div>
-                    <div class="flex items-start gap-4">
-                        <i class="ri-check-double-line text-2xl text-green-300 flex-shrink-0 mt-1"></i>
-                        <span class="text-lg">Prolapse Surgery & Hysterectomy</span>
-                    </div>
-                </div>
-            </div>
-
-            <div class="grid md:grid-cols-2 gap-12 items-center">
-                <img src="/placeholder.svg?height=400&width=400" alt="Expertise" class="rounded-2xl shadow-lg">
-                <div>
-                    <h3 class="text-3xl font-bold text-blue-900 mb-6">Advanced Technology</h3>
-                    <p class="text-gray-700 text-lg leading-relaxed mb-6">
-                        Our clinic is equipped with state-of-the-art medical equipment including advanced ultrasound
-                        machines, laparoscopic systems, and diagnostic tools ensuring accurate diagnosis and optimal
-                        treatment outcomes.
+    <!-- FAQ Section -->
+    <section class="py-10 bg-white">
+        <div class="max-w-4xl mx-auto px-4">
+            <div class="flex flex-col md:flex-row items-start justify-center gap-12">
+                <div class="w-full">
+                    <p class="text-primary text-sm font-semibold mb-2">FAQ's</p>
+                    <h2 class="text-3xl font-bold font-heading text-slate-text mb-2">Looking for answers?</h2>
+                    <p class="text-slate-light mb-8">
+                        Find answers to common questions about gynecological care, treatments, and health management.
                     </p>
-                    <div class="space-y-4">
-                        <div class="flex items-center gap-3">
-                            <div class="w-3 h-3 gradient-purple-pink rounded-full"></div>
-                            <span class="text-gray-700">Latest Laparoscopic Technology</span>
-                        </div>
-                        <div class="flex items-center gap-3">
-                            <div class="w-3 h-3 gradient-purple-pink rounded-full"></div>
-                            <span class="text-gray-700">High-Definition Ultrasound</span>
-                        </div>
-                        <div class="flex items-center gap-3">
-                            <div class="w-3 h-3 gradient-purple-pink rounded-full"></div>
-                            <span class="text-gray-700">Advanced Diagnostic Systems</span>
-                        </div>
-                        <div class="flex items-center gap-3">
-                            <div class="w-3 h-3 gradient-purple-pink rounded-full"></div>
-                            <span class="text-gray-700">Sterile & Hygienic Environment</span>
-                        </div>
-                    </div>
+
+                    <!-- FAQ Items -->
+                    <div id="faqContainer"></div>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Testimonials Section -->
-    <section id="testimonials" class="py-20 px-4 sm:px-6 lg:px-8">
-        <div class="max-w-7xl mx-auto">
-            <h2 class="text-4xl sm:text-5xl font-bold text-center text-blue-900 mb-16">
-                What Patients Say
-            </h2>
+    <section class="py-5 bg-soft-pink">
+        <div class="max-w-6xl mx-auto px-4">
+            <h2 class="text-4xl font-bold font-heading text-center text-slate-text mb-16">Patient Testimonials</h2>
 
-            <div class="grid md:grid-cols-3 gap-8">
-                <div class="hover-lift bg-white rounded-2xl p-8 shadow-lg">
-                    <div class="flex items-center gap-1 mb-4">
-                        <i class="ri-star-fill text-yellow-400"></i>
-                        <i class="ri-star-fill text-yellow-400"></i>
-                        <i class="ri-star-fill text-yellow-400"></i>
-                        <i class="ri-star-fill text-yellow-400"></i>
-                        <i class="ri-star-fill text-yellow-400"></i>
-                    </div>
-                    <p class="text-gray-700 mb-6 leading-relaxed">
-                        "Dr. Rajeshwari's care and expertise made my pregnancy journey so comfortable. Highly
-                        recommended!"
-                    </p>
-                    <div class="flex items-center gap-3">
-                        <img src="/placeholder.svg?height=50&width=50" alt="Patient" class="w-12 h-12 rounded-full">
-                        <div>
-                            <p class="font-semibold text-gray-900">Sarah Johnson</p>
-                            <p class="text-sm text-gray-600">Patient</p>
-                        </div>
-                    </div>
+            <div class="marquee-row w-full overflow-hidden relative">
+                <div
+                    class="absolute left-0 top-0 h-full w-20 z-10 pointer-events-none bg-gradient-to-r from-soft-pink to-transparent">
                 </div>
-
-                <div class="hover-lift bg-white rounded-2xl p-8 shadow-lg">
-                    <div class="flex items-center gap-1 mb-4">
-                        <i class="ri-star-fill text-yellow-400"></i>
-                        <i class="ri-star-fill text-yellow-400"></i>
-                        <i class="ri-star-fill text-yellow-400"></i>
-                        <i class="ri-star-fill text-yellow-400"></i>
-                        <i class="ri-star-fill text-yellow-400"></i>
-                    </div>
-                    <p class="text-gray-700 mb-6 leading-relaxed">
-                        "Exceptional medical skills combined with genuine compassion. Best gynecologist in Hyderabad!"
-                    </p>
-                    <div class="flex items-center gap-3">
-                        <img src="/placeholder.svg?height=50&width=50" alt="Patient" class="w-12 h-12 rounded-full">
-                        <div>
-                            <p class="font-semibold text-gray-900">Priya Sharma</p>
-                            <p class="text-sm text-gray-600">Patient</p>
-                        </div>
-                    </div>
+                <div class="marquee-inner flex min-w-[200%] pt-10 pb-5" id="row1"></div>
+                <div
+                    class="absolute right-0 top-0 h-full w-20 z-10 pointer-events-none bg-gradient-to-l from-soft-pink to-transparent">
                 </div>
+            </div>
 
-                <div class="hover-lift bg-white rounded-2xl p-8 shadow-lg">
-                    <div class="flex items-center gap-1 mb-4">
-                        <i class="ri-star-fill text-yellow-400"></i>
-                        <i class="ri-star-fill text-yellow-400"></i>
-                        <i class="ri-star-fill text-yellow-400"></i>
-                        <i class="ri-star-fill text-yellow-400"></i>
-                        <i class="ri-star-fill text-yellow-400"></i>
-                    </div>
-                    <p class="text-gray-700 mb-6 leading-relaxed">
-                        "The laparoscopic surgery was painless and recovery was quick. Truly grateful to Dr.
-                        Rajeshwari!"
-                    </p>
-                    <div class="flex items-center gap-3">
-                        <img src="/placeholder.svg?height=50&width=50" alt="Patient" class="w-12 h-12 rounded-full">
-                        <div>
-                            <p class="font-semibold text-gray-900">Anjali Reddy</p>
-                            <p class="text-sm text-gray-600">Patient</p>
-                        </div>
-                    </div>
+            <div class="marquee-row w-full overflow-hidden relative">
+                <div
+                    class="absolute left-0 top-0 h-full w-20 z-10 pointer-events-none bg-gradient-to-r from-soft-pink to-transparent">
+                </div>
+                <div class="marquee-inner marquee-reverse flex min-w-[200%] pt-5 pb-10" id="row2"></div>
+                <div
+                    class="absolute right-0 top-0 h-full w-20 z-10 pointer-events-none bg-gradient-to-l from-soft-pink to-transparent">
                 </div>
             </div>
         </div>
     </section>
 
+
     <!-- Contact Section -->
-    <!-- New contact section with clinic images -->
-    <section id="contact" class="py-20 bg-white">
-        <div class="container mx-auto px-4">
+    <section id="contact" class="py-10 text-white bg-[var(--light-bg2)]">
+        <div class="max-w-6xl mx-auto px-4">
             <div class="text-center mb-16">
-                <h2 class="text-3xl md:text-5xl font-heading font-black text-slate-text mb-4">
-                    Get In <span
-                        class="text-transparent bg-gradient-to-r from-primary to-accent bg-clip-text">Touch</span>
+                <h2 class="text-4xl font-bold font-heading text-slate-text mb-4">
+                    Get In <span class="text-primary">Touch</span>
                 </h2>
-                <p class="text-lg text-slate-text/70 max-w-2xl mx-auto text-pretty">
+                <p class="text-lg text-slate-light max-w-2xl mx-auto">
                     Ready for expert women's healthcare? Contact us today for consultation
                 </p>
             </div>
 
-            <div class="grid lg:grid-cols-2 gap-12 max-w-6xl mx-auto">
+            <div class="grid lg:grid-cols-2 gap-12">
                 <!-- Contact Info -->
-                <div class="space-y-8">
-                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-
-                        <!-- Consultation Room -->
-                        <div class="w-full h-40 rounded-2xl shadow-lg relative overflow-hidden">
-                            <iframe
-                                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3806.950569039324!2d78.44363365811081!3d17.414159701276944!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bcb9730a996204d%3A0xb363d9d7937ee566!2sCARE%20Hospitals%20Outpatient%20Centre%2C%20Banjara%20Hills%20%7C%20Best%20Hospital%20in%20Banjara%20Hills!5e0!3m2!1sen!2sin!4v1760860530670!5m2!1sen!2sin"
-                                class="absolute top-0 left-0 w-full h-full" style="border:0;" allowfullscreen=""
-                                loading="lazy" referrerpolicy="no-referrer-when-downgrade">
-                            </iframe>
-                        </div>
-
-                        <!-- Clinic Reception -->
-                        <div class="w-full h-40 rounded-2xl shadow-lg relative overflow-hidden">
-                            <iframe
-                                src="https://www.google.com/maps/embed?pb=!1m16!1m12!1m3!1d243576.29340247865!2d78.04298079453127!3d17.465476599999995!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!2m1!1s%20IKIGAI%20Clinic!5e0!3m2!1sen!2sin!4v1760860378189!5m2!1sen!2sin"
-                                class="absolute top-0 left-0 w-full h-full" style="border:0;" allowfullscreen=""
-                                loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-                        </div>
-
-
+                <div class="flex items-center p-6 bg-soft-pink rounded-xl border border-primary/10">
+                    <div class="w-14 h-14 bg-primary rounded-lg flex items-center justify-center mr-4 flex-shrink-0">
+                        <i class="ri-map-pin-fill text-white text-xl"></i>
                     </div>
-
-
-                    <div class="space-y-6">
-                        <div
-                            class="flex items-center p-6 bg-gradient-to-r from-soft-pink to-white rounded-2xl shadow-lg">
-                            <div
-                                class="w-16 h-16 bg-gradient-to-br from-primary to-accent rounded-2xl flex items-center justify-center mr-6">
-                                <i class="fas fa-map-marker-alt text-white text-xl"></i>
-                            </div>
-                            <div>
-                                <h4 class="font-heading font-bold text-slate-text text-lg mb-1">Care Hospital</h4>
-                                <p class="text-slate-text/70">Banjara Hills, Hyderabad</p>
-                            </div>
-                        </div>
-
-                        <div
-                            class="flex items-center p-6 bg-gradient-to-r from-soft-pink to-white rounded-2xl shadow-lg">
-                            <div class="flex items-start">
-                                <div
-                                    class="w-16 h-16 bg-gradient-to-br from-[#A02745] to-[#B7772A] rounded-2xl flex items-center justify-center mr-6 shrink-0">
-                                    <i class="ri-map-pin-2-fill text-white text-2xl"></i>
-                                </div>
-                                <div>
-                                    <h4 class="font-heading font-bold text-slate-800 text-lg mb-1">IKIGAI Clinic</h4>
-                                    <p class="text-slate-600 text-sm">
-                                        Plot No.60, 4th Floor, Prasad Enclave, Camelot Layout,<br>
-                                        Masjid Band, Kondapur, Hyderabad, Telangana - 500084
-                                    </p>
-                                </div>
-                            </div>
-
-                        </div>
-
-                        <div
-                            class="flex items-center p-6 bg-gradient-to-r from-soft-pink to-white rounded-2xl shadow-lg">
-                            <div
-                                class="w-16 h-16 bg-gradient-to-br from-green-400 to-green-600 rounded-2xl flex items-center justify-center mr-6">
-                                <i class="fas fa-phone text-white text-xl"></i>
-                            </div>
-                            <div>
-                                <h4 class="font-heading font-bold text-slate-text text-lg mb-1">Phone</h4>
-                                <p class="text-slate-text/70">+91-9437955843</p>
-                            </div>
-                        </div>
+                    <div>
+                        <h4 class="font-bold text-slate-text mb-1">Care Hospital</h4>
+                        <p class="text-slate-light text-sm">Banjara Hills, Hyderabad</p>
                     </div>
                 </div>
 
+                <div class="flex items-start p-6 bg-soft-pink rounded-xl border border-primary/10">
+                    <div class="w-14 h-14 bg-primary rounded-lg flex items-center justify-center mr-4 flex-shrink-0">
+                        <i class="ri-map-pin-2-fill text-white text-xl"></i>
+                    </div>
+                    <div>
+                        <h4 class="font-bold text-slate-text mb-1">IKIGAI Clinic</h4>
+                        <p class="text-slate-light text-sm">
+                            Plot No.60, 4th Floor, Prasad Enclave, Camelot Layout, Masjid Band, Kondapur,
+                            Hyderabad - 500084
+                        </p>
+                    </div>
+                </div>
+
+                <div class="flex items-center p-6 bg-soft-pink rounded-xl border border-primary/10">
+                    <div class="w-14 h-14 bg-primary rounded-lg flex items-center justify-center mr-4 flex-shrink-0">
+                        <i class="ri-phone-fill text-white text-xl"></i>
+                    </div>
+                    <div>
+                        <h4 class="font-bold text-slate-text mb-1">Phone</h4>
+                        <p class="text-slate-light text-sm">+91-9437955843</p>
+                    </div>
+                </div>
+
+
                 <!-- Contact Form -->
-                <div class="bg-gradient-to-br from-white to-soft-pink rounded-3xl p-8 shadow-2xl">
-                    <h3 class="text-2xl font-heading font-bold text-slate-text mb-8 text-center">Quick Consultation
-                        Request</h3>
+                <div class="bg-soft-pink rounded-2xl p-8 border border-primary/10">
+                    <h3 class="text-2xl font-bold font-heading text-slate-text mb-8 text-center">Quick Consultation</h3>
                     <form class="space-y-6" id="contact-form">
                         <div class="grid md:grid-cols-2 gap-4">
                             <input type="text" placeholder="Your Name" required
-                                class="w-full px-6 py-4 border-2 border-pink-100 rounded-2xl focus:ring-2 focus:ring-primary focus:border-primary transition-all duration-300 font-body">
+                                class="w-full px-4 py-3 border border-primary/20 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent transition-all">
                             <input type="email" placeholder="Your Email" required
-                                class="w-full px-6 py-4 border-2 border-pink-100 rounded-2xl focus:ring-2 focus:ring-primary focus:border-primary transition-all duration-300 font-body">
+                                class="w-full px-4 py-3 border border-primary/20 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent transition-all">
                         </div>
                         <input type="tel" placeholder="Phone Number" required
-                            class="w-full px-6 py-4 border-2 border-pink-100 rounded-2xl focus:ring-2 focus:ring-primary focus:border-primary transition-all duration-300 font-body">
+                            class="w-full px-4 py-3 border border-primary/20 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent transition-all">
                         <select required
-                            class="w-full px-6 py-4 border-2 border-pink-100 rounded-2xl focus:ring-2 focus:ring-primary focus:border-primary transition-all duration-300 font-body">
+                            class="w-full px-4 text-black py-3 border border-primary/20 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent transition-all">
                             <option value="">Select Service</option>
                             <option value="obstetric">Obstetric Care</option>
                             <option value="gynecology">Gynecological Services</option>
                             <option value="infertility">Infertility Treatment</option>
                             <option value="cosmetic">Cosmetic Gynecology</option>
                             <option value="surgery">Surgical Services</option>
-                            <option value="health-camp">Health Camp Enquiry</option>
                             <option value="other">Other</option>
                         </select>
                         <textarea placeholder="Describe your health concern..." rows="4" required
-                            class="w-full px-6 py-4 border-2 border-pink-100 rounded-2xl focus:ring-2 focus:ring-primary focus:border-primary transition-all duration-300 font-body resize-none"></textarea>
+                            class="w-full px-4 py-3 border border-primary/20 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent transition-all resize-none"></textarea>
                         <button type="submit"
-                            class="w-full bg-gradient-to-r from-primary to-accent text-white py-4 rounded-2xl font-heading font-bold text-lg shadow-xl hover:shadow-2xl transform hover:scale-105 transition-all duration-300">
-                            <i class="fas fa-paper-plane mr-2"></i>
-                            Send Consultation Request
+                            class="w-full bg-[var(--primary-orange)] text-white py-3 rounded-lg font-semibold hover:bg-primary-dark transition-colors">
+                            <i class="fas fa-paper-plane mr-2"></i>Send Consultation Request
                         </button>
                     </form>
                 </div>
@@ -711,164 +1558,278 @@
         </div>
     </section>
 
-
-    <!-- New footer with medical imagery -->
-    <footer class="bg-gradient-to-br from-slate-800 to-slate-900 text-white py-16 relative overflow-hidden">
-        <div class="absolute inset-0 bg-gradient-to-br from-primary/10 via-transparent to-accent/10"></div>
-
-        <div class="container mx-auto px-4 relative z-10">
-            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
-                <!-- Doctor Info -->
-                <div class="lg:col-span-2">
-                    <div class="flex items-center space-x-4 mb-6">
-                        <div
-                            class="w-16 h-16 bg-gradient-to-br from-primary to-accent rounded-2xl flex items-center justify-center">
-                            <i class="fas fa-heartbeat text-white text-2xl"></i>
-                        </div>
-                        <div>
-                            <h3 class="text-2xl font-heading font-bold">Dr. Muthineni Rajini</h3>
-                            <p class="text-white/70">Women's Healthcare Excellence</p>
-                        </div>
-                    </div>
-                    <p class="text-white/80 leading-relaxed mb-6 max-w-md">
-                        Senior Consultant Obstetrician & Gynecologist with 15+ years of medical experience. Specializing
-                        in laparoscopic and robotic surgeries, cosmetic gynecology, and infertility care. Committed to
-                        women's health and wellness with personalized care and advanced treatment approaches.
-                    </p>
-                    <div class="flex space-x-4">
-                        <a href="https://www.facebook.com/profile.php?id=100069708578331"
-                            class="w-12 h-12 bg-primary/20 rounded-xl flex items-center justify-center hover:bg-primary transition-colors">
-                            <i class="fab fa-facebook-f text-white"></i>
-                        </a>
-
-                        <a href="https://www.linkedin.com/company/109303179/admin/dashboard/"
-                            class="w-12 h-12 bg-primary/20 rounded-xl flex items-center justify-center hover:bg-primary transition-colors">
-                            <i class="fab fa-linkedin-in text-white"></i>
-                        </a>
-                        <a href="https://www.instagram.com/dr.rajini.muthineni.official/"
-                            class="w-12 h-12 bg-primary/20 rounded-xl flex items-center justify-center hover:bg-primary transition-colors">
-                            <i class="fab fa-instagram text-white"></i>
-                        </a>
-                    </div>
-                </div>
-
-                <!-- Services -->
-                <div>
-                    <h4 class="text-xl font-heading font-bold mb-6">Medical Services</h4>
-                    <ul class="space-y-3 text-white/80">
-                        <li><a href="#" class="hover:text-accent transition-colors flex items-center"><i
-                                    class="fas fa-chevron-right text-xs mr-2"></i>Obstetric Care</a></li>
-                        <li><a href="#" class="hover:text-accent transition-colors flex items-center"><i
-                                    class="fas fa-chevron-right text-xs mr-2"></i>Gynecology</a></li>
-                        <li><a href="#" class="hover:text-accent transition-colors flex items-center"><i
-                                    class="fas fa-chevron-right text-xs mr-2"></i>Infertility</a></li>
-                        <li><a href="#" class="hover:text-accent transition-colors flex items-center"><i
-                                    class="fas fa-chevron-right text-xs mr-2"></i>Cosmetic Surgery</a></li>
-                        <li><a href="#" class="hover:text-accent transition-colors flex items-center"><i
-                                    class="fas fa-chevron-right text-xs mr-2"></i>Robotic Surgery</a></li>
-                    </ul>
-                </div>
-
-                <!-- Quick Links -->
-                <div>
-                    <h4 class="text-xl font-heading font-bold mb-6">Quick Links</h4>
-                    <ul class="space-y-3 text-white/80">
-                        <li><a href="#home" class="hover:text-accent transition-colors flex items-center"><i
-                                    class="fas fa-chevron-right text-xs mr-2"></i>Home</a></li>
-                        <li><a href="#about" class="hover:text-accent transition-colors flex items-center"><i
-                                    class="fas fa-chevron-right text-xs mr-2"></i>About Doctor</a></li>
-                        <li><a href="#services" class="hover:text-accent transition-colors flex items-center"><i
-                                    class="fas fa-chevron-right text-xs mr-2"></i>Services</a></li>
-                        <li><a href="#contact" class="hover:text-accent transition-colors flex items-center"><i
-                                    class="fas fa-chevron-right text-xs mr-2"></i>Contact</a></li>
-                        <li><a href="#" class="hover:text-accent transition-colors flex items-center"><i
-                                    class="fas fa-chevron-right text-xs mr-2"></i>Health Camps</a></li>
-                    </ul>
-                </div>
-            </div>
-
-            <!-- Bottom Footer -->
-            <div class="border-t border-white/20 pt-8 text-center">
-                <p class="text-white/70 mb-4">
-                    © 2025 Dr. Muthineni Rajini. All rights reserved. | Professional Medical Services
-                </p>
-                <p class="text-white/60 text-sm">
-                    Licensed Medical Practitioner | MBBS, DGO, DNB, FICOG | 15+ Years Experience
-                </p>
-            </div>
+    <!-- Footer -->
+    <footer>
+        <!-- Added social media links with Remix icons -->
+        <div class="social-links">
+            <a href="#" title="Facebook" aria-label="Facebook">
+                <i class="ri-facebook-circle-fill"></i>
+            </a>
+            <a href="#" title="Twitter" aria-label="Twitter">
+                <i class="ri-twitter-x-fill"></i>
+            </a>
+            <a href="#" title="Instagram" aria-label="Instagram">
+                <i class="ri-instagram-fill"></i>
+            </a>
+            <a href="#" title="LinkedIn" aria-label="LinkedIn">
+                <i class="ri-linkedin-box-fill"></i>
+            </a>
+            <a href="#" title="WhatsApp" aria-label="WhatsApp">
+                <i class="ri-whatsapp-fill"></i>
+            </a>
         </div>
+        <p>&copy; 2025 Dr. Rajini - Obstetrician & Gynecologist. All rights reserved.</p>
+        <p>Providing compassionate, expert women's healthcare since 2009.</p>
     </footer>
-    <!-- JavaScript -->
-    <script>
-        const menuToggle = document.getElementById('menuToggle');
-        const navMenu = document.getElementById('navMenu');
 
-        menuToggle.addEventListener('click', () => {
-            navMenu.classList.toggle('active');
-            const icon = menuToggle.querySelector('i');
-            if (navMenu.classList.contains('active')) {
-                icon.className = 'ri-close-line';
+    <script>
+        gsap.registerPlugin(ScrollTrigger);
+
+        const themeToggle = document.getElementById('themeToggle');
+        const html = document.documentElement;
+        const body = document.body;
+
+        // Check for saved theme preference or default to light mode
+        const savedTheme = localStorage.getItem('theme') || 'light-mode';
+        body.classList.remove('light-mode', 'dark-mode');
+        body.classList.add(savedTheme);
+        updateThemeIcon();
+
+        themeToggle.addEventListener('click', () => {
+            const isDark = body.classList.contains('dark-mode');
+            body.classList.remove('light-mode', 'dark-mode');
+
+            if (isDark) {
+                body.classList.add('light-mode');
+                localStorage.setItem('theme', 'light-mode');
             } else {
-                icon.className = 'ri-menu-line';
+                body.classList.add('dark-mode');
+                localStorage.setItem('theme', 'dark-mode');
             }
+            updateThemeIcon();
         });
 
-        // Close menu when clicking on a link
-        const navLinks = navMenu.querySelectorAll('a');
-        navLinks.forEach(link => {
+        function updateThemeIcon() {
+            const isDark = body.classList.contains('dark-mode');
+            themeToggle.innerHTML = isDark ? '<i class="ri-moon-line"></i>' : '<i class="ri-sun-line"></i>';
+        }
+
+        const menuToggle = document.getElementById('menuToggle');
+        const navCenter = document.querySelector('.nav-center');
+
+        menuToggle.addEventListener('click', () => {
+            navCenter.classList.toggle('active');
+            const isActive = navCenter.classList.contains('active');
+            menuToggle.innerHTML = isActive ? '<i class="ri-close-line"></i>' : '<i class="ri-menu-line"></i>';
+        });
+
+        // Close menu when link is clicked
+        document.querySelectorAll('.nav-center a').forEach(link => {
             link.addEventListener('click', () => {
-                navMenu.classList.remove('active');
-                menuToggle.querySelector('i').className = 'ri-menu-line';
+                navCenter.classList.remove('active');
+                menuToggle.innerHTML = '<i class="ri-menu-line"></i>';
             });
         });
 
-        // Close menu when clicking outside
-        document.addEventListener('click', (e) => {
-            if (!e.target.closest('nav')) {
-                navMenu.classList.remove('active');
-                menuToggle.querySelector('i').className = 'ri-menu-line';
+        function scrollServices(button, distance) {
+            const container = button.parentElement.querySelector('.services-scroll');
+            if (container) {
+                gsap.to(container, {
+                    scrollLeft: container.scrollLeft + distance,
+                    duration: 0.5,
+                    ease: 'power2.out'
+                });
             }
+        }
+
+        gsap.to('.hero-content', {
+            duration: 1,
+            opacity: 1,
+            y: 0,
+            delay: 0.2
         });
 
-        // Form submission
-        document.getElementById('contactForm').addEventListener('submit', (e) => {
-            e.preventDefault();
-            alert('Thank you for your message! We will get back to you soon.');
-            e.target.reset();
+        gsap.to('.service-card', {
+            scrollTrigger: {
+                trigger: '.services-wrapper',
+                start: 'top center'
+            },
+            duration: 0.6,
+            opacity: 1,
+            y: 0,
+            stagger: 0.1,
+            delay: 0.2
         });
 
-        // Smooth scroll behavior
+        gsap.to('.stat-card', {
+            scrollTrigger: {
+                trigger: '.about',
+                start: 'top center'
+            },
+            duration: 0.6,
+            opacity: 1,
+            y: 0,
+            stagger: 0.1
+        });
+
+        gsap.to('.category-icon', {
+            duration: 2,
+            y: -10,
+            repeat: -1,
+            yoyo: true,
+            ease: 'sine.inOut'
+        });
+
+        // Smooth scroll for navigation links
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
                 e.preventDefault();
                 const target = document.querySelector(this.getAttribute('href'));
                 if (target) {
-                    target.scrollIntoView({
-                        behavior: 'smooth',
-                        block: 'start'
+                    gsap.to(window, {
+                        scrollTo: target,
+                        duration: 1,
+                        ease: 'power2.inOut'
                     });
                 }
             });
         });
 
-        // Scroll animation trigger
-        const observerOptions = {
-            threshold: 0.1,
-            rootMargin: '0px 0px -100px 0px'
-        };
-
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('fade-in');
-                    observer.unobserve(entry.target);
+        function handleSubmit(event) {
+            event.preventDefault();
+            gsap.to('.contact-form', {
+                duration: 0.5,
+                opacity: 0.5,
+                onComplete: () => {
+                    alert('Thank you for your inquiry! We will contact you soon.');
+                    event.target.reset();
+                    gsap.to('.contact-form', {
+                        duration: 0.5,
+                        opacity: 1
+                    });
                 }
             });
-        }, observerOptions);
+        }
 
-        document.querySelectorAll('section').forEach(section => {
-            observer.observe(section);
+        // FAQ functionality
+        const faqs = [
+            {
+                question: "Why Should You See a Gynaecologist?",
+                answer: "Regular gynecological check-ups are essential for preventive care, early detection of health issues, and maintaining overall reproductive health at every stage of life."
+            },
+            {
+                question: "Who is the Best Gynaecologist in Hyderabad?",
+                answer: "Dr. RAJINI MUTHINENI is among the top gynecologists in Hyderabad with 15+ years of experience, advanced certifications, and a proven track record of patient satisfaction."
+            },
+            {
+                question: "What qualities should you check in a good gynecologist?",
+                answer: "Look for experience, proper certifications, compassionate patient care, modern facilities, advanced treatment options, and a good track record with patient testimonials."
+            },
+            {
+                question: "What are the most common causes of infertility in women?",
+                answer: "Common causes include hormonal imbalances, blocked fallopian tubes, PCOS, endometriosis, and age-related factors. Dr. R specializes in diagnosing and treating these conditions."
+            },
+            {
+                question: "What are the most effective methods of contraception available?",
+                answer: "Various contraception methods are available including oral pills, IUDs, implants, injections, and barrier methods. Dr. R can help you choose the most suitable option."
+            },
+            {
+                question: "What is endometriosis, and how is it diagnosed and managed?",
+                answer: "Endometriosis is a condition where tissue grows outside the uterus. It's diagnosed through imaging and sometimes laparoscopy, and managed through medication or surgical treatment."
+            },
+            {
+                question: "Can gynecological conditions affect fertility?",
+                answer: "Yes, conditions like PCOS, endometriosis, fibroids, and blocked tubes can affect fertility. Early diagnosis and appropriate treatment improve chances of conception."
+            },
+            {
+                question: "What should I expect during a pelvic examination?",
+                answer: "A pelvic exam is a routine health check where the doctor examines your external and internal reproductive organs. It's painless and important for preventive care."
+            },
+            {
+                question: "What are the most common gynecological cancers?",
+                answer: "Common gynecological cancers include cervical, ovarian, and uterine cancers. Early screening and detection significantly improve treatment outcomes."
+            },
+            {
+                question: "How can I maintain optimal gynecological health?",
+                answer: "Maintain health through regular check-ups, healthy lifestyle, safe practices, stress management, proper nutrition, and seeking timely medical advice for any concerns."
+            },
+        ];
+
+        const container = document.getElementById("faqContainer");
+
+        faqs.forEach((faq, index) => {
+            const wrapper = document.createElement("div");
+            wrapper.className = "border-b border-gray-200 py-4 cursor-pointer";
+
+            const header = document.createElement("div");
+            header.className = "flex items-center justify-between";
+            header.innerHTML = `
+            <h3 class="text-base font-semibold text-black">${faq.question}</h3>
+            <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg" class="transition-all duration-500 ease-in-out icon flex-shrink-0 ml-4">
+                <path d="m4.5 7.2 3.793 3.793a1 1 0 0 0 1.414 0L13.5 7.2" stroke="#C41E3A" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+        `;
+
+            const answer = document.createElement("p");
+            answer.className = "text-sm text-slate-light transition-all duration-500 ease-in-out opacity-0 max-h-0 -translate-y-2 pt-0 answer";
+            answer.textContent = faq.answer;
+
+            wrapper.appendChild(header);
+            wrapper.appendChild(answer);
+            container.appendChild(wrapper);
+
+            header.addEventListener("click", () => {
+                const allAnswers = document.querySelectorAll(".answer");
+                const allIcons = document.querySelectorAll(".icon");
+
+                allAnswers.forEach((el, i) => {
+                    if (i === index) {
+                        const isOpen = el.classList.contains("opacity-100");
+                        el.classList.toggle("opacity-100", !isOpen);
+                        el.classList.toggle("max-h-[300px]", !isOpen);
+                        el.classList.toggle("translate-y-0", !isOpen);
+                        el.classList.toggle("pt-4", !isOpen);
+                        el.classList.toggle("opacity-0", isOpen);
+                        el.classList.toggle("max-h-0", isOpen);
+                        el.classList.toggle("-translate-y-2", isOpen);
+
+                        allIcons[i].classList.toggle("rotate-180", !isOpen);
+                    } else {
+                        el.classList.remove("opacity-100", "max-h-[300px]", "translate-y-0", "pt-4");
+                        el.classList.add("opacity-0", "max-h-0", "-translate-y-2");
+                        allIcons[i].classList.remove("rotate-180");
+                    }
+                });
+            });
         });
+
+        const cardsData = [
+            { image: 'https://images.unsplash.com/photo-1633332755192-727a05c4013d?q=80&w=200', name: 'Briar Martin', handle: '@briarmartin', date: 'April 20, 2025' },
+            { image: 'https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?q=80&w=200', name: 'Avery Johnson', handle: '@averywrites', date: 'May 10, 2025' },
+            { image: 'https://images.unsplash.com/photo-1527980965255-d3b416303d12?w=200&auto=format&fit=crop&q=60', name: 'Jordan Lee', handle: '@jordantalks', date: 'June 5, 2025' },
+            { image: 'https://images.unsplash.com/photo-1522075469751-3a6694fb2f61?w=200&auto=format&fit=crop&q=60', name: 'Sarah Mitchell', handle: '@sarahmitchel', date: 'July 12, 2025' },
+        ];
+
+        const row1 = document.getElementById('row1');
+
+        const createCard = (card) => `
+        <div class="p-4 rounded-xl mx-4 shadow-sm hover:shadow-md transition-all duration-200 w-72 flex-shrink-0 bg-white">
+            <div class="flex gap-3 mb-4">
+                <img class="w-11 h-11 rounded-full object-cover" src="${card.image}" alt="User">
+                <div class="flex flex-col justify-center">
+                    <div class="flex items-center gap-1">
+                        <p class="font-semibold text-sm text-slate-text">${card.name}</p>
+                    </div>
+                    <span class="text-xs text-slate-light">${card.handle}</span>
+                </div>
+            </div>
+            <p class="text-sm text-slate-text leading-relaxed">Received excellent care and expert treatment from Dr. R. Highly professional and compassionate approach to patient care.</p>
+        </div>
+    `;
+
+        const doubled = [...cardsData, ...cardsData];
+        doubled.forEach(card => row1.insertAdjacentHTML('beforeend', createCard(card)));
+
     </script>
 </body>
 
