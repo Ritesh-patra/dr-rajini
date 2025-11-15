@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dr. Rajini - Obstetrician & Gynecologist | Women's Health Services</title>
     <!-- Remix Icon CDN -->
-     <link rel="shortcut icon" href="images/owner.jpg" type="image/x-icon">
+    <link rel="shortcut icon" href="images/owner.jpg" type="image/x-icon">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.0.0/remixicon.min.css">
     <script src="https://cdn.tailwindcss.com"></script>
     <!-- GSAP CDN -->
@@ -22,9 +22,9 @@
         <div class="nav-container">
             <div class="logo">👨‍⚕️ Dr. Rajini</div>
             <ul class="nav-center">
-                <li><a href="#about">About</a></li>
-                <li><a href="#services">Services</a></li>
-                <li><a href="#contact">Contact</a></li>
+                <a href="#about">About</a>
+                <a href="#services">Services</a>
+                <a href="#contact">Contact</a>
             </ul>
             <div class="nav-right">
                 <!-- Added theme toggle button and menu toggle for mobile -->
@@ -370,7 +370,8 @@
                     <div class="service-card">
                         <div class="card-badge">Emergency</div>
                         <div class="relative overflow-hidden shadow-lg">
-                            <img src="https://i.pinimg.com/736x/c4/57/d9/c457d91b7edd0640f4151ea249b0db9c.jpg" alt="Dr. Rajini"
+                            <img src="https://i.pinimg.com/736x/c4/57/d9/c457d91b7edd0640f4151ea249b0db9c.jpg"
+                                alt="Dr. Rajini"
                                 class="w-full h-64 sm:h-80 lg:h-[360px] xl:h-[420px] object-cover object-top" />
                             <div class="absolute inset-0 bg-gradient-to-b from-transparent to-black/10"></div>
                         </div>
@@ -384,7 +385,8 @@
                     <div class="service-card">
                         <div class="card-badge">Critical</div>
                         <div class="relative overflow-hidden shadow-lg">
-                            <img src="https://i.pinimg.com/736x/27/e5/44/27e544acab9d49e9088ca439743450ea.jpg" alt="Dr. Rajini"
+                            <img src="https://i.pinimg.com/736x/27/e5/44/27e544acab9d49e9088ca439743450ea.jpg"
+                                alt="Dr. Rajini"
                                 class="w-full h-64 sm:h-80 lg:h-[360px] xl:h-[420px] object-cover object-top" />
                             <div class="absolute inset-0 bg-gradient-to-b from-transparent to-black/10"></div>
                         </div>
@@ -398,7 +400,8 @@
                     <div class="service-card">
                         <div class="card-badge">Emergency</div>
                         <div class="relative overflow-hidden shadow-lg">
-                            <img src="https://i.pinimg.com/736x/58/06/c7/5806c7b8ddc1b4c302a8596c1748979d.jpg" alt="Dr. Rajini"
+                            <img src="https://i.pinimg.com/736x/58/06/c7/5806c7b8ddc1b4c302a8596c1748979d.jpg"
+                                alt="Dr. Rajini"
                                 class="w-full h-64 sm:h-80 lg:h-[360px] xl:h-[420px] object-cover object-top" />
                             <div class="absolute inset-0 bg-gradient-to-b from-transparent to-black/10"></div>
                         </div>
@@ -412,7 +415,8 @@
                     <div class="service-card">
                         <div class="card-badge">Crisis Care</div>
                         <div class="relative overflow-hidden shadow-lg">
-                            <img src="https://i.pinimg.com/736x/1a/fa/fd/1afafd38bec48b27b816573c3ee39a9f.jpg" alt="Dr. Rajini"
+                            <img src="https://i.pinimg.com/736x/1a/fa/fd/1afafd38bec48b27b816573c3ee39a9f.jpg"
+                                alt="Dr. Rajini"
                                 class="w-full h-64 sm:h-80 lg:h-[360px] xl:h-[420px] object-cover object-top" />
                             <div class="absolute inset-0 bg-gradient-to-b from-transparent to-black/10"></div>
                         </div>
@@ -476,7 +480,8 @@
             <div class="flex flex-col md:flex-row items-start justify-center gap-12">
                 <div class="w-full">
                     <p class="text-primary text-sm font-semibold mb-2">FAQ's</p>
-                    <h2 class="text-3xl font-bold font-heading text-slate-text mb-2">Looking for answers?</h2>
+                    <h2 class="text-3xl font-bold font-heading text-black text-slate-text mb-2">Looking for answers?
+                    </h2>
                     <p class="text-slate-light mb-8">
                         Find answers to common questions about gynecological care, treatments, and health management.
                     </p>
@@ -497,21 +502,12 @@
                 <div
                     class="absolute left-0 top-0 h-full w-20 z-10 pointer-events-none bg-gradient-to-r from-soft-pink to-transparent">
                 </div>
-                <div class="marquee-inner flex min-w-[200%] pt-10 pb-5" id="row1"></div>
+                <div class="marquee-inner flex min-w-[200%] text-black pt-10 pb-5" id="row1"></div>
                 <div
-                    class="absolute right-0 top-0 h-full w-20 z-10 pointer-events-none bg-gradient-to-l from-soft-pink to-transparent">
+                    class="absolute right-0 top-0 h-full w-20 text-black z-10 pointer-events-none bg-gradient-to-l from-soft-pink to-transparent">
                 </div>
             </div>
 
-            <div class="marquee-row w-full overflow-hidden relative">
-                <div
-                    class="absolute left-0 top-0 h-full w-20 z-10 pointer-events-none bg-gradient-to-r from-soft-pink to-transparent">
-                </div>
-                <div class="marquee-inner marquee-reverse flex min-w-[200%] pt-5 pb-10" id="row2"></div>
-                <div
-                    class="absolute right-0 top-0 h-full w-20 z-10 pointer-events-none bg-gradient-to-l from-soft-pink to-transparent">
-                </div>
-            </div>
         </div>
     </section>
 
@@ -602,19 +598,18 @@
     <footer>
         <!-- Added social media links with Remix icons -->
         <div class="social-links">
-            <a href="#" title="Facebook" aria-label="Facebook">
+            <a href="https://www.facebook.com/profile.php?id=100069708578331" title="Facebook" aria-label="Facebook">
                 <i class="ri-facebook-circle-fill"></i>
             </a>
-            <a href="#" title="Twitter" aria-label="Twitter">
-                <i class="ri-twitter-x-fill"></i>
-            </a>
-            <a href="#" title="Instagram" aria-label="Instagram">
+            <a href="https://www.instagram.com/dr.rajini.muthineni.official/" title="Instagram" aria-label="Instagram">
                 <i class="ri-instagram-fill"></i>
             </a>
-            <a href="#" title="LinkedIn" aria-label="LinkedIn">
+            <a href="https://www.linkedin.com/company/109303179/admin/dashboard/" title="LinkedIn"
+                aria-label="LinkedIn">
                 <i class="ri-linkedin-box-fill"></i>
             </a>
-            <a href="#" title="WhatsApp" aria-label="WhatsApp">
+            <a href="https://api.whatsapp.com/send?phone=9866430994" title="WhatsApp" aria-label="WhatsApp"
+                target="_blank">
                 <i class="ri-whatsapp-fill"></i>
             </a>
         </div>
