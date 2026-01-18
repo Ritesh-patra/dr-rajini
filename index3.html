@@ -1,0 +1,870 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dr. Rajini - Obstetrician & Gynecologist | Women's Health Services</title>
+    <!-- Remix Icon CDN -->
+    <link rel="shortcut icon" href="images/owner.jpg" type="image/x-icon">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.0.0/remixicon.min.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- GSAP CDN -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+<body class="light-mode">
+    <!-- Navigation -->
+    <nav>
+        <div class="nav-container">
+            <div class="logo">👨‍⚕️ Dr. Rajini</div>
+            <ul class="nav-center">
+                <a href="#about">About</a>
+                <a href="#services">Services</a>
+                <a href="#contact">Contact</a>
+            </ul>
+            <div class="nav-right">
+                <!-- Added theme toggle button and menu toggle for mobile -->
+                <button class="theme-toggle" id="themeToggle" title="Toggle Dark Mode">
+                    <i class="ri-sun-line"></i>
+                </button>
+                <button class="menu-toggle" id="menuToggle">
+                    <i class="ri-menu-line"></i>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Welcome to Excellence in Women's Healthcare</h1>
+            <p>Comprehensive obstetric and gynecological services with over 15 years of expert experience</p>
+            <div class="cta-buttons">
+                <button class="btn btn-primary">Book Consultation</button>
+                <button class="btn btn-secondary">View Services</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="about py-16 px-4 sm:px-6 lg:px-8" id="about">
+        <div class="max-w-6xl mx-auto">
+            <h2 class="section-title text-3xl sm:text-4xl font-bold mb-2">About Dr. Rajini</h2>
+            <p class="section-subtitle text-lg text-slate-600 mb-8">
+                Trusted by thousands of patients for compassionate, expert care
+            </p>
+
+            <div class="about-content grid grid-cols-1 lg:grid-cols-2 gap-10 items-center">
+                <!-- Right: Image -->
+                <div class="stats flex justify-center lg:justify-end">
+                    <div class="relative rounded-2xl overflow-hidden shadow-2xl w-full max-w-md">
+                        <img src="images/owner.jpg" alt="Dr. Rajini"
+                            class="w-full h-80 sm:h-80 lg:h-[420px] object-cover object-top" />
+                        <div class="absolute inset-0 bg-gradient-to-b from-transparent to-black/10"></div>
+                    </div>
+                </div>
+                <!-- Left: Text Content -->
+                <div class="about-text space-y-6">
+                    <div>
+                        <h3 class="text-2xl font-semibold">Professional Excellence</h3>
+                        <p class="text-base text-slate-700 leading-relaxed text-justify">
+                            Dr. Rajini is a highly qualified Obstetrician and Gynecologist with extensive
+                            experience in both routine and complex obstetric and gynecological conditions.
+                            With a patient-centered approach, she ensures the highest quality of care for
+                            every patient.
+                        </p>
+                        <p class="text-base text-slate-700 leading-relaxed text-justify">
+                            Specializing in high-risk pregnancies, infertility treatments, and advanced
+                            minimally invasive procedures, Dr. Rajini combines cutting-edge medical
+                            knowledge with compassionate patient care.
+                        </p>
+                    </div>
+
+                    <div class="bg-slate-900 p-4 rounded-lg">
+                        <h4 class="text-lg text-white font-medium mb-2">QUALIFICATIONS</h4>
+                        <p class="text-sm text-slate-400 leading-relaxed">
+                            MBBS, MS (Obstetrics & Gynecology)<br />
+                            Fellowship in Advanced Laparoscopic Surgery<br />
+                            Certified in Fetal Medicine
+                        </p>
+                    </div>
+                </div>
+
+
+            </div>
+        </div>
+    </section>
+    
+    <!-- Services Section -->
+    <section class="services-wrapper" id="services">
+        <h2 class="main-services-title text-2xl font-bold">Comprehensive Women's Healthcare Services</h2>
+
+        <!-- Obstetrics Services -->
+        <div class="service-category px-[1.5rem]">
+            <div class="category-header obstetrics">
+                <div class="category-icon">🤰</div>
+                <div class="category-title">Obstetrics Services</div>
+            </div>
+            <div class="services-scroll-container">
+                <button class="scroll-button scroll-left" onclick="scrollServices(this, -300)">
+                    <i class="ri-arrow-left-s-line"></i>
+                </button>
+                <div class="services-scroll" id="obstetrics">
+                    <div class="service-card">
+                        <!-- <div class="card-badge">Delivery</div> -->
+                        <div class="relative overflow-hidden shadow-lg">
+                            <img src="https://i.pinimg.com/736x/8f/e4/7b/8fe47bf8ac1cb409926dd1a22b603e58.jpg"
+                                alt="Dr. Rajini"
+                                class="w-full h-64 sm:h-80 lg:h-[360px] xl:h-[420px] object-cover object-top" />
+                            <div class="absolute inset-0 bg-gradient-to-b from-transparent to-black/10"></div>
+                        </div>
+                        <div class="card-content">
+                            <div>
+                                <h3 class="card-title text-lg">Normal Delivery <br> Management</h3>
+                                <p class="card-description">Expert care and support for natural childbirth with
+                                    personalized approach</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="service-card shadow-lg">
+                        <div class="card-badge">Surgery</div>
+                        <div class="relative overflow-hidden shadow-lg">
+                            <img src="https://i.pinimg.com/736x/b1/8e/d7/b18ed7f1192b0cc5663fa105883e8674.jpg"
+                                alt="Dr. Rajini"
+                                class="w-full h-64 sm:h-80 lg:h-[360px] xl:h-[420px] object-cover object-top" />
+                            <div class="absolute inset-0 bg-gradient-to-b from-transparent to-black/10"></div>
+                        </div>
+
+                        <div class="card-content">
+                            <div>
+                                <h3 class="card-title">Cesarean Section</h3>
+                                <p class="card-description">Safe and advanced surgical delivery with minimal recovery
+                                    time</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="service-card">
+                        <div class="card-badge">Screening</div>
+                        <div class="relative overflow-hidden shadow-lg">
+                            <img src="https://i.pinimg.com/1200x/aa/bc/4d/aabc4d11f21c87230047bd8d00f3e4e4.jpg"
+                                alt="Dr. Rajini"
+                                class="w-full h-64 sm:h-80 lg:h-[360px] xl:h-[420px] object-cover object-top" />
+                            <div class="absolute inset-0 bg-gradient-to-b from-transparent to-black/10"></div>
+                        </div>
+                        <div class="card-content">
+                            <div>
+                                <h3 class="card-title">Prenatal Screening</h3>
+                                <p class="card-description">Comprehensive tests to ensure fetal health and early
+                                    detection</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="service-card">
+                        <div class="card-badge">Prenatal</div>
+                        <div class="relative overflow-hidden shadow-lg">
+                            <img src="https://i.pinimg.com/736x/23/08/ac/2308ac14accec271fe55726d64b474c4.jpg"
+                                alt="Dr. Rajini"
+                                class="w-full h-64 sm:h-80 lg:h-[360px] xl:h-[420px] object-cover object-top" />
+                            <div class="absolute inset-0 bg-gradient-to-b from-transparent to-black/10"></div>
+                        </div>
+                        <div class="card-content">
+                            <div>
+                                <h3 class="card-title">High-Risk Pregnancy Care</h3>
+                                <p class="card-description">Specialized management for complex pregnancies with expert
+                                    monitoring</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="service-card">
+                        <div class="card-badge">Postpartum</div>
+                        <div class="relative overflow-hidden shadow-lg">
+                            <img src="https://i.pinimg.com/736x/23/08/ac/2308ac14accec271fe55726d64b474c4.jpg"
+                                alt="Dr. Rajini"
+                                class="w-full h-64 sm:h-80 lg:h-[360px] xl:h-[420px] object-cover object-top" />
+                            <div class="absolute inset-0 bg-gradient-to-b from-transparent to-black/10"></div>
+                        </div>
+                        <div class="card-content">
+                            <div>
+                                <h3 class="card-title">Postpartum Care</h3>
+                                <p class="card-description">Comprehensive recovery support and maternal health
+                                    management</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <button class="scroll-button scroll-right" onclick="scrollServices(this, 300)">
+                    <i class="ri-arrow-right-s-line"></i>
+                </button>
+            </div>
+        </div>
+
+        <!-- Gynecology Services -->
+        <div class="service-category px-[1.5rem]">
+            <div class="category-header gynecology">
+                <div class="category-icon">♀️</div>
+                <div class="category-title">Gynecology Services</div>
+            </div>
+            <div class="services-scroll-container">
+                <button class="scroll-button scroll-left" onclick="scrollServices(this, -300)">
+                    <i class="ri-arrow-left-s-line"></i>
+                </button>
+                <div class="services-scroll">
+                    <div class="service-card">
+                        <div class="card-badge">Checkup</div>
+                        <div class="relative overflow-hidden shadow-lg">
+                            <img src="https://i.pinimg.com/736x/58/13/61/581361bd8317a30e1c1a11d390656320.jpg"
+                                alt="Dr. Rajini"
+                                class="w-full h-64 sm:h-80 lg:h-[360px] xl:h-[420px] object-cover object-top" />
+                            <div class="absolute inset-0 bg-gradient-to-b from-transparent to-black/10"></div>
+                        </div>
+                        <div class="card-content">
+                            <div>
+                                <h3 class="card-title">Regular Check-ups</h3>
+                                <p class="card-description">Preventive wellness examinations for ongoing health
+                                    monitoring</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="service-card">
+                        <div class="card-badge">Disorder</div>
+                        <div class="relative overflow-hidden shadow-lg">
+                            <img src="https://i.pinimg.com/1200x/c9/74/65/c97465c98fc81f50ab79d7fbdf86ee2c.jpg"
+                                alt="Dr. Rajini"
+                                class="w-full h-64 sm:h-80 lg:h-[360px] xl:h-[420px] object-cover object-top" />
+                            <div class="absolute inset-0 bg-gradient-to-b from-transparent to-black/10"></div>
+                        </div>
+                        <div class="card-content">
+                            <div>
+                                <h3 class="card-title">Menstrual Disorders</h3>
+                                <p class="card-description">Treatment for irregular periods and related complications
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="service-card">
+                        <div class="card-badge">Hormonal</div>
+                        <div class="relative overflow-hidden shadow-lg">
+                            <img src="https://i.pinimg.com/736x/0b/1c/4a/0b1c4a81464846e5c8e27da2aa1a4aa1.jpg"
+                                alt="Dr. Rajini"
+                                class="w-full h-64 sm:h-80 lg:h-[360px] xl:h-[420px] object-cover object-top" />
+                            <div class="absolute inset-0 bg-gradient-to-b from-transparent to-black/10"></div>
+                        </div>
+                        <div class="card-content">
+                            <div>
+                                <h3 class="card-title">Hormonal Disorders</h3>
+                                <p class="card-description">Expert diagnosis and management of endocrine imbalances</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="service-card">
+                        <div class="card-badge">Menopause</div>
+                        <div class="relative overflow-hidden shadow-lg">
+                            <img src="https://i.pinimg.com/1200x/c8/87/a9/c887a9e4ab116f8e803d2c5083932f96.jpg"
+                                alt="Dr. Rajini"
+                                class="w-full h-64 sm:h-80 lg:h-[360px] xl:h-[420px] object-cover object-top" />
+                            <div class="absolute inset-0 bg-gradient-to-b from-transparent to-black/10"></div>
+                        </div>
+                        <div class="card-content">
+                            <div>
+                                <h3 class="card-title">Menopausal Transition</h3>
+                                <p class="card-description">Supportive care for symptom management during menopause</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="service-card">
+                        <div class="card-badge">Prevention</div>
+                        <div class="relative overflow-hidden shadow-lg">
+                            <img src="https://i.pinimg.com/1200x/c8/e2/d7/c8e2d76022751ee2df6715dc8c2384be.jpg"
+                                alt="Dr. Rajini"
+                                class="w-full h-64 sm:h-80 lg:h-[360px] xl:h-[420px] object-cover object-top" />
+                            <div class="absolute inset-0 bg-gradient-to-b from-transparent to-black/10"></div>
+                        </div>
+                        <div class="card-content">
+                            <div>
+                                <h3 class="card-title">Cancer Screening & Prevention</h3>
+                                <p class="card-description">Advanced screening programs with early detection protocols
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <button class="scroll-button scroll-right" onclick="scrollServices(this, 300)">
+                    <i class="ri-arrow-right-s-line"></i>
+                </button>
+            </div>
+        </div>
+
+        <section class="w-full grid grid-cols-1 md:grid-cols-2 bg-white">
+            <!-- Left Image -->
+            <div class="w-full min-h-[50vh] md:h-full bg-cover bg-center"
+                style="background-image: url('images/img2.png');"></div>
+
+            <!-- Right Content -->
+            <div class="w-full h-full text-white px-8 py-16 flex items-center justify-center"
+                style="background-color: #BE123C;">
+                <div class="max-w-md space-y-6">
+                    <h2 class="text-3xl font-bold font-heading leading-tight">
+                        Expert in Advanced Gynecological Care
+                    </h2>
+
+                    <ul class="space-y-3 text-base leading-relaxed">
+                        <li class="flex items-start gap-3">
+                            <i class="ri-checkbox-circle-fill text-yellow-300 text-xl flex-shrink-0 mt-0.5"></i>
+                            <span>Diagnostic Hysteroscopy</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <i class="ri-checkbox-circle-fill text-yellow-300 text-xl flex-shrink-0 mt-0.5"></i>
+                            <span>Septate Uterus Correction</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <i class="ri-checkbox-circle-fill text-yellow-300 text-xl flex-shrink-0 mt-0.5"></i>
+                            <span>Intrauterine Adhesion Lysis</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <i class="ri-checkbox-circle-fill text-yellow-300 text-xl flex-shrink-0 mt-0.5"></i>
+                            <span>Uterine Polyp Removal</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <i class="ri-checkbox-circle-fill text-yellow-300 text-xl flex-shrink-0 mt-0.5"></i>
+                            <span>Fibroid Resection</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <i class="ri-checkbox-circle-fill text-yellow-300 text-xl flex-shrink-0 mt-0.5"></i>
+                            <span>Fibroid Removal</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <i class="ri-checkbox-circle-fill text-yellow-300 text-xl flex-shrink-0 mt-0.5"></i>
+                            <span>Endometriosis Treatment</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <i class="ri-checkbox-circle-fill text-yellow-300 text-xl flex-shrink-0 mt-0.5"></i>
+                            <span>Ovarian Cyst Management</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <i class="ri-checkbox-circle-fill text-yellow-300 text-xl flex-shrink-0 mt-0.5"></i>
+                            <span>Adhesion Lysis</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <i class="ri-checkbox-circle-fill text-yellow-300 text-xl flex-shrink-0 mt-0.5"></i>
+                            <span>Hysterectomy (Laparoscopic)</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- Emergency Services -->
+        <div class="service-category px-[2rem] mt-10">
+            <div class="category-header emergency">
+                <div class="category-icon">🚨</div>
+                <div class="category-title">Emergency Services</div>
+            </div>
+            <div class="services-scroll-container">
+
+                <div class="services-scroll">
+                    <div class="service-card">
+                        <div class="card-badge">Emergency</div>
+                        <div class="relative overflow-hidden shadow-lg">
+                            <img src="https://i.pinimg.com/736x/c4/57/d9/c457d91b7edd0640f4151ea249b0db9c.jpg"
+                                alt="Dr. Rajini"
+                                class="w-full h-64 sm:h-80 lg:h-[360px] xl:h-[420px] object-cover object-top" />
+                            <div class="absolute inset-0 bg-gradient-to-b from-transparent to-black/10"></div>
+                        </div>
+                        <div class="card-content">
+                            <div>
+                                <h3 class="card-title">Miscarriage Management</h3>
+                                <p class="card-description">Compassionate care and medical support during loss</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="service-card">
+                        <div class="card-badge">Critical</div>
+                        <div class="relative overflow-hidden shadow-lg">
+                            <img src="https://i.pinimg.com/736x/27/e5/44/27e544acab9d49e9088ca439743450ea.jpg"
+                                alt="Dr. Rajini"
+                                class="w-full h-64 sm:h-80 lg:h-[360px] xl:h-[420px] object-cover object-top" />
+                            <div class="absolute inset-0 bg-gradient-to-b from-transparent to-black/10"></div>
+                        </div>
+                        <div class="card-content">
+                            <div>
+                                <h3 class="card-title">Ectopic Pregnancy Management</h3>
+                                <p class="card-description">Urgent intervention and comprehensive post-care</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="service-card">
+                        <div class="card-badge">Emergency</div>
+                        <div class="relative overflow-hidden shadow-lg">
+                            <img src="https://i.pinimg.com/736x/58/06/c7/5806c7b8ddc1b4c302a8596c1748979d.jpg"
+                                alt="Dr. Rajini"
+                                class="w-full h-64 sm:h-80 lg:h-[360px] xl:h-[420px] object-cover object-top" />
+                            <div class="absolute inset-0 bg-gradient-to-b from-transparent to-black/10"></div>
+                        </div>
+                        <div class="card-content">
+                            <div>
+                                <h3 class="card-title">Postpartum Hemorrhage</h3>
+                                <p class="card-description">Life-saving intervention and rapid stabilization</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="service-card">
+                        <div class="card-badge">Crisis Care</div>
+                        <div class="relative overflow-hidden shadow-lg">
+                            <img src="https://i.pinimg.com/736x/1a/fa/fd/1afafd38bec48b27b816573c3ee39a9f.jpg"
+                                alt="Dr. Rajini"
+                                class="w-full h-64 sm:h-80 lg:h-[360px] xl:h-[420px] object-cover object-top" />
+                            <div class="absolute inset-0 bg-gradient-to-b from-transparent to-black/10"></div>
+                        </div>
+                        <div class="card-content">
+                            <div>
+                                <h3 class="card-title">Gynecological Emergencies</h3>
+                                <p class="card-description">Immediate response for acute gynecological conditions</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Infertility & Specialized Care -->
+        <section class="w-full grid grid-cols-1 md:grid-cols-2 bg-white">
+            <!-- Left Image -->
+            <div class="w-full min-h-[50vh] md:h-full bg-cover bg-center"
+                style="background-image: url('https://i.pinimg.com/736x/0c/26/28/0c26285ae4a494ba2bd04323481ca048.jpg');">
+            </div>
+
+            <!-- Right Content -->
+            <div class="w-full h-full text-white px-8 py-16 flex items-center justify-center"
+                style="background-color: #BE123C;">
+                <div class="max-w-md space-y-6">
+                    <h2 class="text-3xl font-bold font-heading leading-tight">
+                        Leading the Way in Modern Gynecology
+                    </h2>
+
+                    <ul class="space-y-3 text-base leading-relaxed">
+                        <li class="flex items-start gap-3">
+                            <i class="ri-checkbox-circle-fill text-yellow-300 text-xl flex-shrink-0 mt-0.5"></i>
+                            <span>Fertility Evaluation</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <i class="ri-checkbox-circle-fill text-yellow-300 text-xl flex-shrink-0 mt-0.5"></i>
+                            <span>IVF & Embryo Transfer</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <i class="ri-checkbox-circle-fill text-yellow-300 text-xl flex-shrink-0 mt-0.5"></i>
+                            <span>ICSI & Advanced Techniques</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <i class="ri-checkbox-circle-fill text-yellow-300 text-xl flex-shrink-0 mt-0.5"></i>
+                            <span>Genetic Counseling & PGD</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <i class="ri-checkbox-circle-fill text-yellow-300 text-xl flex-shrink-0 mt-0.5"></i>
+                            <span>Infertility Counseling & Support</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="py-10 bg-white">
+        <div class="max-w-4xl mx-auto px-4">
+            <div class="flex flex-col md:flex-row items-start justify-center gap-12">
+                <div class="w-full">
+                    <p class="text-primary text-sm font-semibold mb-2">FAQ's</p>
+                    <h2 class="text-3xl font-bold font-heading text-black text-slate-text mb-2">Looking for answers?
+                    </h2>
+                    <p class="text-slate-light mb-8">
+                        Find answers to common questions about gynecological care, treatments, and health management.
+                    </p>
+
+                    <!-- FAQ Items -->
+                    <div id="faqContainer"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="py-5 bg-soft-pink">
+        <div class="max-w-6xl mx-auto px-4">
+            <h2 class="text-4xl font-bold font-heading text-center text-slate-text mb-16">Patient Testimonials</h2>
+
+            <div class="marquee-row w-full overflow-hidden relative">
+                <div
+                    class="absolute left-0 top-0 h-full w-20 z-10 pointer-events-none bg-gradient-to-r from-soft-pink to-transparent">
+                </div>
+                <div class="marquee-inner flex min-w-[200%] text-black pt-10 pb-5" id="row1"></div>
+                <div
+                    class="absolute right-0 top-0 h-full w-20 text-black z-10 pointer-events-none bg-gradient-to-l from-soft-pink to-transparent">
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-10 text-white bg-[var(--light-bg2)]">
+        <div class="max-w-6xl mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-bold font-heading text-slate-text mb-4">
+                    Get In <span class="text-primary">Touch</span>
+                </h2>
+                <p class="text-lg text-slate-light max-w-2xl mx-auto">
+                    Ready for expert women's healthcare? Contact us today for consultation
+                </p>
+            </div>
+
+            <div class="grid lg:grid-cols-2 gap-12">
+                <!-- Contact Info -->
+                <div class="flex items-center p-6 bg-soft-pink rounded-xl border border-primary/10">
+                    <div class="w-14 h-14 bg-primary rounded-lg flex items-center justify-center mr-4 flex-shrink-0">
+                        <i class="ri-map-pin-fill text-white text-xl"></i>
+                    </div>
+                    <div>
+                        <h4 class="font-bold text-slate-text mb-1">Care Hospital</h4>
+                        <p class="text-slate-light text-sm">Banjara Hills, Hyderabad</p>
+                    </div>
+                </div>
+
+                <div class="flex items-start p-6 bg-soft-pink rounded-xl border border-primary/10">
+                    <div class="w-14 h-14 bg-primary rounded-lg flex items-center justify-center mr-4 flex-shrink-0">
+                        <i class="ri-map-pin-2-fill text-white text-xl"></i>
+                    </div>
+                    <div>
+                        <h4 class="font-bold text-slate-text mb-1">IKIGAI Clinic</h4>
+                        <p class="text-slate-light text-sm">
+                            Plot No.60, 4th Floor, Prasad Enclave, Camelot Layout, Masjid Band, Kondapur,
+                            Hyderabad - 500084
+                        </p>
+                    </div>
+                </div>
+
+                <div class="flex items-center p-6 bg-soft-pink rounded-xl border border-primary/10">
+                    <div class="w-14 h-14 bg-primary rounded-lg flex items-center justify-center mr-4 flex-shrink-0">
+                        <i class="ri-phone-fill text-white text-xl"></i>
+                    </div>
+                    <div>
+                        <h4 class="font-bold text-slate-text mb-1">Phone</h4>
+                        <p class="text-slate-light text-sm">+91-9437955843</p>
+                    </div>
+                </div>
+
+
+                <!-- Contact Form -->
+                <div class="bg-soft-pink rounded-2xl p-8 border border-primary/10">
+                    <h3 class="text-2xl font-bold font-heading text-slate-text mb-8 text-center">Quick Consultation</h3>
+                    <form class="space-y-6" id="contact-form">
+                        <div class="grid md:grid-cols-2 gap-4">
+                            <input type="text" placeholder="Your Name" required
+                                class="w-full px-4 py-3 border border-primary/20 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent transition-all">
+                            <input type="email" placeholder="Your Email" required
+                                class="w-full px-4 py-3 border border-primary/20 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent transition-all">
+                        </div>
+                        <input type="tel" placeholder="Phone Number" required
+                            class="w-full px-4 py-3 border border-primary/20 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent transition-all">
+                        <select required
+                            class="w-full px-4 text-black py-3 border border-primary/20 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent transition-all">
+                            <option value="">Select Service</option>
+                            <option value="obstetric">Obstetric Care</option>
+                            <option value="gynecology">Gynecological Services</option>
+                            <option value="infertility">Infertility Treatment</option>
+                            <option value="cosmetic">Cosmetic Gynecology</option>
+                            <option value="surgery">Surgical Services</option>
+                            <option value="other">Other</option>
+                        </select>
+                        <textarea placeholder="Describe your health concern..." rows="4" required
+                            class="w-full px-4 py-3 border border-primary/20 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent transition-all resize-none"></textarea>
+                        <button type="submit"
+                            class="w-full bg-[var(--primary-orange)] text-white py-3 rounded-lg font-semibold hover:bg-primary-dark transition-colors">
+                            <i class="fas fa-paper-plane mr-2"></i>Send Consultation Request
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <!-- Added social media links with Remix icons -->
+        <div class="social-links">
+            <a href="https://www.facebook.com/profile.php?id=100069708578331" title="Facebook" aria-label="Facebook">
+                <i class="ri-facebook-circle-fill"></i>
+            </a>
+            <a href="https://www.instagram.com/dr.rajini.muthineni.official/" title="Instagram" aria-label="Instagram">
+                <i class="ri-instagram-fill"></i>
+            </a>
+            <a href="https://www.linkedin.com/company/109303179/admin/dashboard/" title="LinkedIn"
+                aria-label="LinkedIn">
+                <i class="ri-linkedin-box-fill"></i>
+            </a>
+            <a href="https://api.whatsapp.com/send?phone=9866430994" title="WhatsApp" aria-label="WhatsApp"
+                target="_blank">
+                <i class="ri-whatsapp-fill"></i>
+            </a>
+        </div>
+        <p>&copy; 2025 Dr. Rajini - Obstetrician & Gynecologist. All rights reserved.</p>
+        <p>Providing compassionate, expert women's healthcare since 2009.</p>
+    </footer>
+
+    <script>
+        gsap.registerPlugin(ScrollTrigger);
+
+        const themeToggle = document.getElementById('themeToggle');
+        const html = document.documentElement;
+        const body = document.body;
+
+        // Check for saved theme preference or default to light mode
+        const savedTheme = localStorage.getItem('theme') || 'light-mode';
+        body.classList.remove('light-mode', 'dark-mode');
+        body.classList.add(savedTheme);
+        updateThemeIcon();
+
+        themeToggle.addEventListener('click', () => {
+            const isDark = body.classList.contains('dark-mode');
+            body.classList.remove('light-mode', 'dark-mode');
+
+            if (isDark) {
+                body.classList.add('light-mode');
+                localStorage.setItem('theme', 'light-mode');
+            } else {
+                body.classList.add('dark-mode');
+                localStorage.setItem('theme', 'dark-mode');
+            }
+            updateThemeIcon();
+        });
+
+        function updateThemeIcon() {
+            const isDark = body.classList.contains('dark-mode');
+            themeToggle.innerHTML = isDark ? '<i class="ri-moon-line"></i>' : '<i class="ri-sun-line"></i>';
+        }
+
+        const menuToggle = document.getElementById('menuToggle');
+        const navCenter = document.querySelector('.nav-center');
+
+        menuToggle.addEventListener('click', () => {
+            navCenter.classList.toggle('active');
+            const isActive = navCenter.classList.contains('active');
+            menuToggle.innerHTML = isActive ? '<i class="ri-close-line"></i>' : '<i class="ri-menu-line"></i>';
+        });
+
+        // Close menu when link is clicked
+        document.querySelectorAll('.nav-center a').forEach(link => {
+            link.addEventListener('click', () => {
+                navCenter.classList.remove('active');
+                menuToggle.innerHTML = '<i class="ri-menu-line"></i>';
+            });
+        });
+
+        function scrollServices(button, distance) {
+            const container = button.parentElement.querySelector('.services-scroll');
+            if (container) {
+                gsap.to(container, {
+                    scrollLeft: container.scrollLeft + distance,
+                    duration: 0.5,
+                    ease: 'power2.out'
+                });
+            }
+        }
+
+        gsap.to('.hero-content', {
+            duration: 1,
+            opacity: 1,
+            y: 0,
+            delay: 0.2
+        });
+
+        gsap.to('.service-card', {
+            scrollTrigger: {
+                trigger: '.services-wrapper',
+                start: 'top center'
+            },
+            duration: 0.6,
+            opacity: 1,
+            y: 0,
+            stagger: 0.1,
+            delay: 0.2
+        });
+
+        gsap.to('.stat-card', {
+            scrollTrigger: {
+                trigger: '.about',
+                start: 'top center'
+            },
+            duration: 0.6,
+            opacity: 1,
+            y: 0,
+            stagger: 0.1
+        });
+
+        gsap.to('.category-icon', {
+            duration: 2,
+            y: -10,
+            repeat: -1,
+            yoyo: true,
+            ease: 'sine.inOut'
+        });
+
+        // Smooth scroll for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    gsap.to(window, {
+                        scrollTo: target,
+                        duration: 1,
+                        ease: 'power2.inOut'
+                    });
+                }
+            });
+        });
+
+        function handleSubmit(event) {
+            event.preventDefault();
+            gsap.to('.contact-form', {
+                duration: 0.5,
+                opacity: 0.5,
+                onComplete: () => {
+                    alert('Thank you for your inquiry! We will contact you soon.');
+                    event.target.reset();
+                    gsap.to('.contact-form', {
+                        duration: 0.5,
+                        opacity: 1
+                    });
+                }
+            });
+        }
+
+        // FAQ functionality
+        const faqs = [
+            {
+                question: "Why Should You See a Gynaecologist?",
+                answer: "Regular gynecological check-ups are essential for preventive care, early detection of health issues, and maintaining overall reproductive health at every stage of life."
+            },
+            {
+                question: "Who is the Best Gynaecologist in Hyderabad?",
+                answer: "Dr. RAJINI MUTHINENI is among the top gynecologists in Hyderabad with 15+ years of experience, advanced certifications, and a proven track record of patient satisfaction."
+            },
+            {
+                question: "What qualities should you check in a good gynecologist?",
+                answer: "Look for experience, proper certifications, compassionate patient care, modern facilities, advanced treatment options, and a good track record with patient testimonials."
+            },
+            {
+                question: "What are the most common causes of infertility in women?",
+                answer: "Common causes include hormonal imbalances, blocked fallopian tubes, PCOS, endometriosis, and age-related factors. Dr. R specializes in diagnosing and treating these conditions."
+            },
+            {
+                question: "What are the most effective methods of contraception available?",
+                answer: "Various contraception methods are available including oral pills, IUDs, implants, injections, and barrier methods. Dr. R can help you choose the most suitable option."
+            },
+            {
+                question: "What is endometriosis, and how is it diagnosed and managed?",
+                answer: "Endometriosis is a condition where tissue grows outside the uterus. It's diagnosed through imaging and sometimes laparoscopy, and managed through medication or surgical treatment."
+            },
+            {
+                question: "Can gynecological conditions affect fertility?",
+                answer: "Yes, conditions like PCOS, endometriosis, fibroids, and blocked tubes can affect fertility. Early diagnosis and appropriate treatment improve chances of conception."
+            },
+            {
+                question: "What should I expect during a pelvic examination?",
+                answer: "A pelvic exam is a routine health check where the doctor examines your external and internal reproductive organs. It's painless and important for preventive care."
+            },
+            {
+                question: "What are the most common gynecological cancers?",
+                answer: "Common gynecological cancers include cervical, ovarian, and uterine cancers. Early screening and detection significantly improve treatment outcomes."
+            },
+            {
+                question: "How can I maintain optimal gynecological health?",
+                answer: "Maintain health through regular check-ups, healthy lifestyle, safe practices, stress management, proper nutrition, and seeking timely medical advice for any concerns."
+            },
+        ];
+
+        const container = document.getElementById("faqContainer");
+
+        faqs.forEach((faq, index) => {
+            const wrapper = document.createElement("div");
+            wrapper.className = "border-b border-gray-200 py-4 cursor-pointer";
+
+            const header = document.createElement("div");
+            header.className = "flex items-center justify-between";
+            header.innerHTML = `
+            <h3 class="text-base font-semibold text-black">${faq.question}</h3>
+            <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg" class="transition-all duration-500 ease-in-out icon flex-shrink-0 ml-4">
+                <path d="m4.5 7.2 3.793 3.793a1 1 0 0 0 1.414 0L13.5 7.2" stroke="#C41E3A" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+        `;
+
+            const answer = document.createElement("p");
+            answer.className = "text-sm text-slate-light transition-all duration-500 ease-in-out opacity-0 max-h-0 -translate-y-2 pt-0 answer";
+            answer.textContent = faq.answer;
+
+            wrapper.appendChild(header);
+            wrapper.appendChild(answer);
+            container.appendChild(wrapper);
+
+            header.addEventListener("click", () => {
+                const allAnswers = document.querySelectorAll(".answer");
+                const allIcons = document.querySelectorAll(".icon");
+
+                allAnswers.forEach((el, i) => {
+                    if (i === index) {
+                        const isOpen = el.classList.contains("opacity-100");
+                        el.classList.toggle("opacity-100", !isOpen);
+                        el.classList.toggle("max-h-[300px]", !isOpen);
+                        el.classList.toggle("translate-y-0", !isOpen);
+                        el.classList.toggle("pt-4", !isOpen);
+                        el.classList.toggle("opacity-0", isOpen);
+                        el.classList.toggle("max-h-0", isOpen);
+                        el.classList.toggle("-translate-y-2", isOpen);
+
+                        allIcons[i].classList.toggle("rotate-180", !isOpen);
+                    } else {
+                        el.classList.remove("opacity-100", "max-h-[300px]", "translate-y-0", "pt-4");
+                        el.classList.add("opacity-0", "max-h-0", "-translate-y-2");
+                        allIcons[i].classList.remove("rotate-180");
+                    }
+                });
+            });
+        });
+
+        const cardsData = [
+            { image: 'https://images.unsplash.com/photo-1633332755192-727a05c4013d?q=80&w=200', name: 'Briar Martin', handle: '@briarmartin', date: 'April 20, 2025' },
+            { image: 'https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?q=80&w=200', name: 'Avery Johnson', handle: '@averywrites', date: 'May 10, 2025' },
+            { image: 'https://images.unsplash.com/photo-1527980965255-d3b416303d12?w=200&auto=format&fit=crop&q=60', name: 'Jordan Lee', handle: '@jordantalks', date: 'June 5, 2025' },
+            { image: 'https://images.unsplash.com/photo-1522075469751-3a6694fb2f61?w=200&auto=format&fit=crop&q=60', name: 'Sarah Mitchell', handle: '@sarahmitchel', date: 'July 12, 2025' },
+        ];
+
+        const row1 = document.getElementById('row1');
+
+        const createCard = (card) => `
+        <div class="p-4 rounded-xl mx-4 shadow-sm hover:shadow-md transition-all duration-200 w-72 flex-shrink-0 bg-white">
+            <div class="flex gap-3 mb-4">
+                <img class="w-11 h-11 rounded-full object-cover" src="${card.image}" alt="User">
+                <div class="flex flex-col justify-center">
+                    <div class="flex items-center gap-1">
+                        <p class="font-semibold text-sm text-slate-text">${card.name}</p>
+                    </div>
+                    <span class="text-xs text-slate-light">${card.handle}</span>
+                </div>
+            </div>
+            <p class="text-sm text-slate-text leading-relaxed">Received excellent care and expert treatment from Dr. R. Highly professional and compassionate approach to patient care.</p>
+        </div>
+    `;
+
+        const doubled = [...cardsData, ...cardsData];
+        doubled.forEach(card => row1.insertAdjacentHTML('beforeend', createCard(card)));
+    </script>
+    </script>
+</body>
+
+</html>
