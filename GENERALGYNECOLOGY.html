@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>General Gynecology | Dr. Rajini</title>
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'primary': '#646A46',   // Forest Green
+                        'accent': '#F4EAE1',    // Elegant Cream
+                        'soft-pink': '#fdf2f8', // Gentle Pink
+                        'slate-text': '#475569',
+                        'deep-forest': '#4a4f34'
+                    },
+                    borderRadius: {
+                        '4xl': '2rem',
+                        '5xl': '3.5rem',
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,700;1,400&display=swap');
+
+        body { font-family: 'Plus Jakarta Sans', sans-serif; background-color: #fcfcfd; }
+        .font-serif { font-family: 'Playfair Display', serif; }
+
+        .glass-nav {
+            background: rgba(255, 255, 255, 0.85);
+            backdrop-filter: blur(15px);
+            border-bottom: 1px solid rgba(100, 106, 70, 0.1);
+        }
+
+        .service-card {
+            transition: all 0.5s cubic-bezier(0.23, 1, 0.32, 1);
+            background: white;
+            border: 1px solid rgba(100, 106, 70, 0.08);
+        }
+
+        .service-card:hover {
+            transform: translateY(-12px);
+            box-shadow: 0 40px 60px -15px rgba(100, 106, 70, 0.12);
+        }
+
+        .img-container {
+            height: 300px;
+            overflow: hidden;
+            border-radius: 2rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .img-container img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.7s ease;
+        }
+
+        .service-card:hover .img-container img {
+            transform: scale(1.1);
+        }
+
+        .whatsapp-btn {
+            background: #25D366;
+            transition: all 0.3s ease;
+            box-shadow: 0 10px 20px -5px rgba(37, 211, 102, 0.4);
+        }
+
+        .whatsapp-btn:hover {
+            background: #128C7E;
+            transform: scale(1.02);
+        }
+
+        .bg-blob {
+            position: absolute;
+            z-index: -1;
+            filter: blur(80px);
+            border-radius: 50%;
+        }
+    </style>
+</head>
+<body>
+
+  <nav class="glass-nav fixed top-0 w-full z-50 py-4 px-6">
+        <div class="container mx-auto flex justify-between items-center">
+            <div class="flex items-center">
+                <a href="#home" class="transition-transform hover:scale-105">
+                    <img src="images/logo.png" class="w-40 h-auto object-contain" alt="Dr. Muthineni Rajini Logo">
+                </a>
+            </div>
+            <div class="flex items-center gap-6">
+                <a href="index.html#services"
+                    class="hidden md:block text-sm font-semibold text-slate-600 hover:text-primary transition-colors">Back
+                    to Main Site</a>
+
+            </div>
+        </div>
+    </nav>
+
+    <header class="relative pt-40 pb-20 overflow-hidden bg-accent/20">
+        <div class="bg-blob w-96 h-96 bg-soft-pink -top-20 -left-20"></div>
+        <div class="container mx-auto px-6 text-center">
+            <div data-aos="fade-up">
+                <span class="text-primary font-black uppercase tracking-widest text-xs mb-4 block">Women's Wellness</span>
+                <h1 class="text-5xl md:text-7xl font-extrabold text-slate-900 leading-tight mb-6">
+                    👩‍⚕️ General <span class="text-primary italic font-serif">Gynecology</span>
+                </h1>
+                <p class="text-slate-text text-lg max-w-2xl mx-auto leading-relaxed">
+                    Compassionate care and advanced medical treatments for gynecological health, focusing on hormonal balance, menstrual health, and overall well-being.
+                </p>
+            </div>
+        </div>
+    </header>
+
+    <section class="py-24">
+        <div class="container mx-auto px-6">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
+
+                <div class="service-card p-6 rounded-4xl" data-aos="fade-up" data-aos-delay="100">
+                    <div class="img-container">
+                        <img src="https://i.pinimg.com/736x/a1/d5/a9/a1d5a962d5b5224a060a9839f1763c96.jpg" alt="PCOS">
+                    </div>
+                    <div class="px-4 pb-4">
+                        <h3 class="text-2xl font-bold text-slate-900 mb-3">PCOS Treatment</h3>
+                        <p class="text-slate-text text-sm mb-8 leading-relaxed">Comprehensive management of hormonal imbalances through lifestyle, nutrition, and medical intervention.</p>
+                        <a href="https://wa.me/919866430994?text=Hi%20Dr.%20Rajini,%20I%20want%20to%20consult%20for%20PCOS%20Treatment." class="whatsapp-btn w-full py-4 rounded-2xl flex items-center justify-center gap-3 text-white font-bold">
+                            <i class="fa-brands fa-whatsapp text-xl"></i> Book Appointment
+                        </a>
+                    </div>
+                </div>
+
+                <div class="service-card p-6 rounded-4xl" data-aos="fade-up" data-aos-delay="200">
+                    <div class="img-container">
+                        <img src="https://i.pinimg.com/736x/00/41/54/004154e701b9af79abd62fed0b0f4070.jpg" alt="Fibroids">
+                    </div>
+                    <div class="px-4 pb-4">
+                        <h3 class="text-2xl font-bold text-slate-900 mb-3">Fibroids Treatment</h3>
+                        <p class="text-slate-text text-sm mb-8 leading-relaxed">Expert diagnosis and surgical/medical solutions for uterine fibroids to relieve pain and pressure.</p>
+                        <a href="https://wa.me/919866430994?text=Hi%20Dr.%20Rajini,%20I%20want%20to%20consult%20for%20Fibroids%20Treatment." class="whatsapp-btn w-full py-4 rounded-2xl flex items-center justify-center gap-3 text-white font-bold">
+                            <i class="fa-brands fa-whatsapp text-xl"></i> Book Appointment
+                        </a>
+                    </div>
+                </div>
+
+                <div class="service-card p-6 rounded-4xl" data-aos="fade-up" data-aos-delay="300">
+                    <div class="img-container">
+                        <img src="https://i.pinimg.com/736x/2a/d6/17/2ad6170359d3ee97583f4bf279120b3f.jpg" alt="Adenomyosis">
+                    </div>
+                    <div class="px-4 pb-4">
+                        <h3 class="text-2xl font-bold text-slate-900 mb-3">Adenomyosis Treatment</h3>
+                        <p class="text-slate-text text-sm mb-8 leading-relaxed">Specialized care for managing the symptoms of adenomyosis, focusing on pain relief and health.</p>
+                        <a href="https://wa.me/919866430994?text=Hi%20Dr.%20Rajini,%20I%20want%20to%20consult%20for%20Adenomyosis%20Treatment." class="whatsapp-btn w-full py-4 rounded-2xl flex items-center justify-center gap-3 text-white font-bold">
+                            <i class="fa-brands fa-whatsapp text-xl"></i> Book Appointment
+                        </a>
+                    </div>
+                </div>
+
+                <div class="service-card p-6 rounded-4xl" data-aos="fade-up" data-aos-delay="400">
+                    <div class="img-container">
+                        <img src="https://i.pinimg.com/736x/91/09/3f/91093f5035b0bb6d8ee894c851cc2f4c.jpg" alt="Irregular Periods">
+                    </div>
+                    <div class="px-4 pb-4">
+                        <h3 class="text-2xl font-bold text-slate-900 mb-3">Irregular Periods</h3>
+                        <p class="text-slate-text text-sm mb-8 leading-relaxed">In-depth investigation and treatment to regulate your menstrual cycle and balance hormones.</p>
+                        <a href="https://wa.me/919866430994?text=Hi%20Dr.%20Rajini,%20I%20want%20to%20consult%20about%20Irregular%20Periods." class="whatsapp-btn w-full py-4 rounded-2xl flex items-center justify-center gap-3 text-white font-bold">
+                            <i class="fa-brands fa-whatsapp text-xl"></i> Book Appointment
+                        </a>
+                    </div>
+                </div>
+
+                <div class="service-card p-6 rounded-4xl" data-aos="fade-up" data-aos-delay="500">
+                    <div class="img-container">
+                        <img src="https://i.pinimg.com/736x/a2/8b/10/a28b101b9796fa0d5d61e3443f1cffa8.jpg" alt="Menstrual Disorders">
+                    </div>
+                    <div class="px-4 pb-4">
+                        <h3 class="text-2xl font-bold text-slate-900 mb-3">Menstrual Disorders</h3>
+                        <p class="text-slate-text text-sm mb-8 leading-relaxed">Managing heavy bleeding, painful periods, and other cycle-related issues with expert medical care.</p>
+                        <a href="https://wa.me/919866430994?text=Hi%20Dr.%20Rajini,%20I%20want%20to%20consult%20about%20Menstrual%20Disorders." class="whatsapp-btn w-full py-4 rounded-2xl flex items-center justify-center gap-3 text-white font-bold">
+                            <i class="fa-brands fa-whatsapp text-xl"></i> Book Appointment
+                        </a>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <section class="container mx-auto px-6 mb-24">
+        <div class="bg-primary rounded-5xl p-12 text-center text-white">
+            <h2 class="text-3xl md:text-4xl font-bold mb-6 italic font-serif">Care That Understands You</h2>
+            <p class="text-white/70 mb-10 max-w-lg mx-auto">Book your consultation today and take the first step towards better gynecological health.</p>
+            <div class="flex flex-wrap justify-center gap-6">
+                <a href="https://wa.me/919866430994" class="bg-accent text-primary px-10 py-5 rounded-2xl font-black shadow-xl hover:scale-105 transition-all">
+                    Message via WhatsApp
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <footer class="py-12 border-t border-slate-100 text-center">
+        <p class="text-slate-400 text-sm">© 2026 Dr. Rajini Gynecology Clinic. Caring for every woman.</p>
+    </footer>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+    <script>
+        AOS.init({ duration: 1000, once: true });
+    </script>
+</body>
+</html>

@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Laparoscopic Surgeries | Dr. Rajini</title>
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'primary': '#646A46',   // Forest Green
+                        'accent': '#F4EAE1',    // Elegant Cream
+                        'soft-pink': '#fdf2f8', 
+                        'slate-text': '#475569',
+                        'dark-blue': '#1e3a8a', // For a techy feel
+                    },
+                    borderRadius: { '4xl': '2rem', '5xl': '3.5rem' },
+                    animation: {
+                        'shine': 'shine 2s infinite',
+                        'pulse-light': 'pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+                    },
+                    keyframes: {
+                        shine: {
+                            '0%': { backgroundPosition: '200% 0' },
+                            '100%': { backgroundPosition: '-200% 0' },
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,700;1,400&display=swap');
+        body { font-family: 'Plus Jakarta Sans', sans-serif; background-color: #fcfcfd; }
+        .font-serif { font-family: 'Playfair Display', serif; }
+        
+        .glass-nav { background: rgba(255, 255, 255, 0.9); backdrop-filter: blur(12px); border-bottom: 1px solid rgba(100, 106, 70, 0.1); }
+        
+        .lap-card {
+            background: rgba(255, 255, 255, 0.8); /* Semi-transparent white */
+            backdrop-filter: blur(10px);
+            border-radius: 2.5rem; /* More rounded */
+            border: 1px solid rgba(100, 106, 70, 0.15); /* Soft border */
+            transition: all 0.5s cubic-bezier(0.23, 1, 0.32, 1);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+            overflow: hidden;
+            position: relative;
+        }
+        
+        .lap-card:hover {
+            transform: translateY(-15px) scale(1.02);
+            box-shadow: 0 40px 80px -20px rgba(100, 106, 70, 0.2);
+            border-color: #646A46;
+        }
+
+        .card-img-wrapper {
+            height: 250px;
+            overflow: hidden;
+            border-radius: 2rem 2rem 0 0; /* Only top corners rounded */
+            position: relative;
+        }
+
+        .card-img-wrapper img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.8s ease;
+        }
+
+        .lap-card:hover .card-img-wrapper img {
+            transform: scale(1.1);
+        }
+
+        .whatsapp-btn {
+            background: #25D366;
+            transition: all 0.3s ease;
+            box-shadow: 0 8px 15px -5px rgba(37, 211, 102, 0.4);
+        }
+        .whatsapp-btn:hover {
+            background: #128C7E;
+            transform: scale(1.03);
+        }
+
+        .blob-bg {
+            position: absolute;
+            width: 600px;
+            height: 600px;
+            background: linear-gradient(135deg, #F4EAE1 0%, #fdf2f8 100%);
+            filter: blur(100px);
+            border-radius: 50%;
+            z-index: -1;
+            opacity: 0.7;
+        }
+
+        /* Shine effect for buttons */
+        .btn-shine {
+            position: relative;
+            overflow: hidden;
+            background: linear-gradient(110deg, #25D366 30%, #4CAF50 50%, #25D366 70%);
+            background-size: 200% 100%;
+            animation: shine 2s infinite;
+        }
+
+        .btn-shine:hover {
+            animation-play-state: paused;
+            background-position: -200% 0; /* Keep it shiny on hover */
+            background: #128C7E;
+        }
+    </style>
+</head>
+<body class="overflow-x-hidden">
+
+    <nav class="glass-nav fixed top-0 w-full z-50 py-4 px-6">
+        <div class="container mx-auto flex justify-between items-center">
+            <a href="index.html" class="flex items-center gap-2">
+                <div class="w-10 h-10 bg-primary rounded-xl flex items-center justify-center text-white">
+                    <i class="fa-solid fa-microscope"></i>
+                </div>
+                <span class="font-bold text-slate-800 text-xl tracking-tight">Dr. Rajini</span>
+            </a>
+            <a href="index.html#services" class="text-sm font-bold text-primary px-4 py-2 bg-accent rounded-lg border border-primary/10">
+                <i class="fa-solid fa-chevron-left mr-2"></i> All Services
+            </a>
+        </div>
+    </nav>
+
+    <header class="relative pt-40 pb-20 overflow-hidden bg-gradient-to-br from-accent/30 to-soft-pink/30">
+        <div class="blob-bg top-[-100px] left-[-100px] animate-pulse-light"></div>
+        <div class="blob-bg bottom-[-100px] right-[-100px] animate-pulse-light animation-delay-500"></div>
+        <div class="container mx-auto px-6 text-center relative z-10">
+            <div data-aos="fade-up">
+                <span class="text-primary font-black uppercase tracking-[0.3em] text-xs mb-4 block">Minimally Invasive Solutions</span>
+                <h1 class="text-5xl md:text-7xl font-extrabold text-slate-900 leading-tight mb-8">
+                    ✨ Advanced <span class="text-primary italic font-serif">Laparoscopic Surgeries</span>
+                </h1>
+                <p class="text-slate-text text-lg md:text-xl max-w-3xl mx-auto leading-relaxed">
+                    Experience precision, minimal scarring, and faster recovery with our state-of-the-art laparoscopic techniques, performed with German-certified surgical excellence.
+                </p>
+            </div>
+        </div>
+    </header>
+
+    <section class="py-24">
+        <div class="container mx-auto px-6">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
+
+                <script>
+                    const laparoscopicProcedures = [
+                        { name: "Total Laparoscopic Hysterectomy (TLH)", icon: "fa-cut", img: "https://images.unsplash.com/photo-1579684385127-1ef15d508118?w=700", description: "Minimally invasive removal of the uterus through small incisions, ensuring quicker healing and less pain." },
+                        { name: "Laparoscopic Myomectomy", icon: "fa-eraser", img: "https://images.unsplash.com/photo-1581594693702-fbdc51b2763b?w=700", description: "Precise removal of uterine fibroids while preserving the uterus for future fertility and health." },
+                        { name: "Laparoscopic Ovarian Cystectomy", icon: "fa-shield-heart", img: "https://i.pinimg.com/1200x/c3/c5/e7/c3c5e7be1eac51082feeaadc7c7b1dd6.jpg", description: "Keyhole surgery to remove ovarian cysts, minimizing damage to healthy ovarian tissue and promoting faster recovery." },
+                        { name: "Laparoscopic Oophoropexy", icon: "fa-person-circle-plus", img: "https://images.unsplash.com/photo-1579154341098-e4e158cc7f55?w=700", description: "Surgical fixation of an ovary to prevent twisting (torsion), offering relief and preserving ovarian function." },
+                        { name: "Ovarian Drilling for PCOD", icon: "fa-spa", img: "https://images.unsplash.com/photo-1576091160550-2173dba999ef?w=700", description: "A fertility-enhancing procedure for PCOS patients, improving ovulation and hormonal balance with minimal invasion." },
+                        { name: "Laparoscopic Colpopexy", icon: "fa-circle-dot", img: "https://i.pinimg.com/736x/9c/63/4d/9c634dcfbbca18061eb80ac17215bc79.jpg", description: "Advanced surgery to correct vaginal prolapse, restoring pelvic support and improving quality of life." },
+                        { name: "Laparoscopic Salpingostomy & Neosalpingostomy", icon: "fa-magnifying-glass", img: "https://images.unsplash.com/photo-1505751172876-fa1923c5c528?w=700", description: "Fertility-sparing surgeries to open blocked fallopian tubes, crucial for natural conception." },
+                        { name: "Laparoscopic Adhesiolysis", icon: "fa-hands-clapping", img: "https://images.unsplash.com/photo-1584036561566-baf8f5f1b144?w=700", description: "Removal of scar tissue (adhesions) causing pain or infertility, restoring normal organ function." },
+                        { name: "Laparoscopic Tubal Recanalization", icon: "fa-arrows-rotate", img: "https://images.unsplash.com/photo-1516574187841-cb9cc2ca948b?w=700", description: "Reversal of tubal ligation to allow for natural pregnancy after previous sterilization." },
+                        { name: "Laparoscopic Metroplasty", icon: "fa-hand-holding-medical", img: "https://i.pinimg.com/474x/8e/0f/22/8e0f229fad260aaf88888ee96c22722a.jpg", description: "Correction of uterine abnormalities to improve fertility outcomes and reduce pregnancy complications." },
+                        { name: "Laparoscopic Endometriotic Cystectomy & Fulguration", icon: "fa-lightbulb", img: "https://i.pinimg.com/736x/39/4f/60/394f60e2702eb5b9639af9910338c380.jpg", description: "Removal and treatment of endometriosis cysts and lesions, reducing pain and improving fertility potential." },
+                        { name: "Laparoscopic Torsion Ovary Management", icon: "fa-rotate", img: "https://i.pinimg.com/736x/35/dc/86/35dc8681803566fd5f59ef8df4fa926c.jpg", description: "Emergency surgery to untwist a torsed ovary, relieving acute pain and preserving the ovary." }
+                    ];
+
+                    document.write(laparoscopicProcedures.map((procedure, index) => `
+                        <div class="lap-card" data-aos="fade-up" data-aos-delay="${index * 70}">
+                            <div class="card-img-wrapper">
+                                <img src="${procedure.img}" alt="${procedure.name}">
+                                <div class="absolute inset-0 bg-gradient-to-t from-primary/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
+                                <div class="absolute top-4 right-4 bg-white/30 backdrop-blur-md text-white text-xs px-3 py-1 rounded-full border border-white/20 font-semibold flex items-center gap-2">
+                                    <i class="fa-solid ${procedure.icon}"></i> Minimally Invasive
+                                </div>
+                            </div>
+                            <div class="p-8">
+                                <h3 class="text-2xl font-bold text-slate-900 mb-3">${procedure.name}</h3>
+                                <p class="text-slate-text text-sm mb-6 leading-relaxed">${procedure.description}</p>
+                                <a href="https://wa.me/919866430994?text=Hello%20Dr.%20Rajini,%20I%20am%20interested%20in%20Laparoscopic%20${encodeURIComponent(procedure.name)}." 
+                                   class="whatsapp-btn w-full py-4 rounded-xl flex items-center justify-center gap-3 text-white font-bold btn-shine">
+                                    <i class="fa-brands fa-whatsapp text-xl"></i> Book Consultation
+                                </a>
+                            </div>
+                        </div>
+                    `).join(''));
+                </script>
+
+            </div>
+        </div>
+    </section>
+
+    <section class="container mx-auto px-6 mb-24">
+        <div class="bg-primary rounded-5xl p-12 text-center text-white relative overflow-hidden shadow-2xl">
+            <h2 class="text-3xl md:text-4xl font-bold mb-6 italic font-serif">Advanced Surgery, Gentle Care</h2>
+            <p class="text-white/70 mb-10 max-w-lg mx-auto">Discover the benefits of laparoscopic surgery for faster recovery and improved outcomes. Schedule your expert evaluation today.</p>
+            <a href="tel:919866430994" class="inline-flex items-center gap-3 bg-accent text-primary px-10 py-5 rounded-2xl font-black hover:scale-105 transition-all shadow-lg">
+                <i class="fa-solid fa-phone"></i> Call for a Consultation
+            </a>
+        </div>
+    </section>
+
+    <footer class="py-12 border-t border-slate-100 text-center text-slate-400 text-sm">
+        <p>© 2026 Dr. Rajini | Laparoscopic Surgery Division. Precision & Care.</p>
+    </footer>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+    <script>
+        AOS.init({ duration: 1000, once: true });
+    </script>
+</body>
+</html>

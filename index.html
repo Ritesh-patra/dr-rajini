@@ -140,54 +140,95 @@
 
 <body class="text-slate-text font-body overflow-x-hidden">
     <!-- Header -->
-    <header class="bg-white shadow-sm sticky top-0 z-50 border-b border-gray-100">
-        <div class="container mx-auto px-4 py-4">
-            <div class="flex items-center justify-between">
-                <div class="flex items-center space-x-3">
-                    <img src="images/logo.png" class="w-32 h-auto object-cover scale-[1.4] ml-3" alt="">
-                </div>
-                <button id="mobile-menu-btn" class="lg:hidden bg-primary text-white p-2 rounded-lg">
-                    <i class="fas fa-bars text-lg"></i>
-                </button>
-                <nav class="hidden lg:flex space-x-8">
-                    <a href="#home"
-                        class="text-slate-text hover:text-primary transition-colors font-medium text-sm">Home</a>
-                    <a href="#about"
-                        class="text-slate-text hover:text-primary transition-colors font-medium text-sm">About</a>
-                    <a href="#services"
-                        class="text-slate-text hover:text-primary transition-colors font-medium text-sm">Services</a>
-                    <a href="#contact"
-                        class="text-slate-text hover:text-primary transition-colors font-medium text-sm">Contact</a>
-                </nav>
+ <header class="bg-white/90 backdrop-blur-md shadow-sm sticky top-0 z-[100] border-b border-gray-100 font-sans transition-all duration-300">
+    <div class="container mx-auto px-6 py-3 lg:py-4">
+        <div class="flex items-center justify-between">
+            <div class="flex items-center">
+                <a href="#home" class="transition-transform duration-300 hover:scale-105 active:scale-95">
+                    <img src="images/logo.png" class="w-36 md:w-44 h-auto object-contain" alt="Dr. Rajini Logo">
+                </a>
             </div>
-            <!-- Mobile Menu -->
-            <div id="mobile-menu" class="hidden lg:hidden mt-4 pb-4 border-t border-gray-100 pt-4">
-                <div class="flex flex-col space-y-3">
-                    <a href="#home"
-                        class="flex items-center gap-2 text-slate-text hover:text-primary transition-colors font-medium py-2 text-sm">
-                        <i class="ri-home-4-line text-lg"></i>Home
-                    </a>
-                    <a href="#about"
-                        class="flex items-center gap-2 text-slate-text hover:text-primary transition-colors font-medium py-2 text-sm">
-                        <i class="ri-user-3-line text-lg"></i>About
-                    </a>
-                    <a href="#services"
-                        class="flex items-center gap-2 text-slate-text hover:text-primary transition-colors font-medium py-2 text-sm">
-                        <i class="ri-hospital-line text-lg"></i>Services
-                    </a>
-                    <a href="#contact"
-                        class="flex items-center gap-2 text-slate-text hover:text-primary transition-colors font-medium py-2 text-sm">
-                        <i class="ri-phone-line text-lg"></i>Contact
-                    </a>
-                </div>
-            </div>
-        </div>
-    </header>
 
-    <!-- hero for mobile screen -->
-    <!-- <section class="w-full h-[90vh] hidden lg:block  ">
-        <img src="images/herolaptop.jpeg" class="w-full h-full object-cover" alt="">
-     </section> -->
+            <nav class="hidden lg:flex items-center space-x-8">
+                <a href="#home" class="text-[#676D47] hover:text-[#D4AF37] transition-all font-bold text-[13px] uppercase tracking-wider relative group">
+                    Home
+                    <span class="absolute -bottom-1 left-0 w-0 h-0.5 bg-[#D4AF37] transition-all group-hover:w-full"></span>
+                </a>
+                <a href="#about" class="text-[#676D47] hover:text-[#D4AF37] transition-all font-bold text-[13px] uppercase tracking-wider relative group">
+                    About Us
+                    <span class="absolute -bottom-1 left-0 w-0 h-0.5 bg-[#D4AF37] transition-all group-hover:w-full"></span>
+                </a>
+
+                <div class="relative group">
+                    <button class="flex items-center gap-1 text-[#676D47] group-hover:text-[#D4AF37] transition-all font-bold text-[13px] uppercase tracking-wider focus:outline-none py-2">
+                        Treatments 
+                        <i class="fa-solid fa-chevron-down text-[10px] group-hover:rotate-180 transition-transform duration-300"></i>
+                    </button>
+                    <div class="absolute left-0 mt-0 w-64 bg-white shadow-2xl rounded-2xl border-t-4 border-[#D4AF37] opacity-0 invisible group-hover:opacity-100 group-hover:visible group-hover:translate-y-2 transition-all duration-300 z-50">
+                        <div class="py-3 px-2">
+                            <a href="obstetrics.html" class="flex items-center gap-3 px-4 py-3 text-sm text-gray-700 hover:bg-[#F4EAE1] hover:text-[#676D47] rounded-xl font-semibold transition-colors">
+                                <span class="w-2 h-2 rounded-full bg-[#D4AF37]"></span> Obstetrics & Gynecology
+                            </a>
+                            <a href="laparoscopic.html" class="flex items-center gap-3 px-4 py-3 text-sm text-gray-700 hover:bg-[#F4EAE1] hover:text-[#676D47] rounded-xl font-semibold transition-colors">
+                                <span class="w-2 h-2 rounded-full bg-[#D4AF37]"></span> Laparoscopic Surgery
+                            </a>
+                            <a href="cosmetic.html" class="flex items-center gap-3 px-4 py-3 text-sm text-gray-700 hover:bg-[#F4EAE1] hover:text-[#676D47] rounded-xl font-semibold transition-colors">
+                                <span class="w-2 h-2 rounded-full bg-[#D4AF37]"></span> Cosmetic Gynecology
+                            </a>
+                            <a href="hysteroscopy.html" class="flex items-center gap-3 px-4 py-3 text-sm text-gray-700 hover:bg-[#F4EAE1] hover:text-[#676D47] rounded-xl font-semibold transition-colors">
+                                <span class="w-2 h-2 rounded-full bg-[#D4AF37]"></span> Hysteroscopy
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <a href="#blog" class="text-[#676D47] hover:text-[#D4AF37] transition-all font-bold text-[13px] uppercase tracking-wider relative group">Blog</a>
+                <a href="#contact" class="text-[#676D47] hover:text-[#D4AF37] transition-all font-bold text-[13px] uppercase tracking-wider relative group">Contact</a>
+            </nav>
+
+            <div class="hidden lg:block">
+                <a href="https://wa.me/919676138576" target="_blank"
+                    class="px-7 py-3 bg-[#676D47] text-white font-bold text-xs uppercase tracking-widest rounded-full border-2 border-transparent hover:border-[#D4AF37] hover:bg-white hover:text-[#676D47] transition-all duration-300 shadow-lg shadow-[#676D47]/20 flex items-center gap-2">
+                    <i class="fa-brands fa-whatsapp text-lg"></i>
+                    Book Appointment
+                </a>
+            </div>
+
+            <button id="mobile-menu-btn" class="lg:hidden flex items-center justify-center bg-[#676D47] text-white w-11 h-11 rounded-xl shadow-lg active:scale-90 transition-transform">
+                <i class="fas fa-bars-staggered text-xl"></i>
+            </button>
+        </div>
+
+        <div id="mobile-menu" class="hidden lg:hidden flex flex-col space-y-4 mt-4 pb-8 pt-6 border-t border-gray-100 transition-all duration-500 overflow-hidden">
+            <a href="#home" class="text-[#676D47] font-bold text-sm uppercase tracking-wider px-2">Home</a>
+            <a href="#about" class="text-[#676D47] font-bold text-sm uppercase tracking-wider px-2">About Us</a>
+
+            <div class="space-y-3">
+                <button id="mobile-dropdown-btn" class="w-full flex justify-between items-center text-[#676D47] font-bold text-sm uppercase tracking-wider px-2 focus:outline-none">
+                    Treatments
+                    <i id="dropdown-icon" class="fa-solid fa-chevron-down text-[10px] transition-transform duration-300"></i>
+                </button>
+
+                <div id="mobile-dropdown-content" class="hidden flex flex-col space-y-4 pl-6 py-2 border-l-2 border-[#D4AF37]/30 bg-gray-50/50 rounded-r-xl">
+                    <a href="obstetrics.html" class="text-gray-600 text-sm font-semibold hover:text-[#676D47]">Obstetrics & Gynecology</a>
+                    <a href="laparoscopic.html" class="text-gray-600 text-sm font-semibold hover:text-[#676D47]">Laparoscopic Surgery</a>
+                    <a href="cosmetic.html" class="text-gray-600 text-sm font-semibold hover:text-[#676D47]">Cosmetic Gynecology</a>
+                    <a href="hysteroscopy.html" class="text-gray-600 text-sm font-semibold hover:text-[#676D47]">Hysteroscopy</a>
+                </div>
+            </div>
+
+            <a href="#blog" class="text-[#676D47] font-bold text-sm uppercase tracking-wider px-2">Blog</a>
+            <a href="#contact" class="text-[#676D47] font-bold text-sm uppercase tracking-wider px-2">Contact Us</a>
+
+            <a href="https://wa.me/919676138576" class="flex items-center justify-center gap-3 bg-[#D4AF37] text-white py-4 rounded-2xl font-black shadow-xl active:scale-95 transition-all text-sm uppercase tracking-widest">
+                <i class="fa-brands fa-whatsapp text-xl"></i>
+                WhatsApp Booking
+            </a>
+        </div>
+    </div>
+</header>
+
+
 
     <!-- Hero Section -->
     <section class="relative min-h-[90vh] lg:min-h-screen flex items-center bg-white overflow-hidden">
@@ -443,311 +484,304 @@
     </section>
 
     <!-- Services Section -->
-    <section class="services-wrapper py-20 bg-[#fcfcfd]" id="services">
+    <section class="services-wrapper py-10 bg-[#FCFBF4]" id="services">
         <div class="container mx-auto px-6">
+
             <div class="max-w-3xl mb-16">
-                <h2 class="text-primary font-bold tracking-widest uppercase text-sm mb-3">Expertise & Care</h2>
-                <h1 class="text-2xl md:text-5xl font-extrabold text-slate-900 leading-tight">
-                    Comprehensive Women's <br> <span class="text-primary italic">Healthcare Services</span>
+                <h2 class="text-[#D4AF37] font-bold tracking-widest uppercase text-sm mb-3">Expertise & Care</h2>
+                <h1 class="text-2xl md:text-5xl font-extrabold text-[#1B4332] leading-tight">
+                    Comprehensive Women's <br> <span class="text-[#D4AF37] italic">Healthcare Services</span>
                 </h1>
-                <div class="w-20 h-1.5 bg-primary mt-2 rounded-full"></div>
+                <div class="w-20 h-1.5 bg-[#D4AF37] mt-2 rounded-full"></div>
             </div>
 
-            <div class="mb-10 w-full ">
-                <div class="mb-24 px-2">
+            <div class=" w-full">
+                <div class="mb-10 px-2">
+
                     <div class="flex items-center gap-4 mb-10">
                         <span
-                            class="p-3 bg-pink-100 text-pink-600 rounded-2xl text-2xl shadow-sm flex items-center justify-center">
-                            <i class="fa-solid fa-person-pregnant"></i>
+                            class="p-3 bg-[#1B4332]/10 text-[#1B4332] rounded-2xl text-2xl shadow-sm flex items-center justify-center">
+                            <i class="fa-solid fa-stethoscope"></i>
                         </span>
                         <div>
-                            <h3 class="text-2xl font-bold text-slate-800 tracking-tight">Obstetrics Services</h3>
-                            <p class="text-sm text-slate-500">Maternal care from conception to postpartum</p>
+                            <h3 class="text-2xl font-bold text-[#1B4332] tracking-tight">Our Specialities</h3>
+                            <p class="text-sm text-[#1B4332]/70">Complete care across all stages of a woman's life</p>
                         </div>
                     </div>
 
+                    <div id="servicesScroll"
+                        class="flex flex-nowrap gap-4 w-full overflow-x-auto pb-6 no-scrollbar snap-x snap-mandatory">
 
+                        <a href="Obstetrics.html"
+                            class="min-w-[280px] md:min-w-[350px] snap-center group relative overflow-hidden rounded-[2rem] bg-white shadow-sm hover:shadow-2xl transition-all duration-500 border border-[#D4AF37]/20">
 
-                    <div id="obstetricsScroll"
-                        class="flex flex-nowrap gap-3 w-full overflow-x-auto pb-6 no-scrollbar snap-x snap-mandatory">
-
-                        <div
-                            class="min-w-[250px] md:min-w-[350px] snap-center group relative overflow-hidden rounded-[2rem] bg-white shadow-sm hover:shadow-2xl transition-all duration-500 border border-slate-100">
                             <div class="aspect-[3/4] overflow-hidden">
-                                <img src="https://i.pinimg.com/736x/8f/e4/7b/8fe47bf8ac1cb409926dd1a22b603e58.jpg"
-                                    class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700">
+                                <img src="https://i.pinimg.com/736x/ef/22/d3/ef22d3a50204dda4e82798c44dc9180e.jpg"
+                                    class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
+                                    alt="Obstetrics">
+                            </div>
+
+                            <div
+                                class="absolute inset-0 bg-gradient-to-t from-[#1B4332] via-[#1B4332]/40 to-transparent opacity-90">
+                            </div>
+
+                            <div
+                                class="absolute bottom-0 p-6 text-white translate-y-4 group-hover:translate-y-0 transition-transform duration-300">
+                                <span class="text-[10px] uppercase tracking-widest font-bold text-[#D4AF37]">Care</span>
+                                <h4 class="text-lg font-bold leading-tight mt-1 text-[#FCFBF4]">
+                                    Obstetrics
+                                </h4>
+                                <p
+                                    class="text-xs text-[#FCFBF4]/80 mt-2 opacity-0 group-hover:opacity-100 transition-opacity">
+                                    Comprehensive pregnancy care, delivery services, and maternal health management.
+                                </p>
+                            </div>
+
+                        </a>
+
+
+                        <a href="High-Risk.html"
+                            class="min-w-[280px] md:min-w-[350px] snap-center group relative overflow-hidden rounded-[2rem] bg-white shadow-sm hover:shadow-2xl transition-all duration-500 border border-[#D4AF37]/20">
+                            <div class="aspect-[3/4] overflow-hidden">
+                                <img src="https://images.unsplash.com/photo-1584515933487-779824d29309?auto=format&fit=crop&w=600&h=800"
+                                    class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
+                                    alt="High Risk Obstetrics">
                             </div>
                             <div
-                                class="absolute inset-0 bg-gradient-to-t from-slate-900 via-slate-900/20 to-transparent opacity-90">
+                                class="absolute inset-0 bg-gradient-to-t from-[#1B4332] via-[#1B4332]/40 to-transparent opacity-90">
                             </div>
                             <div
                                 class="absolute bottom-0 p-6 text-white translate-y-4 group-hover:translate-y-0 transition-transform duration-300">
-                                <span class="text-[10px] uppercase tracking-widest font-bold text-pink-300">Care</span>
-                                <h4 class="text-lg font-bold leading-tight mt-1">Normal Delivery Management</h4>
+                                <span class="text-[10px] uppercase tracking-widest font-bold text-[#D4AF37]">Care</span>
+                                <h4 class="text-lg font-bold leading-tight mt-1 text-[#FCFBF4]">High Risk Obstetrics
+                                </h4>
                                 <p
-                                    class="text-xs text-slate-300 mt-2 opacity-0 group-hover:opacity-100 transition-opacity">
-                                    Expert care and support for natural childbirth with personalized approach.</p>
+                                    class="text-xs text-[#FCFBF4]/80 mt-2 opacity-0 group-hover:opacity-100 transition-opacity">
+                                    Advanced maternal-fetal care for complex and high-risk pregnancies.
+                                </p>
                             </div>
-                        </div>
+                        </a>
 
-                        <div
-                            class="min-w-[280px] md:min-w-[350px] snap-center group relative overflow-hidden rounded-[2rem] bg-white shadow-sm hover:shadow-2xl transition-all duration-500 border border-slate-100">
+                        <a href="GENERALGYNECOLOGY.html"
+                            class="min-w-[280px] md:min-w-[350px] snap-center group relative overflow-hidden rounded-[2rem] bg-white shadow-sm hover:shadow-2xl transition-all duration-500 border border-[#D4AF37]/20">
                             <div class="aspect-[3/4] overflow-hidden">
-                                <img src="https://i.pinimg.com/736x/65/cb/5e/65cb5e77da9a031ef53da3659a4b6cef.jpg"
-                                    class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700">
+                                <img src="https://images.unsplash.com/photo-1638202993928-7267aad84c31?auto=format&fit=crop&w=600&h=800"
+                                    class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
+                                    alt="General Gynecology">
                             </div>
                             <div
-                                class="absolute inset-0 bg-gradient-to-t from-slate-900 via-slate-900/20 to-transparent opacity-90">
+                                class="absolute inset-0 bg-gradient-to-t from-[#1B4332] via-[#1B4332]/40 to-transparent opacity-90">
                             </div>
                             <div
                                 class="absolute bottom-0 p-6 text-white translate-y-4 group-hover:translate-y-0 transition-transform duration-300">
                                 <span
-                                    class="text-[10px] uppercase tracking-widest font-bold text-pink-300">Postpartum</span>
-                                <h4 class="text-lg font-bold leading-tight mt-1">Postpartum Recovery</h4>
+                                    class="text-[10px] uppercase tracking-widest font-bold text-[#D4AF37]">Wellness</span>
+                                <h4 class="text-lg font-bold leading-tight mt-1 text-[#FCFBF4]">General Gynecology</h4>
                                 <p
-                                    class="text-xs text-slate-300 mt-2 opacity-0 group-hover:opacity-100 transition-opacity">
-                                    Comprehensive recovery support and maternal health management.</p>
-                            </div>
-                        </div>
-
-                        <div
-                            class="min-w-[280px] md:min-w-[350px] snap-center group relative overflow-hidden rounded-[2rem] bg-white shadow-sm hover:shadow-2xl transition-all duration-500 border border-slate-100">
-                            <div class="aspect-[3/4] overflow-hidden">
-                                <img src="https://i.pinimg.com/736x/60/26/08/602608e92440ec79f5b7fde9aa8dd803.jpg"
-                                    class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700">
-                            </div>
-                            <div
-                                class="absolute inset-0 bg-gradient-to-t from-slate-900 via-slate-900/20 to-transparent opacity-90">
-                            </div>
-                            <div
-                                class="absolute bottom-0 p-6 text-white translate-y-4 group-hover:translate-y-0 transition-transform duration-300">
-                                <span class="text-[10px] uppercase tracking-widest font-bold text-pink-300">Care</span>
-                                <h4 class="text-lg font-bold leading-tight mt-1">Normal Vaginal Delivery</h4>
-                                <p
-                                    class="text-xs text-slate-300 mt-2 opacity-0 group-hover:opacity-100 transition-opacity">
-                                    Natural childbirth with care, support and safety.
+                                    class="text-xs text-[#FCFBF4]/80 mt-2 opacity-0 group-hover:opacity-100 transition-opacity">
+                                    Comprehensive routine check-ups, screenings, and preventive care.
                                 </p>
                             </div>
-                        </div>
+                        </a>
 
-                        <div
-                            class="min-w-[280px] md:min-w-[350px] snap-center group relative overflow-hidden rounded-[2rem] bg-white shadow-sm hover:shadow-2xl transition-all duration-500 border border-slate-100">
+                        <a href="SurgicalGynecology.html"
+                            class="min-w-[280px] md:min-w-[350px] snap-center group relative overflow-hidden rounded-[2rem] bg-white shadow-sm hover:shadow-2xl transition-all duration-500 border border-[#D4AF37]/20">
                             <div class="aspect-[3/4] overflow-hidden">
-                                <img src="https://i.pinimg.com/736x/ec/f7/25/ecf725f455f2f53d0a1026f52e9e460a.jpg"
-                                    class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700">
-                            </div>
-                            <div
-                                class="absolute inset-0 bg-gradient-to-t from-slate-900 via-slate-900/20 to-transparent opacity-90">
-                            </div>
-                            <div
-                                class="absolute bottom-0 p-6 text-white translate-y-4 group-hover:translate-y-0 transition-transform duration-300">
-                                <span class="text-[10px] uppercase tracking-widest font-bold text-pink-300">Care</span>
-                                <h4 class="text-lg font-bold leading-tight mt-1">Caesarean Section</h4>
-                                <p
-                                    class="text-xs text-slate-300 mt-2 opacity-0 group-hover:opacity-100 transition-opacity">
-                                    Safe C-section deliveries by expert team.
-                                </p>
-                            </div>
-                        </div>
-
-
-
-                        <div
-                            class="min-w-[280px] md:min-w-[350px] snap-center group relative overflow-hidden rounded-[2rem] bg-white shadow-sm hover:shadow-2xl transition-all duration-500 border border-slate-100">
-                            <div class="aspect-[3/4] overflow-hidden">
-                                <img src="https://i.pinimg.com/736x/99/64/d2/9964d299322f16667c3c8636285b3a15.jpg"
-                                    class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700">
-                            </div>
-                            <div
-                                class="absolute inset-0 bg-gradient-to-t from-slate-900 via-slate-900/20 to-transparent opacity-90">
-                            </div>
-                            <div
-                                class="absolute bottom-0 p-6 text-white translate-y-4 group-hover:translate-y-0 transition-transform duration-300">
-                                <span class="text-[10px] uppercase tracking-widest font-bold text-pink-300">Care</span>
-                                <h4 class="text-lg font-bold leading-tight mt-1">PCOS Treatment</h4>
-                                <p
-                                    class="text-xs text-slate-300 mt-2 opacity-0 group-hover:opacity-100 transition-opacity">
-                                    Hormonal balance & personalized PCOS management.
-                                </p>
-                            </div>
-                        </div>
-
-                        <div
-                            class="min-w-[280px] md:min-w-[350px] snap-center group relative overflow-hidden rounded-[2rem] bg-white shadow-sm hover:shadow-2xl transition-all duration-500 border border-slate-100">
-
-                            <div class="aspect-[3/4] overflow-hidden">
-                                <img src="https://imgs.search.brave.com/snxa0vBbVSKpd4mEyZj33r6WIqABimq1Ch4A9Fbms40/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly93d3cu/aW5kaWFpdmYuaW4v/d3AtY29udGVudC91/cGxvYWRzLzIwMjQv/MTIvQ29zbWV0aWMt/R3luZWNvbG9neS53/ZWJw"
+                                <img src="https://images.unsplash.com/photo-1551076805-e1869033e561?auto=format&fit=crop&w=600&h=800"
                                     class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
-                                    alt="Cosmetic Gynecological Surgery">
+                                    alt="Surgical Gynecology">
                             </div>
-
                             <div
-                                class="absolute inset-0 bg-gradient-to-t from-slate-900 via-slate-900/20 to-transparent opacity-90">
+                                class="absolute inset-0 bg-gradient-to-t from-[#1B4332] via-[#1B4332]/40 to-transparent opacity-90">
                             </div>
-
                             <div
                                 class="absolute bottom-0 p-6 text-white translate-y-4 group-hover:translate-y-0 transition-transform duration-300">
-
-                                <span class="text-[10px] uppercase tracking-widest font-bold text-pink-300">
-                                    Women’s Wellness
-                                </span>
-
-                                <h4 class="text-lg font-bold leading-tight mt-1">
-                                    Cosmetic Gynecological Surgery
-                                </h4>
-
+                                <span
+                                    class="text-[10px] uppercase tracking-widest font-bold text-[#D4AF37]">Surgery</span>
+                                <h4 class="text-lg font-bold leading-tight mt-1 text-[#FCFBF4]">Surgical Gynecology</h4>
                                 <p
-                                    class="text-xs text-slate-300 mt-2 opacity-0 group-hover:opacity-100 transition-opacity">
-                                    Advanced cosmetic gynecological procedures designed to enhance intimate wellness,
-                                    comfort, and confidence with safe, modern medical techniques.
+                                    class="text-xs text-[#FCFBF4]/80 mt-2 opacity-0 group-hover:opacity-100 transition-opacity">
+                                    Expert surgical treatments for various complex gynecological conditions.
                                 </p>
                             </div>
-                        </div>
+                        </a>
 
-                        <div
-                            class="min-w-[280px] md:min-w-[350px] snap-center group relative overflow-hidden rounded-[2rem] bg-white shadow-sm hover:shadow-2xl transition-all duration-500 border border-slate-100">
+                        <a href="LAPAROSCOPICSURGERIES.html"
+                            class="min-w-[280px] md:min-w-[350px] snap-center group relative overflow-hidden rounded-[2rem] bg-white shadow-sm hover:shadow-2xl transition-all duration-500 border border-[#D4AF37]/20">
                             <div class="aspect-[3/4] overflow-hidden">
-                                <img src="https://i.pinimg.com/736x/aa/00/f7/aa00f7f3459e6dda179729c00ef0031c.jpg"
-                                    class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700">
+                                <img src="https://images.unsplash.com/photo-1579684385127-1ef15d508118?auto=format&fit=crop&w=600&h=800"
+                                    class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
+                                    alt="Laparoscopic Surgeries">
                             </div>
                             <div
-                                class="absolute inset-0 bg-gradient-to-t from-slate-900 via-slate-900/20 to-transparent opacity-90">
+                                class="absolute inset-0 bg-gradient-to-t from-[#1B4332] via-[#1B4332]/40 to-transparent opacity-90">
                             </div>
                             <div
                                 class="absolute bottom-0 p-6 text-white translate-y-4 group-hover:translate-y-0 transition-transform duration-300">
-                                <span class="text-[10px] uppercase tracking-widest font-bold text-pink-300">Care</span>
-                                <h4 class="text-lg font-bold leading-tight mt-1">Menstrual Disorders</h4>
+                                <span class="text-[10px] uppercase tracking-widest font-bold text-[#D4AF37]">Minimally
+                                    Invasive</span>
+                                <h4 class="text-lg font-bold leading-tight mt-1 text-[#FCFBF4]">Laparoscopic Surgeries
+                                </h4>
                                 <p
-                                    class="text-xs text-slate-300 mt-2 opacity-0 group-hover:opacity-100 transition-opacity">
-                                    Treatment for painful, heavy, or abnormal menstrual cycles.
+                                    class="text-xs text-[#FCFBF4]/80 mt-2 opacity-0 group-hover:opacity-100 transition-opacity">
+                                    Advanced procedures for faster recovery times and minimal scarring.
                                 </p>
                             </div>
-                        </div>
+                        </a>
+
+                        <a href="HYSTEROSCOPYPROCEDURES.html"
+                            class="min-w-[280px] md:min-w-[350px] snap-center group relative overflow-hidden rounded-[2rem] bg-white shadow-sm hover:shadow-2xl transition-all duration-500 border border-[#D4AF37]/20">
+                            <div class="aspect-[3/4] overflow-hidden">
+                                <img src="https://images.unsplash.com/photo-1581594693702-fbdc51b2763b?auto=format&fit=crop&w=600&h=800"
+                                    class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
+                                    alt="Hysteroscopy Procedures">
+                            </div>
+                            <div
+                                class="absolute inset-0 bg-gradient-to-t from-[#1B4332] via-[#1B4332]/40 to-transparent opacity-90">
+                            </div>
+                            <div
+                                class="absolute bottom-0 p-6 text-white translate-y-4 group-hover:translate-y-0 transition-transform duration-300">
+                                <span
+                                    class="text-[10px] uppercase tracking-widest font-bold text-[#D4AF37]">Diagnosis</span>
+                                <h4 class="text-lg font-bold leading-tight mt-1 text-[#FCFBF4]">Hysteroscopy Procedures
+                                </h4>
+                                <p
+                                    class="text-xs text-[#FCFBF4]/80 mt-2 opacity-0 group-hover:opacity-100 transition-opacity">
+                                    Advanced diagnostic and operative treatments for uterine issues.
+                                </p>
+                            </div>
+                        </a>
+
+                        <a href="Emergency.html"
+                            class="min-w-[280px] md:min-w-[350px] snap-center group relative overflow-hidden rounded-[2rem] bg-white shadow-sm hover:shadow-2xl transition-all duration-500 border border-[#D4AF37]/20">
+                            <div class="aspect-[3/4] overflow-hidden">
+                                <img src="https://images.unsplash.com/photo-1516549655169-df83a0774514?auto=format&fit=crop&w=600&h=800"
+                                    class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
+                                    alt="Emergency Surgeries">
+                            </div>
+                            <div
+                                class="absolute inset-0 bg-gradient-to-t from-[#1B4332] via-[#1B4332]/40 to-transparent opacity-90">
+                            </div>
+                            <div
+                                class="absolute bottom-0 p-6 text-white translate-y-4 group-hover:translate-y-0 transition-transform duration-300">
+                                <span class="text-[10px] uppercase tracking-widest font-bold text-[#D4AF37]">24/7
+                                    Care</span>
+                                <h4 class="text-lg font-bold leading-tight mt-1 text-[#FCFBF4]">Emergency Surgeries</h4>
+                                <p
+                                    class="text-xs text-[#FCFBF4]/80 mt-2 opacity-0 group-hover:opacity-100 transition-opacity">
+                                    Rapid response surgical care for critical and life-threatening conditions.
+                                </p>
+                            </div>
+                        </a>
+
+                        <a href="INFERTILITY.html"
+                            class="min-w-[280px] md:min-w-[350px] snap-center group relative overflow-hidden rounded-[2rem] bg-white shadow-sm hover:shadow-2xl transition-all duration-500 border border-[#D4AF37]/20">
+                            <div class="aspect-[3/4] overflow-hidden">
+                                <img src="https://i.pinimg.com/736x/4b/58/b9/4b58b931127f1fdf2e29cfe2041aab9f.jpg"
+                                    class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
+                                    alt="Infertility Services">
+                            </div>
+                            <div
+                                class="absolute inset-0 bg-gradient-to-t from-[#1B4332] via-[#1B4332]/40 to-transparent opacity-90">
+                            </div>
+                            <div
+                                class="absolute bottom-0 p-6 text-white translate-y-4 group-hover:translate-y-0 transition-transform duration-300">
+                                <span class="text-[10px] uppercase tracking-widest font-bold text-[#D4AF37]">Family
+                                    Planning</span>
+                                <h4 class="text-lg font-bold leading-tight mt-1 text-[#FCFBF4]">Infertility Services
+                                </h4>
+                                <p
+                                    class="text-xs text-[#FCFBF4]/80 mt-2 opacity-0 group-hover:opacity-100 transition-opacity">
+                                    Compassionate evaluation and evidence-based fertility treatments.
+                                </p>
+                            </div>
+                        </a>
+
+                        <a href="MENOPAUSAL.html"
+                            class="min-w-[280px] md:min-w-[350px] snap-center group relative overflow-hidden rounded-[2rem] bg-white shadow-sm hover:shadow-2xl transition-all duration-500 border border-[#D4AF37]/20">
+                            <div class="aspect-[3/4] overflow-hidden">
+                                <img src="https://images.unsplash.com/photo-1573497620053-ea5300f94f21?auto=format&fit=crop&w=600&h=800"
+                                    class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
+                                    alt="Menopausal Clinic">
+                            </div>
+                            <div
+                                class="absolute inset-0 bg-gradient-to-t from-[#1B4332] via-[#1B4332]/40 to-transparent opacity-90">
+                            </div>
+                            <div
+                                class="absolute bottom-0 p-6 text-white translate-y-4 group-hover:translate-y-0 transition-transform duration-300">
+                                <span
+                                    class="text-[10px] uppercase tracking-widest font-bold text-[#D4AF37]">Support</span>
+                                <h4 class="text-lg font-bold leading-tight mt-1 text-[#FCFBF4]">Menopausal Clinic</h4>
+                                <p
+                                    class="text-xs text-[#FCFBF4]/80 mt-2 opacity-0 group-hover:opacity-100 transition-opacity">
+                                    Specialized support and symptom management for the menopausal transition.
+                                </p>
+                            </div>
+                        </a>
+
+                        <a href="COUNSELLING.html"
+                            class="min-w-[280px] md:min-w-[350px] snap-center group relative overflow-hidden rounded-[2rem] bg-white shadow-sm hover:shadow-2xl transition-all duration-500 border border-[#D4AF37]/20">
+                            <div class="aspect-[3/4] overflow-hidden">
+                                <img src="images/owner.jpg"
+                                    class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
+                                    alt="Counselling Services">
+                            </div>
+                            <div
+                                class="absolute inset-0 bg-gradient-to-t from-[#1B4332] via-[#1B4332]/40 to-transparent opacity-90">
+                            </div>
+                            <div
+                                class="absolute bottom-0 p-6 text-white translate-y-4 group-hover:translate-y-0 transition-transform duration-300">
+                                <span
+                                    class="text-[10px] uppercase tracking-widest font-bold text-[#D4AF37]">Guidance</span>
+                                <h4 class="text-lg font-bold leading-tight mt-1 text-[#FCFBF4]">Counselling Services
+                                </h4>
+                                <p
+                                    class="text-xs text-[#FCFBF4]/80 mt-2 opacity-0 group-hover:opacity-100 transition-opacity">
+                                    Professional guidance for reproductive health and emotional well-being.
+                                </p>
+                            </div>
+                        </a>
+
+                        <a href="Cosmetic.html"
+                            class="min-w-[280px] md:min-w-[350px] snap-center group relative overflow-hidden rounded-[2rem] bg-white shadow-sm hover:shadow-2xl transition-all duration-500 border border-[#D4AF37]/20">
+                            <div class="aspect-[3/4] overflow-hidden">
+                                <img src="https://images.unsplash.com/photo-1606811841689-23dfddce3e95?auto=format&fit=crop&w=600&h=800"
+                                    class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
+                                    alt="Cosmetic Gynecology">
+                            </div>
+                            <div
+                                class="absolute inset-0 bg-gradient-to-t from-[#1B4332] via-[#1B4332]/40 to-transparent opacity-90">
+                            </div>
+                            <div
+                                class="absolute bottom-0 p-6 text-white translate-y-4 group-hover:translate-y-0 transition-transform duration-300">
+                                <span
+                                    class="text-[10px] uppercase tracking-widest font-bold text-[#D4AF37]">Aesthetics</span>
+                                <h4 class="text-lg font-bold leading-tight mt-1 text-[#FCFBF4]">Cosmetic Gynecology</h4>
+                                <p
+                                    class="text-xs text-[#FCFBF4]/80 mt-2 opacity-0 group-hover:opacity-100 transition-opacity">
+                                    Aesthetic and functional procedures to enhance intimate wellness and comfort.
+                                </p>
+                            </div>
+                        </a>
 
                     </div>
                 </div>
 
-                <!-- <style>
-                    /* Hide scrollbar for Chrome, Safari and Opera */
+                <style>
                     .no-scrollbar::-webkit-scrollbar {
                         display: none;
                     }
 
-                    /* Hide scrollbar for IE, Edge and Firefox */
                     .no-scrollbar {
                         -ms-overflow-style: none;
-                        /* IE and Edge */
                         scrollbar-width: none;
-                        /* Firefox */
                     }
-                </style> -->
-
-
+                </style>
             </div>
-
-            <div class="grid lg:grid-cols-12 gap-12 items-stretch mb-24">
-                <div
-                    class="lg:col-span-5 bg-white p-10 rounded-[3rem] shadow-xl border border-slate-50 flex flex-col justify-center">
-                    <div class="flex items-center gap-4 mb-6">
-                        <span class="p-3 bg-indigo-100 text-indigo-600 rounded-2xl text-2xl">♀️</span>
-                        <h3 class="text-3xl font-bold text-slate-800">Advanced Gynecological Care</h3>
-                    </div>
-                    <p class="text-slate-600 mb-8 leading-relaxed">Specialized minimally invasive procedures and complex
-                        surgery management with German-certified expertise.</p>
-
-                    <ul class="grid grid-cols-1 gap-4">
-                        <li
-                            class="flex items-center gap-3 p-4 bg-slate-50 rounded-2xl hover:bg-primary/5 transition-colors group">
-                            <i class="ri-checkbox-circle-fill text-primary text-xl"></i>
-                            <span class="font-semibold text-slate-700 group-hover:text-primary">Diagnostic
-                                Hysteroscopy</span>
-                        </li>
-                        <li
-                            class="flex items-center gap-3 p-4 bg-slate-50 rounded-2xl hover:bg-primary/5 transition-colors group">
-                            <i class="ri-checkbox-circle-fill text-primary text-xl"></i>
-                            <span class="font-semibold text-slate-700 group-hover:text-primary">Fibroid Resection &
-                                Removal</span>
-                        </li>
-                        <li
-                            class="flex items-center gap-3 p-4 bg-slate-50 rounded-2xl hover:bg-primary/5 transition-colors group">
-                            <i class="ri-checkbox-circle-fill text-primary text-xl"></i>
-                            <span class="font-semibold text-slate-700 group-hover:text-primary">Laparoscopic
-                                Hysterectomy</span>
-                        </li>
-                        <li
-                            class="flex items-center gap-3 p-4 bg-slate-50 rounded-2xl hover:bg-primary/5 transition-colors group">
-                            <i class="ri-checkbox-circle-fill text-primary text-xl"></i>
-                            <span class="font-semibold text-slate-700 group-hover:text-primary">Endometriosis
-                                Treatment</span>
-                        </li>
-                        <li
-                            class="flex items-center gap-3 p-4 bg-slate-50 rounded-2xl hover:bg-primary/5 transition-colors group">
-                            <i class="ri-checkbox-circle-fill text-primary text-xl"></i>
-                            <span class="font-semibold text-slate-700 group-hover:text-primary">Robotic Surgery</span>
-                        </li>
-                    </ul>
-                </div>
-
-                <div class="lg:col-span-7 grid grid-cols-2 gap-4">
-                    <div class="space-y-4">
-                        <img src="https://i.pinimg.com/736x/58/13/61/581361bd8317a30e1c1a11d390656320.jpg"
-                            class="rounded-[2rem] h-64 w-full object-cover shadow-lg">
-                        <img src="https://i.pinimg.com/1200x/c9/74/65/c97465c98fc81f50ab79d7fbdf86ee2c.jpg"
-                            class="rounded-[2rem] h-80 w-full object-cover shadow-lg">
-                    </div>
-                    <div class="space-y-4 pt-12">
-                        <img src="https://i.pinimg.com/736x/0b/1c/4a/0b1c4a81464846e5c8e27da2aa1a4aa1.jpg"
-                            class="rounded-[2rem] h-80 w-full object-cover shadow-lg">
-                        <img src="https://i.pinimg.com/1200x/c8/87/a9/c887a9e4ab116f8e803d2c5083932f96.jpg"
-                            class="rounded-[2rem] h-64 w-full object-cover shadow-lg">
-                    </div>
-                </div>
-            </div>
-
-            <div class="grid md:grid-cols-2 gap-8">
-                <div class="relative overflow-hidden rounded-[3rem] bg-[#646A46] p-12 text-white group">
-                    <div
-                        class="absolute top-0 right-0 p-10 opacity-10 rotate-12 group-hover:rotate-0 transition-transform">
-                        <i class="ri-alarm-warning-fill text-[12rem]"></i>
-                    </div>
-                    <h4 class="text-sm font-bold uppercase tracking-widest mb-4 text-rose-200">24/7 Support</h4>
-                    <h3 class="text-3xl font-bold mb-6">Emergency Services</h3>
-                    <p class="text-rose-100 mb-8 max-w-sm">Ectopic pregnancy, miscarriage management, and life-saving
-                        hemorrhage stabilization.</p>
-                    <a href="tel:"
-                        class="inline-flex items-center gap-2 bg-white text-[#646A46] px-8 py-4 rounded-2xl font-bold shadow-xl hover:scale-105 transition-transform">
-                        <i class="ri-phone-fill"></i> Get Urgent Help
-                    </a>
-                </div>
-
-                <div class="relative overflow-hidden rounded-[3rem] bg-slate-900 p-12 text-white group">
-                    <div class="absolute top-0 right-0 p-10 opacity-10 group-hover:scale-110 transition-transform">
-                        <i class="ri-heart-pulse-fill text-[12rem]"></i>
-                    </div>
-                    <h4 class="text-sm font-bold uppercase tracking-widest mb-4 text-slate-400">Specialized Care</h4>
-                    <h3 class="text-3xl font-bold mb-6">High-Risk Pregnancy Care</h3>
-                    <p class="text-slate-400 mb-8 max-w-sm">
-                        Advanced monitoring and expert management for high-risk pregnancies to ensure the safety of both
-                        mother and baby.
-                    </p>
-                    <div class="flex flex-wrap gap-2">
-                        <span
-                            class="bg-slate-800 px-4 py-2 rounded-full text-xs font-bold border border-slate-700">Placenta
-                            Praevia</span>
-                        <span
-                            class="bg-slate-800 px-4 py-2 rounded-full text-xs font-bold border border-slate-700">Gestational
-                            Diabetes</span>
-                        <span
-                            class="bg-slate-800 px-4 py-2 rounded-full text-xs font-bold border border-slate-700">Pre-Eclampsia</span>
-                    </div>
-                </div>
-
-            </div>
-
         </div>
     </section>
 
-    <section id="laparoscopy-details" class="py-24 bg-slate-50 relative overflow-hidden">
+    <section id="laparoscopy-details" class="pb-10 bg-slate-50 relative overflow-hidden">
         <div
             class="absolute top-0 left-0 w-96 h-96 bg-primary/5 rounded-full blur-[100px] -translate-x-1/2 -translate-y-1/2">
         </div>
@@ -892,7 +926,7 @@
 
 
     <!-- FAQ Section -->
-    <section class="py-10 bg-white">
+    <section id="question" class="py-10 bg-white">
         <div class="max-w-4xl mx-auto px-4">
             <div class="flex flex-col md:flex-row items-start justify-center gap-12">
                 <div class="w-full">
@@ -1095,7 +1129,7 @@
                         </div>
                     </div>
                     <p class="text-slate-400 leading-relaxed max-w-sm">
-                        Senior Consultant Obstetrician & Gynecologist with 15+ years of clinical excellence. Dedicated
+                        Senior Consultant Obstetrician & Gynecologist with 18+ years of clinical excellence. Dedicated
                         to providing compassionate and advanced healthcare for women at every life stage.
                     </p>
                     <div class="flex gap-3">
@@ -1169,12 +1203,24 @@
                 </div>
             </div>
 
-            <div
-                class="pt-8 border-t border-white/5 flex flex-col md:flex-row justify-between items-center gap-4 text-slate-500 text-sm">
-                <p>© 2025 <span class="text-white font-medium">Dr. Rajini Muthineni</span>. All rights reserved.</p>
+            <div class="pt-8 border-t border-white/10 flex flex-col md:flex-row justify-between items-center gap-4 text-sm"
+                style="color: rgba(255, 253, 208, 0.6);">
+
+                <p>© 2026 <span style="color: #FFFDD0;" class="font-medium">Dr. Muthineni Rajini</span>. All rights
+                    reserved.</p>
+
+                <div class="flex items-center gap-1 italic">
+                    <span>Designed by</span>
+                    <a href="#" class="font-bold hover:underline text-pink-500 transition-all tracking-tight">
+                        Spider Innovative
+                    </a>
+                </div>
+
                 <div class="flex gap-6">
-                    <a href="#" class="hover:text-white transition-colors">Privacy Policy</a>
-                    <a href="#" class="hover:text-white transition-colors">Terms of Service</a>
+                    <a href="#" style="color: #FFFDD0;" class="hover:text-[#D4AF37] transition-colors">Privacy
+                        Policy</a>
+                    <a href="#" style="color: #FFFDD0;" class="hover:text-[#D4AF37] transition-colors">Terms of
+                        Service</a>
                 </div>
             </div>
         </div>
@@ -1207,15 +1253,23 @@
     </div>
 
     <script>
-        // Mobile menu toggle
-        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        // Script to handle Mobile Menu Toggle
+        const menuBtn = document.getElementById('mobile-menu-btn');
         const mobileMenu = document.getElementById('mobile-menu');
 
-        mobileMenuBtn.addEventListener('click', () => {
+        menuBtn.addEventListener('click', () => {
             mobileMenu.classList.toggle('hidden');
-            const icon = mobileMenuBtn.querySelector('i');
-            icon.classList.toggle('fa-bars');
-            icon.classList.toggle('fa-times');
+        });
+
+        // Script to handle Mobile Dropdown Toggle
+        const dropdownBtn = document.getElementById('mobile-dropdown-btn');
+        const dropdownContent = document.getElementById('mobile-dropdown-content');
+        const dropdownIcon = document.getElementById('dropdown-icon');
+
+        dropdownBtn.addEventListener('click', () => {
+            dropdownContent.classList.toggle('hidden');
+            // Rotate icon when open
+            dropdownIcon.classList.toggle('rotate-180');
         });
 
         // Smooth scrolling
@@ -1342,30 +1396,52 @@
 
         // Testimonials
         const cardsData = [
-            { image: 'https://images.unsplash.com/photo-1633332755192-727a05c4013d?q=80&w=200', name: 'Briar Martin', handle: '@briarmartin', date: 'April 20, 2025' },
-            { image: 'https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?q=80&w=200', name: 'Avery Johnson', handle: '@averywrites', date: 'May 10, 2025' },
-            { image: 'https://images.unsplash.com/photo-1527980965255-d3b416303d12?w=200&auto=format&fit=crop&q=60', name: 'Jordan Lee', handle: '@jordantalks', date: 'June 5, 2025' },
-            { image: 'https://images.unsplash.com/photo-1522075469751-3a6694fb2f61?w=200&auto=format&fit=crop&q=60', name: 'Sarah Mitchell', handle: '@sarahmitchel', date: 'July 12, 2025' },
+            {
+                image: 'https://images.unsplash.com/photo-1494790108377-be9c29b29330?q=80&w=200',
+                name: 'Sravani Kondapalli',
+                handle: '@sravani_k',
+                review: 'Dr. Rajini is incredibly skilled. The laparoscopic surgery was smooth, and the recovery was faster than I expected.'
+            },
+            {
+                image: 'https://images.unsplash.com/photo-1619333183571-7597a0304122?q=80&w=200',
+                name: 'Anitha Reddy',
+                handle: '@anitha_reddy',
+                review: 'Highly professional and compassionate approach. I received excellent care during my hospital admission.'
+            },
+            {
+                image: 'https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?q=80&w=200',
+                name: 'Lakshmi Narayana',
+                handle: '@lakshmi_n',
+                review: 'The best cosmetic gynecologist in the city. She explained everything clearly and made me feel very comfortable.'
+            },
+            {
+                image: 'https://images.unsplash.com/photo-1589156229687-496a31ad1d1f?q=80&w=200',
+                name: 'Priyanka Talluri',
+                handle: '@priyanka_t',
+                review: 'Home diagnostics service was so convenient! The team was punctual and the reports were delivered quickly on WhatsApp.'
+            },
         ];
-
-        const row1 = document.getElementById('row1');
+        // const row1 = document.getElementById('row1');
 
         const createCard = (card) => `
-        <div class="p-4 rounded-xl mx-4 shadow-sm hover:shadow-md transition-all duration-200 w-72 flex-shrink-0 bg-white">
-            <div class="flex gap-3 mb-4">
-                <img class="w-11 h-11 rounded-full object-cover" src="${card.image}" alt="User">
-                <div class="flex flex-col justify-center">
-                    <div class="flex items-center gap-1">
-                        <p class="font-semibold text-sm text-slate-text">${card.name}</p>
-                    </div>
-                    <span class="text-xs text-slate-light">${card.handle}</span>
-                </div>
+    <div class="p-6 rounded-[2rem] mx-4 shadow-xl hover:shadow-[#D4AF37]/20 transition-all duration-300 w-80 flex-shrink-0 bg-white border border-gray-100">
+        <div class="flex gap-4 mb-4">
+            <img class="w-12 h-12 rounded-full object-cover border-2 border-[#D4AF37]" src="${card.image}" alt="User">
+            <div class="flex flex-col justify-center">
+                <p style="color: #676D47;" class="font-bold text-sm uppercase italic">${card.name}</p>
+                <span style="color: #D4AF37;" class="text-[10px] font-black tracking-widest uppercase">${card.handle}</span>
             </div>
-            <p class="text-sm text-slate-text leading-relaxed">Received excellent care and expert treatment from Dr. R. Highly professional and compassionate approach to patient care.</p>
         </div>
-    `;
-
-        const doubled = [...cardsData, ...cardsData];
+        <p class="text-gray-600 text-sm leading-relaxed italic italic font-medium">
+            "${card.review}"
+        </p>
+        <div class="mt-4 flex gap-1 text-[#D4AF37] text-[10px]">
+            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+        </div>
+    </div>
+`;
+        const row1 = document.getElementById('row1');
+        const doubled = [...cardsData, ...cardsData]; // Infinite loop ke liye double kiya
         doubled.forEach(card => row1.insertAdjacentHTML('beforeend', createCard(card)));
     </script>
 </body>

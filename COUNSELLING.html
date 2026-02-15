@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Counselling Services | Dr. Rajini</title>
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'primary': '#646A46',   // Forest Green
+                        'accent': '#F4EAE1',    // Elegant Cream
+                        'soft-sage': '#f0f2e8',
+                        'slate-text': '#475569',
+                    },
+                    borderRadius: { '4xl': '2rem', '5xl': '3.5rem' }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,700;1,400&display=swap');
+
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background-color: #fdfdfd;
+            overflow-x: hidden;
+        }
+
+        .font-serif {
+            font-family: 'Playfair Display', serif;
+        }
+
+        .glass-nav {
+            background: rgba(255, 255, 255, 0.8);
+            backdrop-filter: blur(15px);
+            border-bottom: 1px solid rgba(100, 106, 70, 0.1);
+        }
+
+        .counsel-card {
+            background: white;
+            border-radius: 3rem;
+            padding: 3rem;
+            border: 1px solid rgba(100, 106, 70, 0.05);
+            transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .counsel-card:hover {
+            transform: translateY(-12px);
+            box-shadow: 0 30px 60px -12px rgba(100, 106, 70, 0.12);
+            background: #F4EAE1;
+        }
+
+        .icon-wrap {
+            width: 70px;
+            height: 70px;
+            background: #f0f2e8;
+            border-radius: 1.5rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            color: #646A46;
+            margin-bottom: 2rem;
+            transition: all 0.5s ease;
+        }
+
+        .counsel-card:hover .icon-wrap {
+            background: #646A46;
+            color: white;
+            transform: scale(1.1);
+        }
+
+        .wa-button {
+            background: #25D366;
+            color: white;
+            padding: 1.25rem;
+            border-radius: 1.5rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 12px;
+            font-weight: 800;
+            transition: all 0.3s ease;
+            width: 100%;
+        }
+
+        .wa-button:hover {
+            background: #128C7E;
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(37, 211, 102, 0.2);
+        }
+
+        .bg-circle {
+            position: absolute;
+            z-index: -1;
+            border-radius: 50%;
+            background: radial-gradient(circle, #F4EAE1 0%, transparent 70%);
+            filter: blur(40px);
+        }
+    </style>
+</head>
+
+<body>
+
+    <nav class="glass-header fixed top-0 w-full z-50 py-4 px-6">
+        <div class="container mx-auto flex justify-between items-center">
+            <a href="index.html" class="flex items-center gap-2 group">
+                <div class="w-10 h-10 bg-primary rounded-xl flex items-center justify-center text-white">
+                    <i class="fa-solid fa-baby-carriage"></i>
+                </div>
+                <span class="font-bold text-slate-800 text-xl tracking-tight">Dr. Rajini</span>
+            </a>
+            <a href="index.html#services"
+                class="text-sm font-bold text-primary px-6 py-2.5 bg-accent rounded-xl border border-primary/10 transition-all hover:bg-primary hover:text-white">
+                <i class="fa-solid fa-chevron-left mr-2"></i> All Services
+            </a>
+        </div>
+    </nav>
+
+    <header class="relative pt-40 pb-20 overflow-hidden">
+        <div class="bg-circle w-96 h-96 top-[-50px] right-[-50px] opacity-60"></div>
+        <div class="container mx-auto px-6 text-center">
+            <div data-aos="fade-up">
+                <span class="text-primary font-black uppercase tracking-[0.3em] text-xs mb-4 block">Compassionate
+                    Guidance</span>
+                <h1 class="text-5xl md:text-7xl font-extrabold text-slate-900 leading-tight mb-8">
+                    Counselling <span class="text-primary italic font-serif">Services</span>
+                </h1>
+                <p class="text-slate-text text-lg md:text-xl max-w-2xl mx-auto leading-relaxed">
+                    A safe, confidential, and judgment-free space for women and couples to discuss reproductive health,
+                    future planning, and personal well-being.
+                </p>
+            </div>
+        </div>
+    </header>
+
+    <section class="py-24">
+        <div class="container mx-auto px-6">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-7xl mx-auto">
+
+                <div class="counsel-card" data-aos="fade-up" data-aos-delay="100">
+                    <div>
+                        <div class="icon-wrap"><i class="fa-solid fa-ring"></i></div>
+                        <h3 class="text-2xl font-bold text-slate-900 mb-4">Premarital Counselling</h3>
+                        <p class="text-slate-text leading-relaxed mb-10">Essential guidance for couples to understand
+                            reproductive health, genetic compatibility, and family planning before marriage.</p>
+                    </div>
+                    <a href="https://wa.me/919866430994?text=I%20want%20to%20book%20a%20Premarital%20Counselling%20session"
+                        class="wa-button">
+                        <i class="fa-brands fa-whatsapp text-xl"></i> Book Session
+                    </a>
+                </div>
+
+                <div class="counsel-card" data-aos="fade-up" data-aos-delay="200">
+                    <div>
+                        <div class="icon-wrap"><i class="fa-solid fa-person-breastfeeding"></i></div>
+                        <h3 class="text-2xl font-bold text-slate-900 mb-4">Preconception Counselling</h3>
+                        <p class="text-slate-text leading-relaxed mb-10">Expert advice on optimizing your health,
+                            nutrition, and lifestyle to ensure a safe and healthy pregnancy journey from day one.</p>
+                    </div>
+                    <a href="https://wa.me/919866430994?text=I%20want%20to%20book%20a%20Preconception%20Counselling%20session"
+                        class="wa-button">
+                        <i class="fa-brands fa-whatsapp text-xl"></i> Book Session
+                    </a>
+                </div>
+
+                <div class="counsel-card" data-aos="fade-up" data-aos-delay="300">
+                    <div>
+                        <div class="icon-wrap"><i class="fa-solid fa-hand-holding-heart"></i></div>
+                        <h3 class="text-2xl font-bold text-slate-900 mb-4">Contraceptive Counselling</h3>
+                        <p class="text-slate-text leading-relaxed mb-10">Understanding the best birth control options
+                            tailored to your body, lifestyle, and future reproductive goals with confidence.</p>
+                    </div>
+                    <a href="https://wa.me/919866430994?text=I%20want%20to%20consult%20regarding%20Contraceptive%20options"
+                        class="wa-button">
+                        <i class="fa-brands fa-whatsapp text-xl"></i> Book Session
+                    </a>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <section class="container mx-auto px-6 mb-24">
+        <div class="bg-primary rounded-5xl p-12 md:p-20 text-center text-white relative overflow-hidden shadow-2xl">
+            <h2 class="text-3xl md:text-5xl font-bold mb-6 italic font-serif">Your Privacy is Our Priority</h2>
+            <p class="text-white/70 mb-10 max-w-xl mx-auto">Every conversation is held with the utmost confidentiality.
+                Whether you have questions about your future or your health, we are here to listen.</p>
+            <div class="flex flex-wrap justify-center gap-6">
+                <a href="tel:919866430994"
+                    class="bg-white text-primary px-10 py-5 rounded-2xl font-black shadow-xl hover:scale-105 transition-all">
+                    Call Confidential Line
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <footer class="py-12 border-t border-slate-100 text-center text-slate-400 text-sm">
+        <p>© 2026 Dr. Rajini's Counselling Unit. Empowering your decisions with knowledge.</p>
+    </footer>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+    <script>
+        AOS.init({ duration: 1000, once: true });
+    </script>
+</body>
+
+</html>

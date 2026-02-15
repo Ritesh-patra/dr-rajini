@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menopausal Clinic | Dr. Rajini</title>
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'primary': '#646A46',   // Forest Green
+                        'accent': '#F4EAE1',    // Elegant Cream
+                        'rose-dust': '#E2C2B3', // Muted Rose
+                        'slate-text': '#475569',
+                    },
+                    borderRadius: { '4xl': '2rem', '5xl': '3.5rem' }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,700;1,400&display=swap');
+        
+        body { font-family: 'Plus Jakarta Sans', sans-serif; background-color: #fcfcfd; }
+        .font-serif { font-family: 'Playfair Display', serif; }
+
+        .glass-nav {
+            background: rgba(255, 255, 255, 0.8);
+            backdrop-filter: blur(15px);
+            border-bottom: 1px solid rgba(100, 106, 70, 0.1);
+        }
+
+        .wellness-card {
+            background: white;
+            border-radius: 3rem;
+            padding: 3rem;
+            border: 1px solid rgba(100, 106, 70, 0.05);
+            transition: all 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .wellness-card:hover {
+            transform: translateY(-12px);
+            box-shadow: 0 40px 80px -20px rgba(100, 106, 70, 0.1);
+            border-color: #646A46;
+        }
+
+        .circle-decor {
+            position: absolute;
+            top: -20px;
+            right: -20px;
+            width: 120px;
+            height: 120px;
+            background: #F4EAE1;
+            border-radius: 50%;
+            z-index: 0;
+            transition: all 0.5s ease;
+        }
+
+        .wellness-card:hover .circle-decor {
+            transform: scale(1.5);
+            background: #646A46;
+            opacity: 0.1;
+        }
+
+        .img-container {
+            height: 320px;
+            border-radius: 2.5rem;
+            overflow: hidden;
+            margin-bottom: 2rem;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.05);
+        }
+
+        .img-container img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 1.2s ease;
+        }
+
+        .wellness-card:hover .img-container img {
+            transform: scale(1.08);
+        }
+
+        .btn-wa {
+            background: #25D366;
+            color: white;
+            padding: 1.25rem;
+            border-radius: 1.5rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 12px;
+            font-weight: 800;
+            box-shadow: 0 10px 20px rgba(37, 211, 102, 0.2);
+            transition: all 0.3s ease;
+        }
+
+        .btn-wa:hover {
+            background: #128C7E;
+            transform: scale(1.03);
+        }
+
+        .floating-leaf {
+            position: absolute;
+            color: rgba(100, 106, 70, 0.05);
+            font-size: 15rem;
+            z-index: -1;
+            pointer-events: none;
+        }
+    </style>
+</head>
+<body class="overflow-x-hidden">
+
+    <nav class="glass-nav fixed top-0 w-full z-50 py-4 px-6">
+        <div class="container mx-auto flex justify-between items-center">
+            <a href="index.html" class="flex items-center gap-2 group">
+                <div class="w-10 h-10 bg-primary rounded-xl flex items-center justify-center text-white transition-transform group-hover:rotate-12">
+                    <i class="fa-solid fa-leaf"></i>
+                </div>
+                <span class="font-bold text-slate-800 text-xl tracking-tight">Dr. Rajini</span>
+            </a>
+            <a href="index.html#services" class="text-sm font-bold text-primary px-5 py-2.5 bg-accent rounded-xl hover:bg-primary hover:text-white transition-all">
+                <i class="fa-solid fa-chevron-left mr-2"></i> All Services
+            </a>
+        </div>
+    </nav>
+
+    <header class="relative pt-40 pb-20 overflow-hidden bg-accent/20">
+        <div class="floating-leaf top-20 right-[-50px] rotate-45"><i class="fa-solid fa-seedling"></i></div>
+        <div class="container mx-auto px-6 relative text-center">
+            <div data-aos="fade-up">
+                <span class="text-primary font-black uppercase tracking-[0.3em] text-xs mb-4 block">Graceful Transitions</span>
+                <h1 class="text-5xl md:text-7xl font-extrabold text-slate-900 leading-tight mb-8">
+                    Menopausal <br> <span class="text-primary italic font-serif">Wellness Clinic</span>
+                </h1>
+                <p class="text-slate-text text-lg md:text-xl max-w-2xl mx-auto leading-relaxed">
+                    Embrace this new phase of life with confidence. Our dedicated clinic provides comprehensive screenings and personalized support to ensure your long-term bone and breast health.
+                </p>
+            </div>
+        </div>
+    </header>
+
+    <section class="py-24">
+        <div class="container mx-auto px-6">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-12 max-w-6xl mx-auto">
+
+                <div class="wellness-card group" data-aos="fade-up">
+                    <div class="circle-decor"></div>
+                    <div class="img-container">
+                        <img src="https://images.unsplash.com/photo-1579684385127-1ef15d508118?w=800" alt="Evaluation">
+                    </div>
+                    <h3 class="text-3xl font-bold text-slate-900 mb-4">Complete Clinical Evaluation</h3>
+                    <p class="text-slate-text leading-relaxed mb-10">A detailed assessment of menopausal symptoms, cardiovascular health, and hormonal profile to customize your wellness journey.</p>
+                    <a href="https://wa.me/919866430994?text=I%20want%20to%20book%20a%20Clinical%20Evaluation%20for%20Menopause" class="btn-wa">
+                        <i class="fa-brands fa-whatsapp text-2xl"></i> Schedule Evaluation
+                    </a>
+                </div>
+
+                <div class="wellness-card group" data-aos="fade-up" data-aos-delay="100">
+                    <div class="circle-decor"></div>
+                    <div class="img-container">
+                        <img src="https://images.unsplash.com/photo-1530026405186-ed1f139313f8?w=800" alt="BMD Scan">
+                    </div>
+                    <h3 class="text-3xl font-bold text-slate-900 mb-4">BMD Screening</h3>
+                    <p class="text-slate-text leading-relaxed mb-10">Early detection of osteoporosis and bone density loss. Essential for maintaining skeletal strength and preventing fractures post-menopause.</p>
+                    <a href="https://wa.me/919866430994?text=I%20want%20to%20book%20a%20BMD%20Screening" class="btn-wa">
+                        <i class="fa-brands fa-whatsapp text-2xl"></i> Book BMD Scan
+                    </a>
+                </div>
+
+                <div class="wellness-card group" data-aos="fade-up">
+                    <div class="circle-decor"></div>
+                    <div class="img-container">
+                        <img src="https://images.unsplash.com/photo-1516549655169-df83a0774514?w=800" alt="Mammogram">
+                    </div>
+                    <h3 class="text-3xl font-bold text-slate-900 mb-4">Advanced Mammography</h3>
+                    <p class="text-slate-text leading-relaxed mb-10">Vital breast health screening for early detection. We recommend annual mammograms for peace of mind and preventive wellness.</p>
+                    <a href="https://wa.me/919866430994?text=I%20want%20to%20book%20a%20Mammogram%20Screening" class="btn-wa">
+                        <i class="fa-brands fa-whatsapp text-2xl"></i> Schedule Mammogram
+                    </a>
+                </div>
+
+                <div class="wellness-card group border-primary/20 bg-accent/10" data-aos="fade-up" data-aos-delay="100">
+                    <div class="circle-decor"></div>
+                    <div class="flex flex-col justify-center h-full">
+                        <div class="w-16 h-16 bg-primary text-white rounded-2xl flex items-center justify-center text-3xl mb-8">
+                            <i class="fa-solid fa-heart-pulse"></i>
+                        </div>
+                        <h3 class="text-3xl font-bold text-slate-900 mb-4">Personalized Support</h3>
+                        <p class="text-slate-text leading-relaxed mb-8">Guidance on HRT (Hormone Replacement Therapy), nutrition, and lifestyle modifications to manage hot flashes and mood swings.</p>
+                        <a href="https://wa.me/919866430994?text=I%20need%20personalized%20counselling%20for%20Menopause" class="text-primary font-black underline uppercase tracking-widest hover:opacity-70 transition-opacity">
+                            Consult Dr. Rajini Directly
+                        </a>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <section class="container mx-auto px-6 mb-24">
+        <div class="bg-primary rounded-5xl p-12 md:p-24 text-center text-white relative overflow-hidden shadow-2xl">
+            <h2 class="text-4xl md:text-5xl font-bold mb-6 italic font-serif">Age with Elegance & Health</h2>
+            <p class="text-white/70 mb-10 max-w-lg mx-auto">Invest in your future health today. Regular clinical checkups during menopause can significantly improve your quality of life.</p>
+            <div class="flex flex-wrap justify-center gap-6">
+                <a href="tel:919866430994" class="bg-white text-primary px-10 py-5 rounded-2xl font-black shadow-xl hover:scale-105 transition-all">
+                    Call 919866430994
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <footer class="py-12 border-t border-slate-100 text-center text-slate-400 text-sm">
+        <p>© 2026 Dr. Rajini's Menopausal Clinic. Prioritizing Your Health.</p>
+    </footer>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+    <script>
+        AOS.init({ duration: 1000, once: true });
+    </script>
+</body>
+</html>

@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cosmetic Gynecology | Dr. Rajini</title>
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'primary': '#646A46',   // Forest Green
+                        'accent': '#F4EAE1',    // Elegant Cream
+                        'soft-pink': '#fdf2f8', // Gentle Pink
+                        'slate-text': '#475569',
+                    },
+                    borderRadius: { '4xl': '2rem', '5xl': '3.5rem' }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,700;1,400&display=swap');
+        
+        body { font-family: 'Plus Jakarta Sans', sans-serif; background-color: #fcfcfd; }
+        .font-serif { font-family: 'Playfair Display', serif; }
+
+        .glass-nav {
+            background: rgba(255, 255, 255, 0.85);
+            backdrop-filter: blur(15px);
+            border-bottom: 1px solid rgba(100, 106, 70, 0.1);
+        }
+
+        .cosmetic-card {
+            background: white;
+            border-radius: 3rem;
+            padding: 3rem;
+            border: 1px solid rgba(100, 106, 70, 0.05);
+            transition: all 0.6s cubic-bezier(0.23, 1, 0.32, 1);
+            position: relative;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .cosmetic-card:hover {
+            transform: translateY(-15px);
+            box-shadow: 0 40px 80px -20px rgba(100, 106, 70, 0.15);
+            border-color: #646A46;
+        }
+
+        .img-mask {
+            height: 300px;
+            border-radius: 2.5rem;
+            overflow: hidden;
+            margin-bottom: 2rem;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.05);
+        }
+
+        .img-mask img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 1.2s ease;
+        }
+
+        .cosmetic-card:hover .img-mask img {
+            transform: scale(1.1);
+        }
+
+        .btn-wa {
+            background: #25D366;
+            color: white;
+            padding: 1.25rem;
+            border-radius: 1.5rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 12px;
+            font-weight: 800;
+            transition: all 0.3s ease;
+            box-shadow: 0 10px 20px rgba(37, 211, 102, 0.2);
+        }
+
+        .btn-wa:hover {
+            background: #128C7E;
+            transform: scale(1.03);
+        }
+
+        .sparkle-icon {
+            color: #D4AF37;
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); opacity: 1; }
+            50% { transform: scale(1.2); opacity: 0.7; }
+        }
+    </style>
+</head>
+<body class="overflow-x-hidden">
+
+    <nav class="glass-header fixed top-0 w-full z-50 py-4 px-6">
+        <div class="container mx-auto flex justify-between items-center">
+            <a href="index.html" class="flex items-center gap-2 group">
+                <div class="w-10 h-10 bg-primary rounded-xl flex items-center justify-center text-white">
+                    <i class="fa-solid fa-baby-carriage"></i>
+                </div>
+                <span class="font-bold text-slate-800 text-xl tracking-tight">Dr. Rajini</span>
+            </a>
+            <a href="index.html#services" class="text-sm font-bold text-primary px-6 py-2.5 bg-accent rounded-xl border border-primary/10 transition-all hover:bg-primary hover:text-white">
+                <i class="fa-solid fa-chevron-left mr-2"></i> All Services
+            </a>
+        </div>
+    </nav>
+
+    <header class="relative pt-40 pb-20 overflow-hidden bg-soft-pink/30">
+        <div class="container mx-auto px-6 text-center">
+            <div data-aos="fade-up">
+                <span class="text-primary font-black uppercase tracking-[0.3em] text-xs mb-4 block">Intimate Wellness & Aesthetics</span>
+                <h1 class="text-5xl md:text-7xl font-extrabold text-slate-900 leading-tight mb-8">
+                    Cosmetic <span class="text-primary italic font-serif">Gynecology</span>
+                </h1>
+                <p class="text-slate-text text-lg md:text-xl max-w-2xl mx-auto leading-relaxed">
+                    Restore your confidence and intimate wellness with advanced, safe, and professional aesthetic procedures tailored to your comfort and health.
+                </p>
+            </div>
+        </div>
+    </header>
+
+    <section class="py-24 relative">
+        <div class="container mx-auto px-6">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-12 max-w-5xl mx-auto">
+
+                <div class="cosmetic-card group" data-aos="fade-right">
+                    <div class="img-mask">
+                        <img src="https://i.pinimg.com/1200x/dd/26/d5/dd26d596f1256405faf43b34a0d99232.jpg" alt="Vaginal Rejuvenation">
+                    </div>
+                    <div>
+                        <div class="flex items-center gap-3 mb-4">
+                            <i class="fa-solid fa-star sparkle-icon text-xl"></i>
+                            <h3 class="text-3xl font-bold text-slate-900">Vaginal Rejuvenation</h3>
+                        </div>
+                        <p class="text-slate-text leading-relaxed mb-10">Advanced non-surgical or surgical procedures designed to improve muscle tone, aesthetic appearance, and functional intimate wellness.</p>
+                    </div>
+                    <a href="https://wa.me/919866430994?text=I%20want%20to%20consult%20for%20Vaginal%20Rejuvenation" class="btn-wa">
+                        <i class="fa-brands fa-whatsapp text-2xl"></i> Private Consultation
+                    </a>
+                </div>
+
+                <div class="cosmetic-card group" data-aos="fade-left">
+                    <div class="img-mask">
+                        <img src="https://imgs.search.brave.com/KxSKvAZzsiTnOYXuaAEDrK4MxfVcwyBuHvnX9P8hRAs/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9waW5r/YXBwbGVhZXN0aGV0/aWNzLmNvbS93cC1j/b250ZW50L3VwbG9h/ZHMvMjAyMy8xMC9H/LXNwb3QtZW5oYW5j/ZW1lbnQtMS5wbmc" alt="G-Spot Enhancement">
+                    </div>
+                    <div>
+                        <div class="flex items-center gap-3 mb-4">
+                            <i class="fa-solid fa-crown sparkle-icon text-xl"></i>
+                            <h3 class="text-3xl font-bold text-slate-900">G-Spot Enhancement</h3>
+                        </div>
+                        <p class="text-slate-text leading-relaxed mb-10">A specialized and safe clinical procedure aimed at enhancing sensitivity and intimate pleasure using modern medical techniques.</p>
+                    </div>
+                    <a href="https://wa.me/919866430994?text=I%20want%20to%20consult%20for%20G-Spot%20Enhancement" class="btn-wa">
+                        <i class="fa-brands fa-whatsapp text-2xl"></i> Book Appointment
+                    </a>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <section class="container mx-auto px-6 mb-24">
+        <div class="bg-primary rounded-5xl p-12 md:p-20 text-center text-white relative overflow-hidden shadow-2xl">
+            <h2 class="text-3xl md:text-5xl font-bold mb-6 italic font-serif">Confidence Reimagined</h2>
+            <p class="text-white/70 mb-10 max-w-lg mx-auto">Every procedure is performed with absolute discretion and professional care. Your comfort is our primary priority.</p>
+            <div class="flex flex-wrap justify-center gap-6">
+                <a href="tel:919866430994" class="bg-accent text-primary px-10 py-5 rounded-2xl font-black shadow-xl hover:scale-105 transition-all">
+                    Call 98664 30994
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <footer class="py-12 border-t border-slate-100 text-center text-slate-400 text-sm">
+        <p>© 2026 Dr. Rajini's Cosmetic Unit. Confidential & Compassionate Care.</p>
+    </footer>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+    <script>
+        AOS.init({ duration: 1000, once: true });
+    </script>
+</body>
+</html>

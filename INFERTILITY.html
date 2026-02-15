@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Infertility Services | Dr. Rajini</title>
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'primary': '#646A46',   // Forest Green
+                        'accent': '#F4EAE1',    // Elegant Cream
+                        'soft-pink': '#fdf2f8', 
+                        'slate-text': '#475569',
+                    },
+                    borderRadius: { '4xl': '2rem', '5xl': '3.5rem' },
+                    animation: {
+                        'float-slow': 'float 8s ease-in-out infinite',
+                    },
+                    keyframes: {
+                        float: {
+                            '0%, 100%': { transform: 'translateY(0)' },
+                            '50%': { transform: 'translateY(-15px)' },
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,700;1,400&display=swap');
+        
+        body { font-family: 'Plus Jakarta Sans', sans-serif; background-color: #fcfcfd; }
+        .font-serif { font-family: 'Playfair Display', serif; }
+
+        .glass-header {
+            background: rgba(255, 255, 255, 0.8);
+            backdrop-filter: blur(12px);
+            border-bottom: 1px solid rgba(100, 106, 70, 0.1);
+        }
+
+        .fertility-card {
+            background: white;
+            border-radius: 3rem;
+            padding: 2.5rem;
+            border: 1px solid rgba(100, 106, 70, 0.08);
+            transition: all 0.5s cubic-bezier(0.25, 1, 0.5, 1);
+            position: relative;
+        }
+
+        .fertility-card:hover {
+            transform: translateY(-15px);
+            box-shadow: 0 40px 80px -20px rgba(100, 106, 70, 0.15);
+            border-color: #646A46;
+        }
+
+        .icon-box {
+            width: 80px;
+            height: 80px;
+            background: #fdf2f8;
+            border-radius: 2rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+            color: #646A46;
+            margin-bottom: 2rem;
+            transition: all 0.5s ease;
+        }
+
+        .fertility-card:hover .icon-box {
+            background: #646A46;
+            color: white;
+            transform: rotateY(360deg);
+        }
+
+        .img-overlay {
+            height: 280px;
+            border-radius: 2.5rem;
+            overflow: hidden;
+            margin-bottom: 2rem;
+            position: relative;
+        }
+
+        .img-overlay img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 1s ease;
+        }
+
+        .fertility-card:hover .img-overlay img {
+            transform: scale(1.1);
+        }
+
+        .btn-wa {
+            background: #25D366;
+            color: white;
+            padding: 1.25rem;
+            border-radius: 1.5rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 12px;
+            font-weight: 800;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+        }
+
+        .btn-wa:hover {
+            background: #128C7E;
+            transform: scale(1.02);
+            box-shadow: 0 15px 30px rgba(37, 211, 102, 0.3);
+        }
+
+        .soft-glow {
+            position: absolute;
+            width: 400px;
+            height: 400px;
+            background: radial-gradient(circle, rgba(244, 234, 225, 1) 0%, rgba(253, 242, 248, 0) 70%);
+            z-index: -1;
+            filter: blur(50px);
+        }
+    </style>
+</head>
+<body class="overflow-x-hidden">
+
+    <nav class="glass-header fixed top-0 w-full z-50 py-4 px-6">
+        <div class="container mx-auto flex justify-between items-center">
+            <a href="index.html" class="flex items-center gap-2 group">
+                <div class="w-10 h-10 bg-primary rounded-xl flex items-center justify-center text-white">
+                    <i class="fa-solid fa-baby-carriage"></i>
+                </div>
+                <span class="font-bold text-slate-800 text-xl tracking-tight">Dr. Rajini</span>
+            </a>
+            <a href="index.html#services" class="text-sm font-bold text-primary px-6 py-2.5 bg-accent rounded-xl border border-primary/10 transition-all hover:bg-primary hover:text-white">
+                <i class="fa-solid fa-chevron-left mr-2"></i> All Services
+            </a>
+        </div>
+    </nav>
+
+    <header class="relative pt-40 pb-20 overflow-hidden">
+        <div class="soft-glow top-[-100px] left-[-100px] animate-float-slow"></div>
+        <div class="container mx-auto px-6 text-center">
+            <div data-aos="fade-up">
+                <span class="text-primary font-black uppercase tracking-[0.3em] text-xs mb-4 block">A Journey Toward Parenthood</span>
+                <h1 class="text-5xl md:text-7xl font-extrabold text-slate-900 leading-tight mb-8">
+                    Infertility <span class="text-primary italic font-serif">Solutions</span>
+                </h1>
+                <p class="text-slate-text text-lg md:text-xl max-w-3xl mx-auto leading-relaxed">
+                    Personalized, compassionate, and evidence-based treatments to help you realize your dream of parenthood. We combine advanced diagnostics with heartfelt care.
+                </p>
+            </div>
+        </div>
+    </header>
+
+    <section class="py-24 relative">
+        <div class="container mx-auto px-6">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-12 max-w-6xl mx-auto">
+
+                <div class="fertility-card" data-aos="fade-left">
+                    <div class="img-overlay">
+                        <img src="https://i.pinimg.com/736x/c5/37/7a/c5377ad1efdbfbb0fa9b0d5ae04cbb92.jpg" alt="Endoscopy">
+                    </div>
+                    <div class="icon-box"><i class="fa-solid fa-wand-magic-sparkles"></i></div>
+                    <h3 class="text-3xl font-bold text-slate-900 mb-4">Corrective Endoscopy</h3>
+                    <p class="text-slate-text leading-relaxed mb-10">Advanced Laparoscopic and Hysteroscopic surgeries to correct uterine, tubal, or ovarian issues hindering conception.</p>
+                    <a href="https://wa.me/919866430994?text=I%20want%20to%20inquire%20about%20Infertility%20Corrective%20Surgeries" class="btn-wa">
+                        <i class="fa-brands fa-whatsapp text-2xl"></i> Inquire About Surgeries
+                    </a>
+                </div>
+
+                <div class="fertility-card" data-aos="fade-right">
+                    <div class="img-overlay">
+                        <img src="https://imgs.search.brave.com/W4YgAqTvcf6-cJoWzGbW6mVoobktskq7B3WETB9Zu84/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9ncmFj/ZWZlcnRpbGl0eS5p/bi93cC1jb250ZW50/L3VwbG9hZHMvMjAy/My8wNi9FbmQtSW1h/Z2UtMTAyNHg2MDYu/d2VicA" alt="Ovulation">
+                    </div>
+                    <div class="icon-box"><i class="fa-solid fa-clover"></i></div>
+                    <h3 class="text-3xl font-bold text-slate-900 mb-4">Ovulation Induction</h3>
+                    <p class="text-slate-text leading-relaxed mb-10">Medical assistance to stimulate and regulate egg production, increasing the chances of natural conception significantly.</p>
+                    <a href="https://wa.me/919866430994?text=I%20want%20to%20consult%20for%20Ovulation%20Induction" class="btn-wa">
+                        <i class="fa-brands fa-whatsapp text-2xl"></i> Book My Appointment
+                    </a>
+                </div>
+
+                <div class="fertility-card" data-aos="fade-left">
+                    <div class="img-overlay">
+                        <img src="https://i.pinimg.com/736x/95/2a/b1/952ab1b69348cfd362d4f4858f788fe3.jpg" alt="Tracking">
+                    </div>
+                    <div class="icon-box"><i class="fa-solid fa-magnifying-glass-chart"></i></div>
+                    <h3 class="text-3xl font-bold text-slate-900 mb-4">Follicular Tracking</h3>
+                    <p class="text-slate-text leading-relaxed mb-10">Series of ultrasound scans to monitor egg development and determine the exact window of peak fertility.</p>
+                    <a href="https://wa.me/919866430994?text=I%20want%20to%20schedule%20Follicular%20Tracking%20scans" class="btn-wa">
+                        <i class="fa-brands fa-whatsapp text-2xl"></i> Schedule My Scan
+                    </a>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <section class="container mx-auto px-6 mb-24">
+        <div class="bg-primary rounded-5xl p-12 md:p-20 text-center text-white relative overflow-hidden shadow-2xl">
+            <div class="soft-glow bottom-[-50px] right-[-50px] opacity-20"></div>
+            <h2 class="text-3xl md:text-5xl font-bold mb-6 italic font-serif">Every Miracle Starts with Hope</h2>
+            <p class="text-white/70 mb-10 max-w-lg mx-auto">We are here to support you with expert advice and the latest medical technology. Let's start this journey together.</p>
+            <div class="flex flex-wrap justify-center gap-6">
+                <a href="https://wa.me/919866430994" class="bg-accent text-primary px-10 py-5 rounded-2xl font-black shadow-xl hover:scale-105 transition-all">
+                    Consult via WhatsApp
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <footer class="py-12 border-t border-slate-100 text-center text-slate-400 text-sm">
+        <p>© 2026 Dr. Rajini's Infertility Clinic. Creating Families with Care.</p>
+    </footer>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+    <script>
+        AOS.init({ duration: 1000, once: true });
+    </script>
+</body>
+</html>

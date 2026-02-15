@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hysteroscopy Procedures | Dr. Rajini</title>
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'primary': '#646A46',   // Forest Green
+                        'accent': '#F4EAE1',    // Elegant Cream
+                        'soft-pink': '#fdf2f8', 
+                        'slate-text': '#475569',
+                    },
+                    borderRadius: { '4xl': '2rem', '5xl': '3.5rem' }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,700;1,400&display=swap');
+        
+        body { font-family: 'Plus Jakarta Sans', sans-serif; background-color: #fcfcfd; overflow-x: hidden; }
+        .font-serif { font-family: 'Playfair Display', serif; }
+
+        /* Glassmorphism Navigation */
+        .glass-nav {
+            background: rgba(255, 255, 255, 0.8);
+            backdrop-filter: blur(15px);
+            border-bottom: 1px solid rgba(100, 106, 70, 0.1);
+        }
+
+        /* Animated Card Design */
+        .hystero-card {
+            position: relative;
+            background: white;
+            border-radius: 2.5rem;
+            padding: 2rem;
+            border: 1px solid rgba(100, 106, 70, 0.1);
+            transition: all 0.6s cubic-bezier(0.23, 1, 0.32, 1);
+            overflow: hidden;
+        }
+
+        .hystero-card:hover {
+            transform: translateY(-15px) rotate(1deg);
+            box-shadow: 0 40px 70px -15px rgba(100, 106, 70, 0.2);
+            border-color: #646A46;
+        }
+
+        .icon-circle {
+            width: 70px;
+            height: 70px;
+            background: #F4EAE1;
+            border-radius: 1.5rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.75rem;
+            color: #646A46;
+            margin-bottom: 1.5rem;
+            transition: all 0.5s ease;
+        }
+
+        .hystero-card:hover .icon-circle {
+            background: #646A46;
+            color: white;
+            transform: scale(1.1) rotate(-10deg);
+        }
+
+        /* Image Mask Effect */
+        .img-mask {
+            height: 200px;
+            width: 100%;
+            border-radius: 2rem;
+            margin-bottom: 1.5rem;
+            overflow: hidden;
+            mask-image: linear-gradient(to bottom, black 80%, transparent 100%);
+        }
+
+        .img-mask img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 1s ease;
+        }
+
+        .hystero-card:hover .img-mask img {
+            transform: scale(1.15);
+        }
+
+        /* WhatsApp Button Pulse */
+        .wa-btn {
+            background: #25D366;
+            color: white;
+            padding: 1rem;
+            border-radius: 1.25rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            font-weight: 800;
+            transition: all 0.4s ease;
+        }
+
+        .wa-btn:hover {
+            background: #128C7E;
+            transform: scale(1.05);
+            box-shadow: 0 15px 30px rgba(37, 211, 102, 0.3);
+        }
+
+        .bg-pattern {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: radial-gradient(#646A46 0.5px, transparent 0.5px);
+            background-size: 30px 30px;
+            opacity: 0.05;
+            z-index: -1;
+        }
+    </style>
+</head>
+<body>
+
+    <nav class="glass-nav fixed top-0 w-full z-50 py-4 px-6">
+        <div class="container mx-auto flex justify-between items-center">
+            <a href="index.html" class="flex items-center gap-2 group">
+                <div class="w-10 h-10 bg-primary rounded-xl flex items-center justify-center text-white transition-transform group-hover:rotate-12">
+                    <i class="fa-solid fa-camera-retro"></i>
+                </div>
+                <span class="font-bold text-slate-800 text-xl tracking-tight">Dr. Rajini</span>
+            </a>
+            <a href="index.html#services" class="text-sm font-bold text-primary px-5 py-2.5 bg-accent rounded-xl border border-primary/10 hover:bg-primary hover:text-white transition-all">
+                <i class="fa-solid fa-arrow-left mr-2"></i> Back
+            </a>
+        </div>
+    </nav>
+
+    <header class="relative pt-40 pb-24 overflow-hidden">
+        <div class="bg-pattern"></div>
+        <div class="container mx-auto px-6 relative">
+            <div class="text-center max-w-4xl mx-auto" data-aos="fade-down">
+                <span class="bg-soft-pink text-primary px-5 py-2 rounded-full text-xs font-black uppercase tracking-widest mb-6 inline-block border border-primary/10">Diagnostic & Operative</span>
+                <h1 class="text-5xl md:text-7xl font-extrabold text-slate-900 leading-tight mb-8">
+                    Modern <span class="text-primary italic font-serif">Hysteroscopy</span>
+                </h1>
+                <p class="text-slate-text text-lg md:text-xl leading-relaxed">
+                    Advanced "No-Incision" surgical procedures to diagnose and treat uterine conditions with maximum precision and zero external scarring.
+                </p>
+            </div>
+        </div>
+    </header>
+
+    <section class="pb-32">
+        <div class="container mx-auto px-6">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
+
+                <div class="hystero-card" data-aos="fade-up">
+                    <div class="img-mask">
+                        <img src="https://images.unsplash.com/photo-1579154341098-e4e158cc7f55?w=700" alt="Asherman's">
+                    </div>
+                    <div class="icon-circle"><i class="fa-solid fa-layer-group"></i></div>
+                    <h3 class="text-2xl font-bold text-slate-900 mb-3">Metroplasty (Asherman’s)</h3>
+                    <p class="text-slate-text text-sm mb-8">Advanced treatment to remove intrauterine adhesions and restore the normal uterine cavity for fertility.</p>
+                    <a href="https://wa.me/919866430994?text=I%20want%20to%20consult%20for%20Metroplasty%20for%20Asherman’s%20Syndrome" class="wa-btn">
+                        <i class="fa-brands fa-whatsapp text-xl"></i> Book Appointment
+                    </a>
+                </div>
+
+                <div class="hystero-card" data-aos="fade-up" data-aos-delay="100">
+                    <div class="img-mask">
+                        <img src="https://images.unsplash.com/photo-1581594693702-fbdc51b2763b?w=700" alt="Septal Resection">
+                    </div>
+                    <div class="icon-circle"><i class="fa-solid fa-scissors"></i></div>
+                    <h3 class="text-2xl font-bold text-slate-900 mb-3">Septal Resection</h3>
+                    <p class="text-slate-text text-sm mb-8">Corrective surgery for a uterine septum to prevent recurrent miscarriages and improve pregnancy outcomes.</p>
+                    <a href="https://wa.me/919866430994?text=I%20want%20to%20consult%20for%20Septal%20Resection" class="wa-btn">
+                        <i class="fa-brands fa-whatsapp text-xl"></i> Book Appointment
+                    </a>
+                </div>
+
+                <div class="hystero-card" data-aos="fade-up" data-aos-delay="200">
+                    <div class="img-mask">
+                        <img src="https://images.unsplash.com/photo-1576091160550-2173dba999ef?w=700" alt="Myomectomy">
+                    </div>
+                    <div class="icon-circle"><i class="fa-solid fa-circle-nodes"></i></div>
+                    <h3 class="text-2xl font-bold text-slate-900 mb-3">Hysteroscopic Myomectomy</h3>
+                    <p class="text-slate-text text-sm mb-8">Removal of submucous fibroids using a hysteroscope, avoiding any abdominal incisions or stitches.</p>
+                    <a href="https://wa.me/919866430994?text=I%20want%20to%20consult%20for%20Hysteroscopic%20Myomectomy" class="wa-btn">
+                        <i class="fa-brands fa-whatsapp text-xl"></i> Book Appointment
+                    </a>
+                </div>
+
+                <div class="hystero-card" data-aos="fade-up">
+                    <div class="img-mask">
+                        <img src="https://imgs.search.brave.com/679-eLmFl7Q54sJ3hHuRt6aIVm9j7Sr6yFAD01DyxI4/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9jZG4u/bmNiaS5ubG0ubmlo/Lmdvdi9wbWMvYmxv/YnMvZTVhMy8zMzg3/NzQ3L2Y5YTczZmRh/N2ZiZC9vaHRhcy0w/NC02MS1nMDAyLmpw/Zw" alt="Polypectomy">
+                    </div>
+                    <div class="icon-circle"><i class="fa-solid fa-virus-slash"></i></div>
+                    <h3 class="text-2xl font-bold text-slate-900 mb-3">Hysteroscopic Polypectomy</h3>
+                    <p class="text-slate-text text-sm mb-8">Precise removal of uterine polyps that cause heavy bleeding or interfere with natural conception.</p>
+                    <a href="https://imgs.search.brave.com/nJClCKZwPxY72EYGDcNvwfsU1eaXZVws_Eod2knOdWM/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9kcmFi/ZHVsYmFzaXRoLmNv/bS9mcm9udGVuZC9h/c3NldHMvaW1hZ2Vz/L3RyZWF0bWVudHMv/dHJlYXQxMC5wbmc" class="wa-btn">
+                        <i class="fa-brands fa-whatsapp text-xl"></i> Book Appointment
+                    </a>
+                </div>
+
+                <div class="hystero-card" data-aos="fade-up" data-aos-delay="100">
+                    <div class="img-mask">
+                        <img src="https://imgs.search.brave.com/mUE-y-pQ7lURNPh8zRQtb2jpX3j1-7m1f7hiXH0TtEg/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly93d3cu/d2lraWhvdy5jb20v/aW1hZ2VzL3RodW1i/LzIvMjMvVW5ibG9j/ay1GYWxsb3BpYW4t/VHViZXMtTmF0dXJh/bGx5LVN0ZXAtMi5q/cGcvdjQtNDYwcHgt/VW5ibG9jay1GYWxs/b3BpYW4tVHViZXMt/TmF0dXJhbGx5LVN0/ZXAtMi5qcGc" alt="Cannulation">
+                    </div>
+                    <div class="icon-circle"><i class="fa-solid fa-vial"></i></div>
+                    <h3 class="text-2xl font-bold text-slate-900 mb-3">Fallopian Tube Cannulation</h3>
+                    <p class="text-slate-text text-sm mb-8">Opening blocked fallopian tubes at the uterine end to restore fertility without major surgery.</p>
+                    <a href="https://wa.me/919866430994?text=I%20want%20to%20consult%20for%20Fallopian%20Tube%20Cannulation" class="wa-btn">
+                        <i class="fa-brands fa-whatsapp text-xl"></i> Book Appointment
+                    </a>
+                </div>
+
+                <div class="hystero-card" data-aos="fade-up" data-aos-delay="200">
+                    <div class="img-mask">
+                        <img src="https://images.unsplash.com/photo-1516549655169-df83a0774514?w=700" alt="TCRE">
+                    </div>
+                    <div class="icon-circle"><i class="fa-solid fa-droplet-slash"></i></div>
+                    <h3 class="text-2xl font-bold text-slate-900 mb-3">TCRE for Bleeding (DUB)</h3>
+                    <p class="text-slate-text text-sm mb-8">Thermal resection to treat heavy menstrual bleeding as a safer alternative to a hysterectomy.</p>
+                    <a href="https://wa.me/919866430994?text=I%20want%20to%20consult%20for%20TCRE%20for%20Dysfunctional%20Uterine%20Bleeding" class="wa-btn">
+                        <i class="fa-brands fa-whatsapp text-xl"></i> Book Appointment
+                    </a>
+                </div>
+
+                <div class="hystero-card" data-aos="fade-up">
+                    <div class="img-mask">
+                        <img src="https://imgs.search.brave.com/nrBjMN4qni_ZQ0bd3Uc0A9No6a0ysXS9WZ8jKr4-oSY/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9kcm1h/bGljbGluaWMuY29t/L3dwLWNvbnRlbnQv/dXBsb2Fkcy8yMDI1/LzA1L3VpZDIuanBn" alt="IUCD">
+                    </div>
+                    <div class="icon-circle"><i class="fa-solid fa-anchor-lock"></i></div>
+                    <h3 class="text-2xl font-bold text-slate-900 mb-3">Removal of Missing IUCD</h3>
+                    <p class="text-slate-text text-sm mb-8">Safe localization and removal of a displaced or "lost" intrauterine contraceptive device using a scope.</p>
+                    <a href="https://wa.me/919866430994?text=I%20want%20to%20consult%20for%20Removal%20of%20Missing%20IUCD" class="wa-btn">
+                        <i class="fa-brands fa-whatsapp text-xl"></i> Book Appointment
+                    </a>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <section class="container mx-auto px-6 mb-24" data-aos="zoom-in">
+        <div class="bg-primary rounded-5xl p-12 md:p-20 text-center text-white relative overflow-hidden">
+            <h2 class="text-3xl md:text-5xl font-bold mb-6 italic font-serif">Advanced Visualization. Precise Healing.</h2>
+            <p class="text-white/70 mb-10 max-w-lg mx-auto">Hysteroscopy offers a day-care solution for complex uterine issues. Get back to your normal life faster with Dr. Rajini's expert care.</p>
+            <div class="flex flex-wrap justify-center gap-6">
+                <a href="https://wa.me/919866430994" class="bg-accent text-primary px-10 py-5 rounded-2xl font-black shadow-xl hover:scale-105 transition-all">
+                    Message via WhatsApp
+                </a>
+                <a href="tel:919866430994" class="bg-white/10 border border-white/20 px-10 py-5 rounded-2xl font-black hover:bg-white/20 transition-all">
+                    Call 91 98664 30994
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <footer class="py-12 border-t border-slate-100 text-center text-slate-400 text-sm">
+        <p>© 2026 Dr. Rajini | Hysteroscopy Center of Excellence</p>
+    </footer>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+    <script>
+        AOS.init({ duration: 1000, once: true });
+    </script>
+</body>
+</html>

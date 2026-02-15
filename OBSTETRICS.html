@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Obstetrics Excellence | Dr. Rajini</title>
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'primary': '#646A46',   // Forest Green
+                        'accent': '#F4EAE1',    // Elegant Cream
+                        'soft-pink': '#fdf2f8', // Gentle Pink
+                        'slate-text': '#475569',
+                        'deep-forest': '#4a4f34'
+                    },
+                    borderRadius: {
+                        '4xl': '2rem',
+                        '5xl': '3.5rem',
+                    },
+                    animation: {
+                        'float': 'float 6s ease-in-out infinite',
+                        'pulse-slow': 'pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+                    },
+                    keyframes: {
+                        float: {
+                            '0%, 100%': { transform: 'translateY(0)' },
+                            '50%': { transform: 'translateY(-20px)' },
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap');
+
+        :root {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background-color: #fcfcfd;
+            overflow-x: hidden;
+        }
+
+        .font-serif {
+            font-family: 'Playfair Display', serif;
+        }
+
+        .glass-nav {
+            background: rgba(255, 255, 255, 0.85);
+            backdrop-filter: blur(15px);
+            border-bottom: 1px solid rgba(100, 106, 70, 0.1);
+        }
+
+        .service-card-v2 {
+            position: relative;
+            overflow: hidden;
+            border-radius: 2.5rem;
+            transition: all 0.5s cubic-bezier(0.23, 1, 0.32, 1);
+            background: white;
+            border: 1px solid #f1f1f1;
+        }
+
+        .service-card-v2:hover {
+            transform: translateY(-15px);
+            box-shadow: 0 40px 80px -20px rgba(100, 106, 70, 0.15);
+        }
+
+        .img-zoom {
+            transition: transform 0.8s cubic-bezier(0.23, 1, 0.32, 1);
+        }
+
+        .service-card-v2:hover .img-zoom {
+            transform: scale(1.1);
+        }
+
+        .whatsapp-btn {
+            background: #25D366;
+            transition: all 0.3s ease;
+        }
+
+        .whatsapp-btn:hover {
+            background: #128C7E;
+            transform: scale(1.05);
+        }
+
+        .blob {
+            position: absolute;
+            width: 600px;
+            height: 600px;
+            background: linear-gradient(180deg, #F4EAE1 0%, #fdf2f8 100%);
+            filter: blur(90px);
+            border-radius: 50%;
+            z-index: -1;
+        }
+    </style>
+</head>
+
+<body>
+
+    <nav class="glass-nav fixed top-0 w-full z-50 py-4 px-6">
+        <div class="container mx-auto flex justify-between items-center">
+            <div class="flex items-center">
+                <a href="#home" class="transition-transform hover:scale-105">
+                    <img src="images/logo.png" class="w-40 h-auto object-contain" alt="Dr. Muthineni Rajini Logo">
+                </a>
+            </div>
+            <div class="flex items-center gap-6">
+                <a href="index.html#services"
+                    class="hidden md:block text-sm font-semibold text-slate-600 hover:text-primary transition-colors">Back
+                    to Main Site</a>
+
+            </div>
+        </div>
+    </nav>
+
+    <section class="relative pt-20 pb-24 overflow-hidden">
+        <div class="blob -top-20 -right-20 animate-pulse-slow"></div>
+        <div class="container mx-auto px-6 text-center">
+            <div data-aos="fade-up">
+                <span
+                    class="bg-primary/10 text-primary px-5 py-2 rounded-full text-xs font-black uppercase tracking-widest mb-6 inline-block">Maternity
+                    & Childbirth</span>
+                <h1 class="text-5xl md:text-7xl font-extrabold text-slate-900 leading-tight mb-8">
+                    Exceptional Care for <br> <span class="text-primary italic font-serif">Every Miracle</span>
+                </h1>
+                <p class="text-slate-text text-lg md:text-xl max-w-3xl mx-auto leading-relaxed">
+                    Personalized obstetric services designed to provide you with safety, comfort, and expert medical
+                    guidance throughout your pregnancy journey.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <section class="pb-32 relative">
+        <div class="container mx-auto px-6">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
+
+                <div class="service-card-v2 group" data-aos="fade-up" data-aos-delay="100">
+                    <div class="relative h-72 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1576091160550-2173dba999ef?q=80&w=2070&auto=format&fit=crop"
+                            class="w-full h-full object-cover img-zoom" alt="Pre-Pregnancy">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
+                        <div class="absolute bottom-6 left-6">
+                            <span
+                                class="bg-accent/20 backdrop-blur-md text-white text-[10px] font-bold uppercase tracking-tighter px-3 py-1 rounded-full border border-white/20">Planning
+                                Stage</span>
+                        </div>
+                    </div>
+                    <div class="p-8">
+                        <h3 class="text-2xl font-bold text-slate-900 mb-4">Pre-Pregnancy Counselling</h3>
+                        <p class="text-slate-text text-sm leading-relaxed mb-8">Expert medical advice to prepare your
+                            body for a healthy conception and pregnancy journey.</p>
+                        <a href="https://wa.me/919866430994?text=Hi%20Dr.%20Rajini,%20I%20want%20to%20book%20an%20appointment%20for%20Pre-Pregnancy%20Counselling."
+                            class="whatsapp-btn w-full py-4 rounded-2xl flex items-center justify-center gap-3 text-white font-bold shadow-xl shadow-green-200">
+                            <i class="fa-brands fa-whatsapp text-xl"></i>
+                            Book via WhatsApp
+                        </a>
+                    </div>
+                </div>
+
+                <div class="service-card-v2 group" data-aos="fade-up" data-aos-delay="200">
+                    <div class="relative h-72 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1584515933487-779824d29309?q=80&w=2070&auto=format&fit=crop"
+                            class="w-full h-full object-cover img-zoom" alt="Pregnancy Care">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
+                        <div class="absolute bottom-6 left-6">
+                            <span
+                                class="bg-accent/20 backdrop-blur-md text-white text-[10px] font-bold uppercase tracking-tighter px-3 py-1 rounded-full border border-white/20">9
+                                Month Journey</span>
+                        </div>
+                    </div>
+                    <div class="p-8">
+                        <h3 class="text-2xl font-bold text-slate-900 mb-4">Pregnancy Care & Monitoring</h3>
+                        <p class="text-slate-text text-sm leading-relaxed mb-8">Continuous health checks and advanced
+                            scans to ensure you and your baby are thriving at every stage.</p>
+                        <a href="https://wa.me/919866430994?text=Hi%20Dr.%20Rajini,%20I%20want%20to%20book%20an%20appointment%20for%20Pregnancy%20Care%20%26%20Monitoring."
+                            class="whatsapp-btn w-full py-4 rounded-2xl flex items-center justify-center gap-3 text-white font-bold shadow-xl shadow-green-200">
+                            <i class="fa-brands fa-whatsapp text-xl"></i>
+                            Book via WhatsApp
+                        </a>
+                    </div>
+                </div>
+
+                <div class="service-card-v2 group border-primary/20" data-aos="fade-up" data-aos-delay="300">
+                    <div class="relative h-72 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1551076805-e1869033e561?q=80&w=2070&auto=format&fit=crop"
+                            class="w-full h-full object-cover img-zoom" alt="Normal Delivery">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
+                        <div class="absolute bottom-6 left-6">
+                            <span
+                                class="bg-primary text-white text-[10px] font-bold uppercase tracking-tighter px-3 py-1 rounded-full">Natural
+                                Birth</span>
+                        </div>
+                    </div>
+                    <div class="p-8">
+                        <h3 class="text-2xl font-bold text-slate-900 mb-4">Normal Vaginal Delivery</h3>
+                        <p class="text-slate-text text-sm leading-relaxed mb-8">Safe, supportive delivery management
+                            with a focus on natural processes and maternal comfort.</p>
+                        <a href="https://wa.me/919866430994?text=Hi%20Dr.%20Rajini,%20I%20want%20to%20book%20an%20appointment%20for%20Normal%20Vaginal%20Delivery."
+                            class="whatsapp-btn w-full py-4 rounded-2xl flex items-center justify-center gap-3 text-white font-bold shadow-xl shadow-green-200">
+                            <i class="fa-brands fa-whatsapp text-xl"></i>
+                            Book via WhatsApp
+                        </a>
+                    </div>
+                </div>
+
+                <div class="service-card-v2 group" data-aos="fade-up" data-aos-delay="400">
+                    <div class="relative h-72 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1516549655169-df83a0774514?q=80&w=2070&auto=format&fit=crop"
+                            class="w-full h-full object-cover img-zoom" alt="C Section">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
+                        <div class="absolute bottom-6 left-6">
+                            <span
+                                class="bg-accent/20 backdrop-blur-md text-white text-[10px] font-bold uppercase tracking-tighter px-3 py-1 rounded-full border border-white/20">Surgical
+                                Expertise</span>
+                        </div>
+                    </div>
+                    <div class="p-8">
+                        <h3 class="text-2xl font-bold text-slate-900 mb-4">Caesarean Section (C-Section)</h3>
+                        <p class="text-slate-text text-sm leading-relaxed mb-8">Expert surgical delivery using advanced
+                            techniques for a safe birth and quick maternal recovery.</p>
+                        <a href="https://wa.me/919866430994?text=Hi%20Dr.%20Rajini,%20I%20want%20to%20book%20an%20appointment%20for%20Caesarean%20Section."
+                            class="whatsapp-btn w-full py-4 rounded-2xl flex items-center justify-center gap-3 text-white font-bold shadow-xl shadow-green-200">
+                            <i class="fa-brands fa-whatsapp text-xl"></i>
+                            Book via WhatsApp
+                        </a>
+                    </div>
+                </div>
+
+                <div class="service-card-v2 group" data-aos="fade-up" data-aos-delay="500">
+                    <div class="relative h-72 overflow-hidden">
+                        <img src="https://i.pinimg.com/736x/5e/33/cc/5e33cc92cd712ad9093cc729eecdc200.jpg"
+                            class="w-full h-full object-cover img-zoom" alt="Cerclage">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
+                        <div class="absolute bottom-6 left-6">
+                            <span
+                                class="bg-accent/20 backdrop-blur-md text-white text-[10px] font-bold uppercase tracking-tighter px-3 py-1 rounded-full border border-white/20">High
+                                Risk Care</span>
+                        </div>
+                    </div>
+                    <div class="p-8">
+                        <h3 class="text-2xl font-bold text-slate-900 mb-4">Cerclage Procedures</h3>
+                        <p class="text-slate-text text-sm leading-relaxed mb-8">Specialized procedures to support a weak
+                            cervix and prevent premature labor during pregnancy.</p>
+                        <a href="https://wa.me/919866430994?text=Hi%20Dr.%20Rajini,%20I%20want%20to%20book%20an%20appointment%20for%20Cerclage%20Procedures."
+                            class="whatsapp-btn w-full py-4 rounded-2xl flex items-center justify-center gap-3 text-white font-bold shadow-xl shadow-green-200">
+                            <i class="fa-brands fa-whatsapp text-xl"></i>
+                            Book via WhatsApp
+                        </a>
+                    </div>
+                </div>
+
+                <div class="service-card-v2 group" data-aos="fade-up" data-aos-delay="600">
+                    <div class="relative h-72 overflow-hidden">
+                        <img src="https://i.pinimg.com/1200x/ff/27/3a/ff273a8976ed355ac52dc00db32be85d.jpg"
+                            class="w-full h-full object-cover img-zoom" alt="Fibroid">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
+                        <div class="absolute bottom-6 left-6">
+                            <span
+                                class="bg-accent/20 backdrop-blur-md text-white text-[10px] font-bold uppercase tracking-tighter px-3 py-1 rounded-full border border-white/20">Specialized
+                                Management</span>
+                        </div>
+                    </div>
+                    <div class="p-8">
+                        <h3 class="text-2xl font-bold text-slate-900 mb-4">Fibroid Management in Pregnancy</h3>
+                        <p class="text-slate-text text-sm leading-relaxed mb-8">Careful monitoring and treatment of
+                            fibroids to ensure they don't impact the baby's health.</p>
+                        <a href="https://wa.me/919866430994?text=Hi%20Dr.%20Rajini,%20I%20want%20to%20book%20an%20appointment%20for%20Fibroid%20Management."
+                            class="whatsapp-btn w-full py-4 rounded-2xl flex items-center justify-center gap-3 text-white font-bold shadow-xl shadow-green-200">
+                            <i class="fa-brands fa-whatsapp text-xl"></i>
+                            Book via WhatsApp
+                        </a>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <section class="container mx-auto px-6 mb-20" data-aos="zoom-in">
+        <div class="bg-primary rounded-5xl p-10 md:p-20 text-center text-white relative overflow-hidden">
+            <div class="absolute top-0 right-0 w-64 h-64 bg-white/5 rounded-full -translate-y-1/2 translate-x-1/2">
+            </div>
+            <div class="relative z-10">
+                <h2 class="text-3xl md:text-5xl font-bold mb-6 italic font-serif">Plan Your Visit with Dr. Rajini</h2>
+                <p class="text-white/70 text-lg mb-10 max-w-xl mx-auto">Don't wait. Secure your appointment instantly
+                    through WhatsApp or call our office.</p>
+                <div class="flex flex-wrap justify-center gap-4">
+                    <a href="https://wa.me/919866430994"
+                        class="bg-white text-primary px-10 py-5 rounded-2xl font-black shadow-xl hover:bg-accent transition-all">
+                        Chat on WhatsApp
+                    </a>
+                    <a href="tel:919866430994"
+                        class="bg-transparent border-2 border-white/30 text-white px-10 py-5 rounded-2xl font-black hover:bg-white/10 transition-all">
+                        Call +91 919866430994
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="py-12 border-t border-slate-100 text-center">
+        <div class="flex justify-center gap-6 mb-8 text-slate-400">
+            <a href="https://www.facebook.com/profile.php?id=100069708578331" target="_blank"
+                class="hover:text-primary transition-colors">
+                <i class="fa-brands fa-facebook-f"></i>
+            </a>
+            <a href="https://www.instagram.com/dr.rajini.muthineni.official/" target="_blank"
+                class="hover:text-primary transition-colors">
+                <i class="fa-brands fa-instagram"></i>
+            </a>
+            <a href="https://www.linkedin.com/company/109303179/" target="_blank"
+                class="hover:text-primary transition-colors">
+                <i class="fa-brands fa-linkedin-in"></i>
+            </a>
+        </div>
+
+        <p class="text-slate-400 text-sm">© 2026 Dr. Rajini's Obstetric Clinic. All rights reserved.</p>
+    </footer>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+    <script>
+        AOS.init({
+            duration: 1000,
+            once: true,
+            easing: 'ease-out-cubic'
+        });
+    </script>
+</body>
+
+</html>
