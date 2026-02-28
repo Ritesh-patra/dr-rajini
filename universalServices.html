@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clinical Expertise Portal | Dr. Muthineni Rajini</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:italic,wght@700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#646A46',
+                        accent: '#F4EAE1',
+                        slateText: '#475569',
+                        darkGreen: '#1B3022'
+                    },
+                    fontFamily: {
+                        sans: ['Plus Jakarta Sans', 'sans-serif'],
+                        serif: ['Playfair Display', 'serif'],
+                    },
+                }
+            }
+        }
+    </script>
+
+    <style>
+        /* Custom Scrollbar for Sidebar */
+        .custom-scrollbar::-webkit-scrollbar { width: 3px; }
+        .custom-scrollbar::-webkit-scrollbar-track { background: transparent; }
+        .custom-scrollbar::-webkit-scrollbar-thumb { background: #646A46; border-radius: 10px; }
+        
+        /* Fixed Sidebar Logic */
+        .sidebar-locked {
+            height: calc(100vh - 100px);
+            position: sticky;
+            top: 50px;
+        }
+
+        /* Make right content independently scrollable */
+        .content-scroll {
+            max-height: calc(100vh - 100px);
+            overflow-y: auto;
+            padding-right: 1rem;
+        }
+        /* Premium Link Interaction */
+        .service-link.active {
+            background-color: #646A46;
+            color: #F4EAE1;
+            box-shadow: 0 20px 25px -5px rgba(100, 106, 70, 0.2);
+            transform: scale(1.02);
+        }
+
+        /* Content Animation */
+        .animate-content {
+            animation: fadeInBlur 0.8s cubic-bezier(0.19, 1, 0.22, 1) forwards;
+        }
+
+        @keyframes fadeInBlur {
+            from { opacity: 0; filter: blur(10px); transform: translateY(20px); }
+            to { opacity: 1; filter: blur(0); transform: translateY(0); }
+        }
+
+        /* Responsive: on small screens show sidebar below content */
+        @media (max-width: 768px) {
+            .container > .grid {
+                display: flex;
+                flex-direction: column-reverse;
+            }
+            .sidebar-locked {
+                position: static;
+                height: auto;
+            }
+            .content-scroll {
+                max-height: none;
+            }
+        }
+    </style>
+</head>
+<body class="bg-[#FAF9F6] font-sans selection:bg-primary selection:text-white">
+
+    <section class="min-h-screen py-12">
+        <div class="container max-w-full px-6">
+            
+            <div class="grid lg:grid-cols-12 gap-12 items-start">
+                
+                <div class="lg:col-span-4">
+                    <div class="sidebar-locked flex flex-col">
+                        <div class="mb-10 space-y-4">
+                            <div class="flex items-center gap-3">
+                                <span class="h-[1.5px] w-10 bg-primary"></span>
+                                <span class="text-primary font-bold tracking-[0.3em] uppercase text-[10px]">Medical Excellence</span>
+                            </div>
+                            <h1 class="text-4xl font-extrabold text-darkGreen leading-tight tracking-tighter">
+                                Clinical <br><span class="italic font-serif text-primary">Service Modules</span>
+                            </h1>
+                        </div>
+
+                        <nav class="flex-1 overflow-y-auto custom-scrollbar pr-4 space-y-3" id="service-menu">
+                            </nav>
+                    </div>
+                </div>
+
+                <div class="lg:col-span-8">
+                    <div class="content-scroll ">
+                        <div id="service-display" class="bg-white rounded-[2rem] p-5 md:p-20 lg:p-10 shadow-[0_32px_64px_-15px_rgba(0,0,0,0.05)] border border-white min-h-[80vh] ">
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <script>
+        const services = {
+            obstetrics: {
+                title: 'Comprehensive <span class="text-primary italic">Obstetrics</span>',
+                desc: 'Obstetrics is the medical specialty focused on care during pregnancy, childbirth, and the postpartum period. Providing holistic maternity care from pre-conception to postnatal stages ensures the safety of both mother and newborn.',
+                img: 'https://i.pinimg.com/736x/ef/22/d3/ef22d3a50204dda4e82798c44dc9180e.jpg',
+                details: 'Our approach focuses on biological safety and psychological support. We use advanced ultrasound monitoring to track fetal development and maternal wellness, preparing you for a safe delivery journey.',
+                list: ['Antenatal Care & Screenings', 'Painless Labor (Epidural)', 'Postnatal Recovery Protocols', 'Lactation & Breastfeeding Support']
+            },
+            'high-risk': {
+                title: 'High-Risk <span class="text-primary italic">Obstetrics Specialist</span>',
+                desc: 'A high-risk pregnancy is one that requires extra monitoring due to potential complications. This includes placental disorders like Placenta Praevia and pre-existing medical conditions.',
+                img: 'https://images.unsplash.com/photo-1584515933487-779824d29309?auto=format&fit=crop&w=600&h=800',
+                details: 'We specialize in managing hypertensive disorders, gestational diabetes, and multiple gestations (twins). Our neonatal support system is ready 24/7 for immediate intervention if required.',
+                list: ['Fetal Heart Monitoring', 'Gestational Hypertension Care', 'Diabetes Management', 'Preterm Labor Prevention']
+            },
+            robotic: {
+                title: 'Robotic-Assisted <span class="text-primary italic">Surgery</span>',
+                desc: 'The pinnacle of surgical precision. Robotic hysterectomies and myomectomies offer minimal scarring and 3D high-definition visualization for complex procedures.',
+                img: 'https://images.unsplash.com/photo-1579684385127-1ef15d508118?auto=format&fit=crop&w=600&h=800',
+                details: 'By using robotic arms that mimic a surgeon’s movements with greater dexterity, we ensure less blood loss, lower risk of infection, and a significantly faster hospital discharge.',
+                list: ['3D Vision Surgical Precision', 'Robotic Hysterectomy', 'Complex Fibroid Excision', 'Enhanced Surgical Dexterity']
+            },
+            laparoscopic: {
+                title: 'Advanced <span class="text-primary italic">Laparoscopy</span>',
+                desc: 'Minimally invasive keyhole surgeries replace large incisions with small ports, ensuring cosmetic integrity and rapid healing for various gynecological issues.',
+                img: 'https://images.unsplash.com/photo-1579684385127-1ef15d508118?auto=format&fit=crop&w=600&h=800',
+                details: 'We utilize advanced optics to perform "scarless" surgeries for ovarian cysts and ectopic pregnancies. Most patients are back to their daily routine within a few days.',
+                list: ['Keyhole Hysterectomy', 'Ovarian Cystectomy', 'Ectopic Pregnancy Support', 'Endometrial Ablation']
+            },
+            infertility: {
+                title: 'Infertility <span class="text-primary italic">Solutions</span>',
+                desc: 'Fertility issues can be complex. We offer compassionaate, evidence-based treatments and fertility-enhancing surgeries to help you build your family.',
+                img: 'https://i.pinimg.com/736x/4b/58/b9/4b58b931127f1fdf2e29cfe2041aab9f.jpg',
+                details: 'From ovulation induction to checking tubal patency, we investigate every biological factor. Our surgical interventions aim to correct uterine anomalies that may hinder conception.',
+                list: ['Ovulation Induction', 'Tubal Patency Tests', 'Uterine Septum Correction', 'Follicular Monitoring']
+            },
+            cosmetic: {
+                title: 'Cosmetic <span class="text-primary italic">Gynecology</span>',
+                desc: 'Restorative and aesthetic procedures focusing on both functional improvement and patient confidence. These procedures restore comfort and symmetry.',
+                img: 'https://images.unsplash.com/photo-1606811841689-23dfddce3e95?auto=format&fit=crop&w=600&h=800',
+                details: 'Addressing concerns like post-delivery laxity or functional discomfort, we use both surgical and laser-based technologies to rejuvenate and restore the intimate area.',
+                list: ['Vaginal Rejuvenation', 'Labiaplasty', 'Perineoplasty', 'Laser Tightening']
+            }
+            ,
+            'general-gyn': {
+                title: 'General <span class="text-primary italic">Gynecology</span>',
+                desc: 'Comprehensive outpatient gynecological care including routine screenings, menstrual disorders, and hormonal health management.',
+                img: 'https://images.unsplash.com/photo-1638202993928-7267aad84c31?auto=format&fit=crop&w=600&h=800',
+                details: 'We provide contraception counseling, HPV and cervical screening, management of abnormal uterine bleeding and pelvic pain with conservative and evidence-based approaches.',
+                list: ['Routine Pap Smear & HPV Screening', 'Menstrual Disorder Management', 'Contraception Counseling', 'Pelvic Pain Evaluation']
+            },
+            'surgical-gyn': {
+                title: 'Surgical <span class="text-primary italic">Gynecology</span>',
+                desc: 'Advanced gynecological surgery for conditions requiring operative intervention, performed with safety and minimal invasiveness.',
+                img: 'https://images.unsplash.com/photo-1551076805-e1869033e561?auto=format&fit=crop&w=600&h=800',
+                details: 'From myomectomy and hysterectomy to complex pelvic reconstructions, our surgical practice emphasizes precision, haemostasis, and fast recovery.',
+                list: ['Hysterectomy (Minimally Invasive)', 'Myomectomy', 'Pelvic Reconstructive Surgery', 'Adhesiolysis']
+            },
+            hysteroscopy: {
+                title: 'Hysteroscopy <span class="text-primary italic">Procedures</span>',
+                desc: 'Diagnostic and operative hysteroscopy for uterine cavity evaluation and treatment of intrauterine pathologies.',
+                img: 'https://images.unsplash.com/photo-1581594693702-fbdc51b2763b?auto=format&fit=crop&w=600&h=800',
+                details: 'We use high-definition hysteroscopes for polypectomy, fibroid resection (submucosal), and evaluation of abnormal uterine bleeding with same-day recovery when possible.',
+                list: ['Diagnostic Hysteroscopy', 'Polypectomy', 'Submucous Fibroid Resection', 'Endometrial Sampling']
+            },
+            emergency: {
+                title: 'Emergency <span class="text-primary italic">Surgeries</span>',
+                desc: 'Rapid-response surgical care for obstetric and gynecological emergencies to protect maternal and fetal health.',
+                img: 'https://images.unsplash.com/photo-1516549655169-df83a0774514?auto=format&fit=crop&w=600&h=800',
+                details: 'Our team provides 24/7 management of ectopic pregnancy, hemorrhage control, emergency cesarean section and stabilization for critically ill patients.',
+                list: ['Ectopic Pregnancy Management', 'Postpartum Hemorrhage Control', 'Emergency Cesarean Section', 'Acute Pelvic Hemorrhage']
+            },
+            menopausal: {
+                title: 'Menopausal <span class="text-primary italic">Clinic</span>',
+                desc: 'Holistic care for menopausal transition addressing symptoms, bone health, and individualized hormone therapy when appropriate.',
+                img: 'https://images.unsplash.com/photo-1573497620053-ea5300f94f21?auto=format&fit=crop&w=600&h=800',
+                details: 'We offer symptom management, cardiovascular and bone risk assessment, lifestyle interventions and guidance on safe use of hormone replacement therapy.',
+                list: ['Symptom Management', 'Bone Density & Osteoporosis Care', 'Cardiovascular Risk Screening', 'Hormone Therapy Counseling']
+            },
+            counselling: {
+                title: 'Counselling <span class="text-primary italic">Services</span>',
+                desc: 'Supportive counselling for fertility, pregnancy decision-making, and emotional wellbeing throughout reproductive care.',
+                img: 'images/owner.jpg',
+                details: 'Our counselling includes pre-conception guidance, perinatal mental health support, and shared decision-making for complex care pathways.',
+                list: ['Pre-conception Counselling', 'Perinatal Mental Health Support', 'Fertility Decision Support', 'Patient Education & Shared Decision-Making']
+            }
+        };
+
+        const nav = document.getElementById('service-menu');
+        const display = document.getElementById('service-display');
+
+        function initNav() {
+            // Include all original keys from your prompt
+            const allKeys = ['obstetrics', 'high-risk', 'general-gyn', 'surgical-gyn', 'robotic', 'laparoscopic', 'hysteroscopy', 'emergency', 'infertility', 'menopausal', 'counselling', 'cosmetic'];
+            
+            allKeys.forEach(key => {
+                const btn = document.createElement('button');
+                btn.className = 'service-link w-full text-left p-5 rounded-2xl flex items-center justify-between transition-all duration-300 group';
+                btn.dataset.key = key;
+                btn.innerHTML = `
+                    <span class="font-bold text-[11px] uppercase tracking-widest">${key.replace('-', ' ')}</span>
+                    <i class="ri-arrow-right-up-line opacity-0 group-hover:opacity-100 transition-all"></i>
+                `;
+                btn.onclick = (e) => updateContent(key, e.currentTarget);
+                nav.appendChild(btn);
+            });
+        }
+
+        function updateContent(key, element) {
+            const data = services[key] || services['obstetrics'];
+            document.querySelectorAll('.service-link').forEach(l => l.classList.remove('active'));
+            element.classList.add('active');
+
+            display.innerHTML = `
+                <div class="animate-content space-y-16">
+                    <div class="relative rounded-[1rem] overflow-hidden aspect-video shadow-2xl group">
+                        <img src="${data.img}" class="w-full h-full object-cover transition-transform duration-[2s] group-hover:scale-110" />
+                        <div class="absolute inset-0 bg-gradient-to-t from-darkGreen/50 to-transparent"></div>
+                    </div>
+
+                    <div class="space-y-8">
+                        <h2 class="text-4xl md:text-5xl lg:text-6xl font-extrabold text-darkGreen leading-[1.1] tracking-tighter">${data.title}</h2>
+                        <div class="flex items-center gap-6">
+                            <span class="h-16 w-[1.5px] bg-primary"></span>
+                            <p class="text-xl text-slateText/80 leading-relaxed font-serif italic">${data.desc}</p>
+                        </div>
+                    </div>
+
+                    <div class="grid md:grid-cols-2 gap-10">
+                        <div class="space-y-4">
+                            <h4 class="text-xs font-black uppercase tracking-widest text-primary">Procedural Depth</h4>
+                            <p class="text-sm text-slateText/80 leading-relaxed">${data.details || 'Advanced protocols tailored to individual patient needs for optimal recovery and health outcomes.'}</p>
+                        </div>
+                        <div class="space-y-4">
+                            <h4 class="text-xs font-black uppercase tracking-widest text-primary">Clinical Objectives</h4>
+                            <ul class="space-y-3">
+                                ${data.list.map(item => `
+                                    <li class="flex items-center gap-3 text-[10px] font-black uppercase tracking-widest text-darkGreen">
+                                        <i class="ri-checkbox-circle-fill text-primary"></i> ${item}
+                                    </li>
+                                `).join('')}
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="p-10 bg-darkGreen text-accent rounded-[3rem] shadow-xl relative overflow-hidden group">
+                        <div class="absolute -right-10 -bottom-10 opacity-10 group-hover:scale-150 transition-transform duration-1000">
+                            <i class="ri-heart-pulse-line text-8xl"></i>
+                        </div>
+                        <h4 class="text-lg font-bold mb-4">The Expert Perspective</h4>
+                        <p class="text-sm leading-relaxed opacity-70">"Clinical excellence in gynaecology is the synthesis of advanced surgical technology and deep human empathy. Every procedure we perform is calibrated for the patient’s long-term quality of life."</p>
+                    </div>
+                    <div class="flex items-center gap-4">
+                        <a href="index.html?service=${key}#contact" class="px-6 py-3 bg-primary text-white rounded-2xl font-bold shadow hover:opacity-90 transition-all">Book Appointment</a>
+                        <a target="_blank" href="https://wa.me/919676138576?text=${encodeURIComponent('Hi Dr Rajini, I want to book an appointment for ' + key)}" class="px-6 py-3 bg-white border border-primary text-primary rounded-2xl font-bold shadow hover:bg-primary/5 transition-all">WhatsApp</a>
+                    </div>
+                </div>
+            `;
+        }
+
+        window.onload = () => {
+            initNav();
+            // If ?service=key is provided, open that service; otherwise open first
+            const params = new URLSearchParams(window.location.search);
+            const svc = params.get('service');
+            if (svc) {
+                const btn = Array.from(document.querySelectorAll('.service-link')).find(b => b.dataset.key === svc);
+                if (btn) return btn.click();
+            }
+            const first = document.querySelector('.service-link');
+            if (first) first.click();
+        };
+    </script>
+</body>
+</html>
