@@ -130,6 +130,46 @@
         .marquee-reverse {
             animation-direction: reverse;
         }
+
+        /* Premium color helpers for Expertise section */
+        :root {
+            --gold: #D4AF37;
+            --forest: #1B4332;
+            --cream: #FCFBF4;
+            --cream-dark: #F4EAE1;
+        }
+
+        .bg-cream {
+            background: var(--cream) !important;
+        }
+
+        .text-forest {
+            color: var(--forest) !important;
+        }
+
+        .text-gold {
+            color: var(--gold) !important;
+        }
+
+        .border-cream-dark {
+            border-color: var(--cream-dark) !important;
+        }
+
+        .card-premium {
+            transition: transform .35s ease, box-shadow .35s ease, border-color .35s ease;
+            box-shadow: 0 8px 24px rgba(11, 17, 32, 0.06);
+            border-radius: 1rem;
+        }
+
+        .card-premium:hover {
+            transform: translateY(-6px) scale(1.01);
+            box-shadow: 0 28px 60px rgba(11, 17, 32, 0.12);
+            border-color: rgba(212, 175, 55, 0.18);
+        }
+
+        .accent-top {
+            background: linear-gradient(90deg, var(--forest), var(--gold));
+        }
     </style>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
     <link
@@ -172,30 +212,129 @@
                                 class="fa-solid fa-chevron-down text-[10px] group-hover:rotate-180 transition-transform duration-300"></i>
                         </button>
                         <div
-                            class="absolute left-0 mt-0 w-64 bg-white shadow-2xl rounded-2xl border-t-4 border-[#D4AF37] opacity-0 invisible group-hover:opacity-100 group-hover:visible group-hover:translate-y-2 transition-all duration-300 z-50">
-                            <div class="py-3 px-2">
-                                <a href="universalServices.html?service=obstetrics"
-                                    class="flex items-center gap-3 px-4 py-3 text-sm text-gray-700 hover:bg-[#F4EAE1] hover:text-[#676D47] rounded-xl font-semibold transition-colors">
-                                    <span class="w-2 h-2 rounded-full bg-[#D4AF37]"></span> Obstetrics & Gynecology
-                                </a>
-                                <a href="universalServices.html?service=laparoscopic"
-                                    class="flex items-center gap-3 px-4 py-3 text-sm text-gray-700 hover:bg-[#F4EAE1] hover:text-[#676D47] rounded-xl font-semibold transition-colors">
-                                    <span class="w-2 h-2 rounded-full bg-[#D4AF37]"></span> Laparoscopic Surgery
-                                </a>
-                                <a href="universalServices.html?service=cosmetic"
-                                    class="flex items-center gap-3 px-4 py-3 text-sm text-gray-700 hover:bg-[#F4EAE1] hover:text-[#676D47] rounded-xl font-semibold transition-colors">
-                                    <span class="w-2 h-2 rounded-full bg-[#D4AF37]"></span> Cosmetic Gynecology
-                                </a>
-                                <a href="universalServices.html?service=hysteroscopy"
-                                    class="flex items-center gap-3 px-4 py-3 text-sm text-gray-700 hover:bg-[#F4EAE1] hover:text-[#676D47] rounded-xl font-semibold transition-colors">
-                                    <span class="w-2 h-2 rounded-full bg-[#D4AF37]"></span> Hysteroscopy
-                                </a>
+                            class="absolute left-0 mt-2 w-[760px] bg-white shadow-2xl rounded-2xl border-t-4 border-[#D4AF37] opacity-0 invisible group-hover:opacity-100 group-hover:visible group-hover:translate-y-2 transition-all duration-300 z-50">
+                            <div class="p-4">
+                                <div class="grid grid-cols-3 gap-4">
+                                    <a href="universalServices.html?service=obstetrics"
+                                        class="block rounded-lg overflow-hidden hover:shadow-lg transition-all">
+                                        <div class="aspect-[3/2] overflow-hidden">
+                                            <img src="https://i.pinimg.com/736x/ef/22/d3/ef22d3a50204dda4e82798c44dc9180e.jpg"
+                                                class="w-full h-full object-cover" alt="Obstetrics">
+                                        </div>
+                                        <div class="p-2 text-sm font-semibold text-[#1B4332]">Obstetrics & Gynecology
+                                        </div>
+                                    </a>
+
+                                    <a href="universalServices.html?service=high-risk"
+                                        class="block rounded-lg overflow-hidden hover:shadow-lg transition-all">
+                                        <div class="aspect-[3/2] overflow-hidden">
+                                            <img src="https://images.unsplash.com/photo-1584515933487-779824d29309?auto=format&fit=crop&w=600&h=800"
+                                                class="w-full h-full object-cover" alt="High Risk">
+                                        </div>
+                                        <div class="p-2 text-sm font-semibold text-[#1B4332]">High-Risk Obstetrics</div>
+                                    </a>
+
+                                    <a href="universalServices.html?service=general-gyn"
+                                        class="block rounded-lg overflow-hidden hover:shadow-lg transition-all">
+                                        <div class="aspect-[3/2] overflow-hidden">
+                                            <img src="https://images.unsplash.com/photo-1638202993928-7267aad84c31?auto=format&fit=crop&w=600&h=800"
+                                                class="w-full h-full object-cover" alt="General Gyn">
+                                        </div>
+                                        <div class="p-2 text-sm font-semibold text-[#1B4332]">General Gynecology</div>
+                                    </a>
+
+                                    <a href="universalServices.html?service=surgical-gyn"
+                                        class="block rounded-lg overflow-hidden hover:shadow-lg transition-all">
+                                        <div class="aspect-[3/2] overflow-hidden">
+                                            <img src="https://images.unsplash.com/photo-1551076805-e1869033e561?auto=format&fit=crop&w=600&h=800"
+                                                class="w-full h-full object-cover" alt="Surgical Gyn">
+                                        </div>
+                                        <div class="p-2 text-sm font-semibold text-[#1B4332]">Surgical Gynecology</div>
+                                    </a>
+
+                                    <a href="universalServices.html?service=robotic"
+                                        class="block rounded-lg overflow-hidden hover:shadow-lg transition-all">
+                                        <div class="aspect-[3/2] overflow-hidden">
+                                            <img src="https://images.unsplash.com/photo-1579684385127-1ef15d508118?auto=format&fit=crop&w=600&h=800"
+                                                class="w-full h-full object-cover" alt="Robotic Surgery">
+                                        </div>
+                                        <div class="p-2 text-sm font-semibold text-[#1B4332]">Robotic-Assisted Surgery
+                                        </div>
+                                    </a>
+
+                                    <a href="universalServices.html?service=laparoscopic"
+                                        class="block rounded-lg overflow-hidden hover:shadow-lg transition-all">
+                                        <div class="aspect-[3/2] overflow-hidden">
+                                            <img src="https://images.unsplash.com/photo-1579684385127-1ef15d508118?auto=format&fit=crop&w=600&h=800"
+                                                class="w-full h-full object-cover" alt="Laparoscopic">
+                                        </div>
+                                        <div class="p-2 text-sm font-semibold text-[#1B4332]">Laparoscopic Surgeries
+                                        </div>
+                                    </a>
+
+                                    <a href="universalServices.html?service=hysteroscopy"
+                                        class="block rounded-lg overflow-hidden hover:shadow-lg transition-all">
+                                        <div class="aspect-[3/2] overflow-hidden">
+                                            <img src="https://images.unsplash.com/photo-1581594693702-fbdc51b2763b?auto=format&fit=crop&w=600&h=800"
+                                                class="w-full h-full object-cover" alt="Hysteroscopy">
+                                        </div>
+                                        <div class="p-2 text-sm font-semibold text-[#1B4332]">Hysteroscopy Procedures
+                                        </div>
+                                    </a>
+
+                                    <a href="universalServices.html?service=emergency"
+                                        class="block rounded-lg overflow-hidden hover:shadow-lg transition-all">
+                                        <div class="aspect-[3/2] overflow-hidden">
+                                            <img src="https://images.unsplash.com/photo-1516549655169-df83a0774514?auto=format&fit=crop&w=600&h=800"
+                                                class="w-full h-full object-cover" alt="Emergency">
+                                        </div>
+                                        <div class="p-2 text-sm font-semibold text-[#1B4332]">Emergency Surgeries</div>
+                                    </a>
+
+                                    <a href="universalServices.html?service=infertility"
+                                        class="block rounded-lg overflow-hidden hover:shadow-lg transition-all">
+                                        <div class="aspect-[3/2] overflow-hidden">
+                                            <img src="https://i.pinimg.com/736x/4b/58/b9/4b58b931127f1fdf2e29cfe2041aab9f.jpg"
+                                                class="w-full h-full object-cover" alt="Infertility">
+                                        </div>
+                                        <div class="p-2 text-sm font-semibold text-[#1B4332]">Infertility Services</div>
+                                    </a>
+
+                                    <a href="universalServices.html?service=menopausal"
+                                        class="block rounded-lg overflow-hidden hover:shadow-lg transition-all">
+                                        <div class="aspect-[3/2] overflow-hidden">
+                                            <img src="https://images.unsplash.com/photo-1573497620053-ea5300f94f21?auto=format&fit=crop&w=600&h=800"
+                                                class="w-full h-full object-cover" alt="Menopausal">
+                                        </div>
+                                        <div class="p-2 text-sm font-semibold text-[#1B4332]">Menopausal Clinic</div>
+                                    </a>
+
+                                    <a href="universalServices.html?service=counselling"
+                                        class="block rounded-lg overflow-hidden hover:shadow-lg transition-all">
+                                        <div class="aspect-[3/2] overflow-hidden">
+                                            <img src="images/owner.jpg" class="w-full h-full object-cover"
+                                                alt="Counselling">
+                                        </div>
+                                        <div class="p-2 text-sm font-semibold text-[#1B4332]">Counselling Services</div>
+                                    </a>
+
+                                    <a href="universalServices.html?service=cosmetic"
+                                        class="block rounded-lg overflow-hidden hover:shadow-lg transition-all">
+                                        <div class="aspect-[3/2] overflow-hidden">
+                                            <img src="https://images.unsplash.com/photo-1606811841689-23dfddce3e95?auto=format&fit=crop&w=600&h=800"
+                                                class="w-full h-full object-cover" alt="Cosmetic">
+                                        </div>
+                                        <div class="p-2 text-sm font-semibold text-[#1B4332]">Cosmetic Gynecology</div>
+                                    </a>
+                                </div>
                             </div>
                         </div>
                     </div>
 
                     <a href="#blog"
                         class="text-[#676D47] hover:text-[#D4AF37] transition-all font-bold text-[13px] uppercase tracking-wider relative group">Blog</a>
+                         <a href="#media-gallery"
+                        class="text-[#676D47] hover:text-[#D4AF37] transition-all font-bold text-[13px] uppercase tracking-wider relative group">Gallery</a>
                     <a href="#contact"
                         class="text-[#676D47] hover:text-[#D4AF37] transition-all font-bold text-[13px] uppercase tracking-wider relative group">Contact</a>
                 </nav>
@@ -226,21 +365,38 @@
                         <i id="dropdown-icon"
                             class="fa-solid fa-chevron-down text-[10px] transition-transform duration-300"></i>
                     </button>
-
                     <div id="mobile-dropdown-content"
-                        class="hidden flex flex-col space-y-4 pl-6 py-2 border-l-2 border-[#D4AF37]/30 bg-gray-50/50 rounded-r-xl">
-                        <a href="obstetrics.html"
+                        class="hidden flex flex-col space-y-2 pl-4 py-2 border-l-2 border-[#D4AF37]/30 bg-gray-50/50 rounded-r-xl">
+                        <a href="universalServices.html?service=obstetrics"
                             class="text-gray-600 text-sm font-semibold hover:text-[#676D47]">Obstetrics & Gynecology</a>
-                        <a href="laparoscopic.html"
+                        <a href="universalServices.html?service=high-risk"
+                            class="text-gray-600 text-sm font-semibold hover:text-[#676D47]">High-Risk Obstetrics</a>
+                        <a href="universalServices.html?service=general-gyn"
+                            class="text-gray-600 text-sm font-semibold hover:text-[#676D47]">General Gynecology</a>
+                        <a href="universalServices.html?service=surgical-gyn"
+                            class="text-gray-600 text-sm font-semibold hover:text-[#676D47]">Surgical Gynecology</a>
+                        <a href="universalServices.html?service=robotic"
+                            class="text-gray-600 text-sm font-semibold hover:text-[#676D47]">Robotic-Assisted
+                            Surgery</a>
+                        <a href="universalServices.html?service=laparoscopic"
                             class="text-gray-600 text-sm font-semibold hover:text-[#676D47]">Laparoscopic Surgery</a>
-                        <a href="cosmetic.html"
+                        <a href="universalServices.html?service=hysteroscopy"
+                            class="text-gray-600 text-sm font-semibold hover:text-[#676D47]">Hysteroscopy Procedures</a>
+                        <a href="universalServices.html?service=emergency"
+                            class="text-gray-600 text-sm font-semibold hover:text-[#676D47]">Emergency Surgeries</a>
+                        <a href="universalServices.html?service=infertility"
+                            class="text-gray-600 text-sm font-semibold hover:text-[#676D47]">Infertility Services</a>
+                        <a href="universalServices.html?service=menopausal"
+                            class="text-gray-600 text-sm font-semibold hover:text-[#676D47]">Menopausal Clinic</a>
+                        <a href="universalServices.html?service=counselling"
+                            class="text-gray-600 text-sm font-semibold hover:text-[#676D47]">Counselling Services</a>
+                        <a href="universalServices.html?service=cosmetic"
                             class="text-gray-600 text-sm font-semibold hover:text-[#676D47]">Cosmetic Gynecology</a>
-                        <a href="hysteroscopy.html"
-                            class="text-gray-600 text-sm font-semibold hover:text-[#676D47]">Hysteroscopy</a>
                     </div>
                 </div>
 
                 <a href="#blog" class="text-[#676D47] font-bold text-sm uppercase tracking-wider px-2">Blog</a>
+                <a href="#media-gallery" class="text-[#676D47] font-bold text-sm uppercase tracking-wider px-2">gallery</a>
                 <a href="#contact" class="text-[#676D47] font-bold text-sm uppercase tracking-wider px-2">Contact Us</a>
 
                 <a href="https://wa.me/919676138576"
@@ -651,6 +807,206 @@
         </div>
     </section>
 
+
+<section class="py-24 bg-[#FDFBF7] relative overflow-hidden font-sans">
+    
+    <div class="absolute top-0 left-0 w-[600px] h-[600px] bg-[#D4AF37]/5 blur-[120px] rounded-full pointer-events-none -translate-x-1/2 -translate-y-1/2"></div>
+    <div class="absolute bottom-0 right-0 w-[800px] h-[800px] bg-[#2C5530]/5 blur-[150px] rounded-full pointer-events-none translate-x-1/3 translate-y-1/3"></div>
+
+    <div class="max-w-7xl mx-auto px-6 relative z-10">
+
+        <div class="text-center mb-20 space-y-4">
+            <span class="text-[11px] font-black uppercase tracking-[0.3em] text-[#D4AF37]">Clinical Excellence</span>
+            <h2 class="text-4xl md:text-5xl font-light text-[#2C5530] tracking-wide">
+                Our <span class="font-extrabold text-[#D4AF37]">Expertise</span>
+            </h2>
+            <div class="flex justify-center items-center gap-3 pt-2">
+                <div class="w-12 h-[1px] bg-gradient-to-r from-transparent to-[#D4AF37]"></div>
+                <div class="w-2 h-2 rotate-45 bg-[#D4AF37]"></div>
+                <div class="w-12 h-[1px] bg-gradient-to-l from-transparent to-[#D4AF37]"></div>
+            </div>
+        </div>
+
+        <div class="columns-1 md:columns-2 lg:columns-3 gap-8 space-y-8">
+
+            <div class="break-inside-avoid bg-white/70 backdrop-blur-xl rounded-[2rem] p-8 shadow-[0_8px_30px_rgb(0,0,0,0.04)] border border-white hover:border-[#D4AF37]/30 hover:shadow-[0_20px_40px_rgb(0,0,0,0.08)] hover:-translate-y-2 transition-all duration-500 relative group overflow-hidden">
+                <div class="absolute top-0 left-0 w-full h-[3px] bg-gradient-to-r from-[#2C5530] via-[#D4AF37] to-[#2C5530] opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                
+                <div class="flex items-center gap-4 mb-6 pb-4 border-b border-[#2C5530]/10">
+                    <div class="flex items-center justify-center w-12 h-12 rounded-xl bg-[#FDFBF7] border border-[#D4AF37]/20 text-[#D4AF37] group-hover:bg-[#D4AF37] group-hover:text-white transition-colors duration-500">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"></path></svg>
+                    </div>
+                    <h3 class="text-xl font-extrabold text-[#2C5530] uppercase tracking-wider">Laparoscopy</h3>
+                </div>
+
+                <ul class="space-y-3 text-[14px] text-gray-600 font-medium leading-relaxed">
+                    <li class="flex items-start gap-3 group/item"><span class="mt-1 text-[#D4AF37] opacity-60 group-hover/item:opacity-100 transition-opacity"><svg class="w-3.5 h-3.5" fill="currentColor" viewBox="0 0 20 20"><path d="M10 2L12.5 7.5L18 10L12.5 12.5L10 18L7.5 12.5L2 10L7.5 7.5L10 2Z"/></svg></span><span>Total Laparoscopic Hysterectomy .</span></li>
+                    <li class="flex items-start gap-3 group/item"><span class="mt-1 text-[#D4AF37] opacity-60 group-hover/item:opacity-100 transition-opacity"><svg class="w-3.5 h-3.5" fill="currentColor" viewBox="0 0 20 20"><path d="M10 2L12.5 7.5L18 10L12.5 12.5L10 18L7.5 12.5L2 10L7.5 7.5L10 2Z"/></svg></span><span>Laparoscopic myomectomy.(fibroid removal)</span></li>
+                    <li class="flex items-start gap-3 group/item"><span class="mt-1 text-[#D4AF37] opacity-60 group-hover/item:opacity-100 transition-opacity"><svg class="w-3.5 h-3.5" fill="currentColor" viewBox="0 0 20 20"><path d="M10 2L12.5 7.5L18 10L12.5 12.5L10 18L7.5 12.5L2 10L7.5 7.5L10 2Z"/></svg></span><span>Lap ovarian cystectomy- removal of ovarian cyst and wall.</span></li>
+                    <li class="flex items-start gap-3 group/item"><span class="mt-1 text-[#D4AF37] opacity-60 group-hover/item:opacity-100 transition-opacity"><svg class="w-3.5 h-3.5" fill="currentColor" viewBox="0 0 20 20"><path d="M10 2L12.5 7.5L18 10L12.5 12.5L10 18L7.5 12.5L2 10L7.5 7.5L10 2Z"/></svg></span><span>Laparoscopic endometriotic cystectomy.</span></li>
+                    <li class="flex items-start gap-3 group/item"><span class="mt-1 text-[#D4AF37] opacity-60 group-hover/item:opacity-100 transition-opacity"><svg class="w-3.5 h-3.5" fill="currentColor" viewBox="0 0 20 20"><path d="M10 2L12.5 7.5L18 10L12.5 12.5L10 18L7.5 12.5L2 10L7.5 7.5L10 2Z"/></svg></span><span>Laparoscopic Dermoid cystectomy</span></li>
+                    <li class="flex items-start gap-3 group/item"><span class="mt-1 text-[#D4AF37] opacity-60 group-hover/item:opacity-100 transition-opacity"><svg class="w-3.5 h-3.5" fill="currentColor" viewBox="0 0 20 20"><path d="M10 2L12.5 7.5L18 10L12.5 12.5L10 18L7.5 12.5L2 10L7.5 7.5L10 2Z"/></svg></span><span>Laparoscopic abdominal cerclage</span></li>
+                    <li class="flex items-start gap-3 group/item"><span class="mt-1 text-[#D4AF37] opacity-60 group-hover/item:opacity-100 transition-opacity"><svg class="w-3.5 h-3.5" fill="currentColor" viewBox="0 0 20 20"><path d="M10 2L12.5 7.5L18 10L12.5 12.5L10 18L7.5 12.5L2 10L7.5 7.5L10 2Z"/></svg></span><span>Laparoscopic ectopic pregnancy management .</span></li>
+                    <li class="flex items-start gap-3 group/item"><span class="mt-1 text-[#D4AF37] opacity-60 group-hover/item:opacity-100 transition-opacity"><svg class="w-3.5 h-3.5" fill="currentColor" viewBox="0 0 20 20"><path d="M10 2L12.5 7.5L18 10L12.5 12.5L10 18L7.5 12.5L2 10L7.5 7.5L10 2Z"/></svg></span><span>Lap ovarian drilling for PCOD ( polycystic ovaries).</span></li>
+                    <li class="flex items-start gap-3 group/item"><span class="mt-1 text-[#D4AF37] opacity-60 group-hover/item:opacity-100 transition-opacity"><svg class="w-3.5 h-3.5" fill="currentColor" viewBox="0 0 20 20"><path d="M10 2L12.5 7.5L18 10L12.5 12.5L10 18L7.5 12.5L2 10L7.5 7.5L10 2Z"/></svg></span><span>Lap adhesiolysis.</span></li>
+                    <li class="flex items-start gap-3 group/item"><span class="mt-1 text-[#D4AF37] opacity-60 group-hover/item:opacity-100 transition-opacity"><svg class="w-3.5 h-3.5" fill="currentColor" viewBox="0 0 20 20"><path d="M10 2L12.5 7.5L18 10L12.5 12.5L10 18L7.5 12.5L2 10L7.5 7.5L10 2Z"/></svg></span><span>Lap tubal recanalization – post tubal sterilization</span></li>
+                    <li class="flex items-start gap-3 group/item"><span class="mt-1 text-[#D4AF37] opacity-60 group-hover/item:opacity-100 transition-opacity"><svg class="w-3.5 h-3.5" fill="currentColor" viewBox="0 0 20 20"><path d="M10 2L12.5 7.5L18 10L12.5 12.5L10 18L7.5 12.5L2 10L7.5 7.5L10 2Z"/></svg></span><span>Lap metroplasty</span></li>
+                </ul>
+            </div>
+
+            <div class="break-inside-avoid bg-white/70 backdrop-blur-xl rounded-[2rem] p-8 shadow-[0_8px_30px_rgb(0,0,0,0.04)] border border-white hover:border-[#D4AF37]/30 hover:shadow-[0_20px_40px_rgb(0,0,0,0.08)] hover:-translate-y-2 transition-all duration-500 relative group overflow-hidden">
+                <div class="absolute top-0 left-0 w-full h-[3px] bg-gradient-to-r from-[#2C5530] via-[#D4AF37] to-[#2C5530] opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                
+                <div class="flex items-center gap-4 mb-6 pb-4 border-b border-[#2C5530]/10">
+                    <div class="flex items-center justify-center w-12 h-12 rounded-xl bg-[#FDFBF7] border border-[#D4AF37]/20 text-[#D4AF37] group-hover:bg-[#D4AF37] group-hover:text-white transition-colors duration-500">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 4v16m8-8H4"></path></svg>
+                    </div>
+                    <h3 class="text-xl font-extrabold text-[#2C5530] uppercase tracking-wider">Gynaecology</h3>
+                </div>
+
+                <ul class="space-y-3 text-[14px] text-gray-600 font-medium leading-relaxed">
+                    <li class="flex items-start gap-3 group/item"><span class="mt-1 text-[#D4AF37] opacity-60 group-hover/item:opacity-100 transition-opacity"><svg class="w-3.5 h-3.5" fill="currentColor" viewBox="0 0 20 20"><path d="M10 2L12.5 7.5L18 10L12.5 12.5L10 18L7.5 12.5L2 10L7.5 7.5L10 2Z"/></svg></span><span>Total abdominal hysterectomies</span></li>
+                    <li class="flex items-start gap-3 group/item"><span class="mt-1 text-[#D4AF37] opacity-60 group-hover/item:opacity-100 transition-opacity"><svg class="w-3.5 h-3.5" fill="currentColor" viewBox="0 0 20 20"><path d="M10 2L12.5 7.5L18 10L12.5 12.5L10 18L7.5 12.5L2 10L7.5 7.5L10 2Z"/></svg></span><span>Myomectomies</span></li>
+                    <li class="flex items-start gap-3 group/item"><span class="mt-1 text-[#D4AF37] opacity-60 group-hover/item:opacity-100 transition-opacity"><svg class="w-3.5 h-3.5" fill="currentColor" viewBox="0 0 20 20"><path d="M10 2L12.5 7.5L18 10L12.5 12.5L10 18L7.5 12.5L2 10L7.5 7.5L10 2Z"/></svg></span><span>Tuboplasty</span></li>
+                    <li class="flex items-start gap-3 group/item"><span class="mt-1 text-[#D4AF37] opacity-60 group-hover/item:opacity-100 transition-opacity"><svg class="w-3.5 h-3.5" fill="currentColor" viewBox="0 0 20 20"><path d="M10 2L12.5 7.5L18 10L12.5 12.5L10 18L7.5 12.5L2 10L7.5 7.5L10 2Z"/></svg></span><span>Tubal recanalisations</span></li>
+                    <li class="flex items-start gap-3 group/item"><span class="mt-1 text-[#D4AF37] opacity-60 group-hover/item:opacity-100 transition-opacity"><svg class="w-3.5 h-3.5" fill="currentColor" viewBox="0 0 20 20"><path d="M10 2L12.5 7.5L18 10L12.5 12.5L10 18L7.5 12.5L2 10L7.5 7.5L10 2Z"/></svg></span><span>vaginal prolapse surgeries</span></li>
+                    <li class="flex items-start gap-3 group/item"><span class="mt-1 text-[#D4AF37] opacity-60 group-hover/item:opacity-100 transition-opacity"><svg class="w-3.5 h-3.5" fill="currentColor" viewBox="0 0 20 20"><path d="M10 2L12.5 7.5L18 10L12.5 12.5L10 18L7.5 12.5L2 10L7.5 7.5L10 2Z"/></svg></span><span>Cystocele & rectocele</span></li>
+                    <li class="flex items-start gap-3 group/item"><span class="mt-1 text-[#D4AF37] opacity-60 group-hover/item:opacity-100 transition-opacity"><svg class="w-3.5 h-3.5" fill="currentColor" viewBox="0 0 20 20"><path d="M10 2L12.5 7.5L18 10L12.5 12.5L10 18L7.5 12.5L2 10L7.5 7.5L10 2Z"/></svg></span><span>MIRENA insertions for Abnormal uterine bleeding</span></li>
+                    <li class="flex items-start gap-3 group/item"><span class="mt-1 text-[#D4AF37] opacity-60 group-hover/item:opacity-100 transition-opacity"><svg class="w-3.5 h-3.5" fill="currentColor" viewBox="0 0 20 20"><path d="M10 2L12.5 7.5L18 10L12.5 12.5L10 18L7.5 12.5L2 10L7.5 7.5L10 2Z"/></svg></span><span>Cryocauterization & LLETZ of cervix for cervical erosions etc</span></li>
+                    <li class="flex items-start gap-3 group/item"><span class="mt-1 text-[#D4AF37] opacity-60 group-hover/item:opacity-100 transition-opacity"><svg class="w-3.5 h-3.5" fill="currentColor" viewBox="0 0 20 20"><path d="M10 2L12.5 7.5L18 10L12.5 12.5L10 18L7.5 12.5L2 10L7.5 7.5L10 2Z"/></svg></span><span>Cervical Conization for cervical dysplasias</span></li>
+                </ul>
+            </div>
+
+            <div class="break-inside-avoid bg-white/70 backdrop-blur-xl rounded-[2rem] p-8 shadow-[0_8px_30px_rgb(0,0,0,0.04)] border border-white hover:border-[#D4AF37]/30 hover:shadow-[0_20px_40px_rgb(0,0,0,0.08)] hover:-translate-y-2 transition-all duration-500 relative group overflow-hidden">
+                <div class="absolute top-0 left-0 w-full h-[3px] bg-gradient-to-r from-[#2C5530] via-[#D4AF37] to-[#2C5530] opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                
+                <div class="flex items-center gap-4 mb-6 pb-4 border-b border-[#2C5530]/10">
+                    <div class="flex items-center justify-center w-12 h-12 rounded-xl bg-[#FDFBF7] border border-[#D4AF37]/20 text-[#D4AF37] group-hover:bg-[#D4AF37] group-hover:text-white transition-colors duration-500">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                    </div>
+                    <h3 class="text-xl font-extrabold text-[#2C5530] uppercase tracking-wider">Infertility</h3>
+                </div>
+
+                <ul class="space-y-3 text-[14px] text-gray-600 font-medium leading-relaxed">
+                    <li class="flex items-start gap-3 group/item"><span class="mt-1 text-[#D4AF37] opacity-60 group-hover/item:opacity-100 transition-opacity"><svg class="w-3.5 h-3.5" fill="currentColor" viewBox="0 0 20 20"><path d="M10 2L12.5 7.5L18 10L12.5 12.5L10 18L7.5 12.5L2 10L7.5 7.5L10 2Z"/></svg></span><span>Evaluation - male & female</span></li>
+                    <li class="flex items-start gap-3 group/item"><span class="mt-1 text-[#D4AF37] opacity-60 group-hover/item:opacity-100 transition-opacity"><svg class="w-3.5 h-3.5" fill="currentColor" viewBox="0 0 20 20"><path d="M10 2L12.5 7.5L18 10L12.5 12.5L10 18L7.5 12.5L2 10L7.5 7.5L10 2Z"/></svg></span><span>Endoscopic corrective surgeries – Laparoscopic & hysteroscopic evaluation for Infertility.</span></li>
+                    <li class="flex items-start gap-3 group/item"><span class="mt-1 text-[#D4AF37] opacity-60 group-hover/item:opacity-100 transition-opacity"><svg class="w-3.5 h-3.5" fill="currentColor" viewBox="0 0 20 20"><path d="M10 2L12.5 7.5L18 10L12.5 12.5L10 18L7.5 12.5L2 10L7.5 7.5L10 2Z"/></svg></span><span>Endometrial and ovarian rejuvenation.</span></li>
+                    <li class="flex items-start gap-3 group/item"><span class="mt-1 text-[#D4AF37] opacity-60 group-hover/item:opacity-100 transition-opacity"><svg class="w-3.5 h-3.5" fill="currentColor" viewBox="0 0 20 20"><path d="M10 2L12.5 7.5L18 10L12.5 12.5L10 18L7.5 12.5L2 10L7.5 7.5L10 2Z"/></svg></span><span>Induction of ovulation</span></li>
+                    <li class="flex items-start gap-3 group/item"><span class="mt-1 text-[#D4AF37] opacity-60 group-hover/item:opacity-100 transition-opacity"><svg class="w-3.5 h-3.5" fill="currentColor" viewBox="0 0 20 20"><path d="M10 2L12.5 7.5L18 10L12.5 12.5L10 18L7.5 12.5L2 10L7.5 7.5L10 2Z"/></svg></span><span>Follicular tracking</span></li>
+                    <li class="flex items-start gap-3 group/item"><span class="mt-1 text-[#D4AF37] opacity-60 group-hover/item:opacity-100 transition-opacity"><svg class="w-3.5 h-3.5" fill="currentColor" viewBox="0 0 20 20"><path d="M10 2L12.5 7.5L18 10L12.5 12.5L10 18L7.5 12.5L2 10L7.5 7.5L10 2Z"/></svg></span><span>Intrauterine inseminations</span></li>
+                </ul>
+            </div>
+
+            <div class="break-inside-avoid bg-white/70 backdrop-blur-xl rounded-[2rem] p-8 shadow-[0_8px_30px_rgb(0,0,0,0.04)] border border-white hover:border-[#D4AF37]/30 hover:shadow-[0_20px_40px_rgb(0,0,0,0.08)] hover:-translate-y-2 transition-all duration-500 relative group overflow-hidden">
+                <div class="absolute top-0 left-0 w-full h-[3px] bg-gradient-to-r from-[#2C5530] via-[#D4AF37] to-[#2C5530] opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                
+                <div class="flex items-center gap-4 mb-6 pb-4 border-b border-[#2C5530]/10">
+                    <div class="flex items-center justify-center w-12 h-12 rounded-xl bg-[#FDFBF7] border border-[#D4AF37]/20 text-[#D4AF37] group-hover:bg-[#D4AF37] group-hover:text-white transition-colors duration-500">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z"></path></svg>
+                    </div>
+                    <h3 class="text-xl font-extrabold text-[#2C5530] uppercase tracking-wider">Robotic Surgeries</h3>
+                </div>
+
+                <ul class="space-y-3 text-[14px] text-gray-600 font-medium leading-relaxed">
+                    <li class="flex items-start gap-3 group/item"><span class="mt-1 text-[#D4AF37] opacity-60 group-hover/item:opacity-100 transition-opacity"><svg class="w-3.5 h-3.5" fill="currentColor" viewBox="0 0 20 20"><path d="M10 2L12.5 7.5L18 10L12.5 12.5L10 18L7.5 12.5L2 10L7.5 7.5L10 2Z"/></svg></span><span>Minimal access robotic hysterectomy</span></li>
+                    <li class="flex items-start gap-3 group/item"><span class="mt-1 text-[#D4AF37] opacity-60 group-hover/item:opacity-100 transition-opacity"><svg class="w-3.5 h-3.5" fill="currentColor" viewBox="0 0 20 20"><path d="M10 2L12.5 7.5L18 10L12.5 12.5L10 18L7.5 12.5L2 10L7.5 7.5L10 2Z"/></svg></span><span>Minimal Access robotic myomectomy</span></li>
+                    <li class="flex items-start gap-3 group/item"><span class="mt-1 text-[#D4AF37] opacity-60 group-hover/item:opacity-100 transition-opacity"><svg class="w-3.5 h-3.5" fill="currentColor" viewBox="0 0 20 20"><path d="M10 2L12.5 7.5L18 10L12.5 12.5L10 18L7.5 12.5L2 10L7.5 7.5L10 2Z"/></svg></span><span>Minimal access ovarian cystectomy.</span></li>
+                </ul>
+            </div>
+
+            <div class="break-inside-avoid bg-white/70 backdrop-blur-xl rounded-[2rem] p-8 shadow-[0_8px_30px_rgb(0,0,0,0.04)] border border-white hover:border-[#D4AF37]/30 hover:shadow-[0_20px_40px_rgb(0,0,0,0.08)] hover:-translate-y-2 transition-all duration-500 relative group overflow-hidden">
+                <div class="absolute top-0 left-0 w-full h-[3px] bg-gradient-to-r from-[#2C5530] via-[#D4AF37] to-[#2C5530] opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                
+                <div class="flex items-center gap-4 mb-6 pb-4 border-b border-[#2C5530]/10">
+                    <div class="flex items-center justify-center w-12 h-12 rounded-xl bg-[#FDFBF7] border border-[#D4AF37]/20 text-[#D4AF37] group-hover:bg-[#D4AF37] group-hover:text-white transition-colors duration-500">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"></path></svg>
+                    </div>
+                    <h3 class="text-xl font-extrabold text-[#2C5530] uppercase tracking-wider">High Risk Obstetrics</h3>
+                </div>
+
+                <ul class="space-y-3 text-[14px] text-gray-600 font-medium leading-relaxed">
+                    <li class="flex items-start gap-3 group/item"><span class="mt-1 text-[#D4AF37] opacity-60 group-hover/item:opacity-100 transition-opacity"><svg class="w-3.5 h-3.5" fill="currentColor" viewBox="0 0 20 20"><path d="M10 2L12.5 7.5L18 10L12.5 12.5L10 18L7.5 12.5L2 10L7.5 7.5L10 2Z"/></svg></span><span>Obstetrical emergencies: Emergency cerclage, Multiple pregnancies, Antepartum haemorrhage, PROM, Preterm, CPD, Malpresentations, Eclampsia, Severe PIH, Gestational DM, Pr LsCs, V – Back, Rh Incompatibilities, Bad Obstetric histories, Postpartum haemorrhage,</span></li>
+                    <li class="flex items-start gap-3 group/item"><span class="mt-1 text-[#D4AF37] opacity-60 group-hover/item:opacity-100 transition-opacity"><svg class="w-3.5 h-3.5" fill="currentColor" viewBox="0 0 20 20"><path d="M10 2L12.5 7.5L18 10L12.5 12.5L10 18L7.5 12.5L2 10L7.5 7.5L10 2Z"/></svg></span><span>PPH surgeries: uterine artery embolisations, Uterine artery ligations, Internal Iliac ligation, B – Lynch's stich, Mulberry Stich, Ceserean Hysterectomy</span></li>
+                    <li class="flex items-start gap-3 group/item"><span class="mt-1 text-[#D4AF37] opacity-60 group-hover/item:opacity-100 transition-opacity"><svg class="w-3.5 h-3.5" fill="currentColor" viewBox="0 0 20 20"><path d="M10 2L12.5 7.5L18 10L12.5 12.5L10 18L7.5 12.5L2 10L7.5 7.5L10 2Z"/></svg></span><span>Fibroids, Ovarian cysts complicating pregnancies</span></li>
+                    <li class="flex items-start gap-3 group/item"><span class="mt-1 text-[#D4AF37] opacity-60 group-hover/item:opacity-100 transition-opacity"><svg class="w-3.5 h-3.5" fill="currentColor" viewBox="0 0 20 20"><path d="M10 2L12.5 7.5L18 10L12.5 12.5L10 18L7.5 12.5L2 10L7.5 7.5L10 2Z"/></svg></span><span>Medical disorders complicating pregnancies - Heart disease, Diabetes, Epilepsy, Thyroid disorders, Chronic renal failure, Autoimmune conditions, Acute viral & bacterial illnesses, Liver disorders, blood disorder s complicating pregnancies</span></li>
+                </ul>
+            </div>
+
+            <div class="break-inside-avoid bg-white/70 backdrop-blur-xl rounded-[2rem] p-8 shadow-[0_8px_30px_rgb(0,0,0,0.04)] border border-white hover:border-[#D4AF37]/30 hover:shadow-[0_20px_40px_rgb(0,0,0,0.08)] hover:-translate-y-2 transition-all duration-500 relative group overflow-hidden">
+                <div class="absolute top-0 left-0 w-full h-[3px] bg-gradient-to-r from-[#2C5530] via-[#D4AF37] to-[#2C5530] opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                
+                <div class="flex items-center gap-4 mb-6 pb-4 border-b border-[#2C5530]/10">
+                    <div class="flex items-center justify-center w-12 h-12 rounded-xl bg-[#FDFBF7] border border-[#D4AF37]/20 text-[#D4AF37] group-hover:bg-[#D4AF37] group-hover:text-white transition-colors duration-500">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1"></path></svg>
+                    </div>
+                    <h3 class="text-xl font-extrabold text-[#2C5530] uppercase tracking-wider">Hysteroscopy</h3>
+                </div>
+
+                <ul class="space-y-3 text-[14px] text-gray-600 font-medium leading-relaxed">
+                    <li class="flex items-start gap-3 group/item"><span class="mt-1 text-[#D4AF37] opacity-60 group-hover/item:opacity-100 transition-opacity"><svg class="w-3.5 h-3.5" fill="currentColor" viewBox="0 0 20 20"><path d="M10 2L12.5 7.5L18 10L12.5 12.5L10 18L7.5 12.5L2 10L7.5 7.5L10 2Z"/></svg></span><span>Hysteroscopic septal resections for septate uterus</span></li>
+                    <li class="flex items-start gap-3 group/item"><span class="mt-1 text-[#D4AF37] opacity-60 group-hover/item:opacity-100 transition-opacity"><svg class="w-3.5 h-3.5" fill="currentColor" viewBox="0 0 20 20"><path d="M10 2L12.5 7.5L18 10L12.5 12.5L10 18L7.5 12.5L2 10L7.5 7.5L10 2Z"/></svg></span><span>Hysteroscopic myomectomies for submucosal fibroids</span></li>
+                    <li class="flex items-start gap-3 group/item"><span class="mt-1 text-[#D4AF37] opacity-60 group-hover/item:opacity-100 transition-opacity"><svg class="w-3.5 h-3.5" fill="currentColor" viewBox="0 0 20 20"><path d="M10 2L12.5 7.5L18 10L12.5 12.5L10 18L7.5 12.5L2 10L7.5 7.5L10 2Z"/></svg></span><span>Hysteroscopic polypectomies</span></li>
+                    <li class="flex items-start gap-3 group/item"><span class="mt-1 text-[#D4AF37] opacity-60 group-hover/item:opacity-100 transition-opacity"><svg class="w-3.5 h-3.5" fill="currentColor" viewBox="0 0 20 20"><path d="M10 2L12.5 7.5L18 10L12.5 12.5L10 18L7.5 12.5L2 10L7.5 7.5L10 2Z"/></svg></span><span>Hysteroscopic fallopian tube cannulation for cornual blocks of fallopian tube</span></li>
+                    <li class="flex items-start gap-3 group/item"><span class="mt-1 text-[#D4AF37] opacity-60 group-hover/item:opacity-100 transition-opacity"><svg class="w-3.5 h-3.5" fill="currentColor" viewBox="0 0 20 20"><path d="M10 2L12.5 7.5L18 10L12.5 12.5L10 18L7.5 12.5L2 10L7.5 7.5L10 2Z"/></svg></span><span>Hysteroscopic TCRE</span></li>
+                    <li class="flex items-start gap-3 group/item"><span class="mt-1 text-[#D4AF37] opacity-60 group-hover/item:opacity-100 transition-opacity"><svg class="w-3.5 h-3.5" fill="currentColor" viewBox="0 0 20 20"><path d="M10 2L12.5 7.5L18 10L12.5 12.5L10 18L7.5 12.5L2 10L7.5 7.5L10 2Z"/></svg></span><span>Hysteroscopic removal of missing IUCD</span></li>
+                    <li class="flex items-start gap-3 group/item"><span class="mt-1 text-[#D4AF37] opacity-60 group-hover/item:opacity-100 transition-opacity"><svg class="w-3.5 h-3.5" fill="currentColor" viewBox="0 0 20 20"><path d="M10 2L12.5 7.5L18 10L12.5 12.5L10 18L7.5 12.5L2 10L7.5 7.5L10 2Z"/></svg></span><span>Hysteroscopic Asherman's release</span></li>
+                </ul>
+            </div>
+
+            <div class="break-inside-avoid bg-white/70 backdrop-blur-xl rounded-[2rem] p-8 shadow-[0_8px_30px_rgb(0,0,0,0.04)] border border-white hover:border-[#D4AF37]/30 hover:shadow-[0_20px_40px_rgb(0,0,0,0.08)] hover:-translate-y-2 transition-all duration-500 relative group overflow-hidden">
+                <div class="absolute top-0 left-0 w-full h-[3px] bg-gradient-to-r from-[#2C5530] via-[#D4AF37] to-[#2C5530] opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                
+                <div class="flex items-center gap-4 mb-6 pb-4 border-b border-[#2C5530]/10">
+                    <div class="flex items-center justify-center w-12 h-12 rounded-xl bg-[#FDFBF7] border border-[#D4AF37]/20 text-[#D4AF37] group-hover:bg-[#D4AF37] group-hover:text-white transition-colors duration-500">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z"></path></svg>
+                    </div>
+                    <h3 class="text-xl font-extrabold text-[#2C5530] uppercase tracking-wider">Cosmetic Gynecology</h3>
+                </div>
+
+                <ul class="space-y-3 text-[14px] text-gray-600 font-medium leading-relaxed">
+                    <li class="flex items-start gap-3 group/item"><span class="mt-1 text-[#D4AF37] opacity-60 group-hover/item:opacity-100 transition-opacity"><svg class="w-3.5 h-3.5" fill="currentColor" viewBox="0 0 20 20"><path d="M10 2L12.5 7.5L18 10L12.5 12.5L10 18L7.5 12.5L2 10L7.5 7.5L10 2Z"/></svg></span><span>Vaginal rejuvenation</span></li>
+                    <li class="flex items-start gap-3 group/item"><span class="mt-1 text-[#D4AF37] opacity-60 group-hover/item:opacity-100 transition-opacity"><svg class="w-3.5 h-3.5" fill="currentColor" viewBox="0 0 20 20"><path d="M10 2L12.5 7.5L18 10L12.5 12.5L10 18L7.5 12.5L2 10L7.5 7.5L10 2Z"/></svg></span><span>Signature kamasutra shots</span></li>
+                    <li class="flex items-start gap-3 group/item"><span class="mt-1 text-[#D4AF37] opacity-60 group-hover/item:opacity-100 transition-opacity"><svg class="w-3.5 h-3.5" fill="currentColor" viewBox="0 0 20 20"><path d="M10 2L12.5 7.5L18 10L12.5 12.5L10 18L7.5 12.5L2 10L7.5 7.5L10 2Z"/></svg></span><span>G Shot Amplification</span></li>
+                </ul>
+            </div>
+
+            <div class="break-inside-avoid bg-white/70 backdrop-blur-xl rounded-[2rem] p-8 shadow-[0_8px_30px_rgb(0,0,0,0.04)] border border-white hover:border-[#D4AF37]/30 hover:shadow-[0_20px_40px_rgb(0,0,0,0.08)] hover:-translate-y-2 transition-all duration-500 relative group overflow-hidden">
+                <div class="absolute top-0 left-0 w-full h-[3px] bg-gradient-to-r from-[#2C5530] via-[#D4AF37] to-[#2C5530] opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                
+                <div class="flex items-center gap-4 mb-6 pb-4 border-b border-[#2C5530]/10">
+                    <div class="flex items-center justify-center w-12 h-12 rounded-xl bg-[#FDFBF7] border border-[#D4AF37]/20 text-[#D4AF37] group-hover:bg-[#D4AF37] group-hover:text-white transition-colors duration-500">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                    </div>
+                    <h3 class="text-xl font-extrabold text-[#2C5530] uppercase tracking-wider">Menopausal Clinics</h3>
+                </div>
+
+                <ul class="space-y-3 text-[14px] text-gray-600 font-medium leading-relaxed">
+                    <li class="flex items-start gap-3 group/item"><span class="mt-1 text-[#D4AF37] opacity-60 group-hover/item:opacity-100 transition-opacity"><svg class="w-3.5 h-3.5" fill="currentColor" viewBox="0 0 20 20"><path d="M10 2L12.5 7.5L18 10L12.5 12.5L10 18L7.5 12.5L2 10L7.5 7.5L10 2Z"/></svg></span><span>Counselling</span></li>
+                    <li class="flex items-start gap-3 group/item"><span class="mt-1 text-[#D4AF37] opacity-60 group-hover/item:opacity-100 transition-opacity"><svg class="w-3.5 h-3.5" fill="currentColor" viewBox="0 0 20 20"><path d="M10 2L12.5 7.5L18 10L12.5 12.5L10 18L7.5 12.5L2 10L7.5 7.5L10 2Z"/></svg></span><span>Risk evaluation - Clinical examination, BMD, Mammogram etc</span></li>
+                    <li class="flex items-start gap-3 group/item"><span class="mt-1 text-[#D4AF37] opacity-60 group-hover/item:opacity-100 transition-opacity"><svg class="w-3.5 h-3.5" fill="currentColor" viewBox="0 0 20 20"><path d="M10 2L12.5 7.5L18 10L12.5 12.5L10 18L7.5 12.5L2 10L7.5 7.5L10 2Z"/></svg></span><span>Management - Hormonal replacement & Non-hormonal management.</span></li>
+                </ul>
+            </div>
+
+            <div class="break-inside-avoid bg-white/70 backdrop-blur-xl rounded-[2rem] p-8 shadow-[0_8px_30px_rgb(0,0,0,0.04)] border border-white hover:border-[#D4AF37]/30 hover:shadow-[0_20px_40px_rgb(0,0,0,0.08)] hover:-translate-y-2 transition-all duration-500 relative group overflow-hidden">
+                <div class="absolute top-0 left-0 w-full h-[3px] bg-gradient-to-r from-[#2C5530] via-[#D4AF37] to-[#2C5530] opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                
+                <div class="flex items-center gap-4 mb-6 pb-4 border-b border-[#2C5530]/10">
+                    <div class="flex items-center justify-center w-12 h-12 rounded-xl bg-[#FDFBF7] border border-[#D4AF37]/20 text-[#D4AF37] group-hover:bg-[#D4AF37] group-hover:text-white transition-colors duration-500">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M17 8h2a2 2 0 012 2v6a2 2 0 01-2 2h-2v4l-4-4H9a1.994 1.994 0 01-1.414-.586m0 0L11 14h4a2 2 0 002-2V6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2v4l.586-.586z"></path></svg>
+                    </div>
+                    <h3 class="text-xl font-extrabold text-[#2C5530] uppercase tracking-wider">Counselling</h3>
+                </div>
+
+                <ul class="space-y-3 text-[14px] text-gray-600 font-medium leading-relaxed">
+                    <li class="flex items-start gap-3 group/item"><span class="mt-1 text-[#D4AF37] opacity-60 group-hover/item:opacity-100 transition-opacity"><svg class="w-3.5 h-3.5" fill="currentColor" viewBox="0 0 20 20"><path d="M10 2L12.5 7.5L18 10L12.5 12.5L10 18L7.5 12.5L2 10L7.5 7.5L10 2Z"/></svg></span><span>Premarital counseling</span></li>
+                    <li class="flex items-start gap-3 group/item"><span class="mt-1 text-[#D4AF37] opacity-60 group-hover/item:opacity-100 transition-opacity"><svg class="w-3.5 h-3.5" fill="currentColor" viewBox="0 0 20 20"><path d="M10 2L12.5 7.5L18 10L12.5 12.5L10 18L7.5 12.5L2 10L7.5 7.5L10 2Z"/></svg></span><span>Contraceptive counselling</span></li>
+                    <li class="flex items-start gap-3 group/item"><span class="mt-1 text-[#D4AF37] opacity-60 group-hover/item:opacity-100 transition-opacity"><svg class="w-3.5 h-3.5" fill="currentColor" viewBox="0 0 20 20"><path d="M10 2L12.5 7.5L18 10L12.5 12.5L10 18L7.5 12.5L2 10L7.5 7.5L10 2Z"/></svg></span><span>Preconceptional counseling</span></li>
+                </ul>
+            </div>
+
+        </div>
+    </div>
+</section>
     <style>
         @keyframes bounce-slow {
 
