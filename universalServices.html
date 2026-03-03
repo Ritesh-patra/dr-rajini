@@ -1,12 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Clinical Expertise Portal | Dr. Muthineni Rajini</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:italic,wght@700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:italic,wght@700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet">
 
     <script>
         tailwind.config = {
@@ -29,10 +32,19 @@
 
     <style>
         /* Custom Scrollbar for Sidebar */
-        .custom-scrollbar::-webkit-scrollbar { width: 3px; }
-        .custom-scrollbar::-webkit-scrollbar-track { background: transparent; }
-        .custom-scrollbar::-webkit-scrollbar-thumb { background: #646A46; border-radius: 10px; }
-        
+        .custom-scrollbar::-webkit-scrollbar {
+            width: 3px;
+        }
+
+        .custom-scrollbar::-webkit-scrollbar-track {
+            background: transparent;
+        }
+
+        .custom-scrollbar::-webkit-scrollbar-thumb {
+            background: #646A46;
+            border-radius: 10px;
+        }
+
         /* Fixed Sidebar Logic */
         .sidebar-locked {
             height: calc(100vh - 100px);
@@ -46,6 +58,7 @@
             overflow-y: auto;
             padding-right: 1rem;
         }
+
         /* Premium Link Interaction */
         .service-link.active {
             background-color: #646A46;
@@ -60,39 +73,52 @@
         }
 
         @keyframes fadeInBlur {
-            from { opacity: 0; filter: blur(10px); transform: translateY(20px); }
-            to { opacity: 1; filter: blur(0); transform: translateY(0); }
+            from {
+                opacity: 0;
+                filter: blur(10px);
+                transform: translateY(20px);
+            }
+
+            to {
+                opacity: 1;
+                filter: blur(0);
+                transform: translateY(0);
+            }
         }
 
         /* Responsive: on small screens show sidebar below content */
         @media (max-width: 768px) {
-            .container > .grid {
+            .container>.grid {
                 display: flex;
                 flex-direction: column-reverse;
             }
+
             .sidebar-locked {
                 position: static;
                 height: auto;
             }
+
             .content-scroll {
                 max-height: none;
             }
         }
     </style>
 </head>
+
 <body class="bg-[#FAF9F6] font-sans selection:bg-primary selection:text-white">
 
     <section class="min-h-screen py-12">
         <div class="container max-w-full px-6">
-            
+
             <div class="grid lg:grid-cols-12 gap-12 items-start">
-                
+
                 <div class="lg:col-span-4">
                     <div class="sidebar-locked flex flex-col">
                         <div class="mb-10 space-y-4">
                             <div class="flex items-center gap-3">
                                 <span class="h-[1.5px] w-10 bg-primary"></span>
-                                <span class="text-primary font-bold tracking-[0.3em] uppercase text-[10px]">Medical Excellence</span>
+                                <span class="text-primary font-bold tracking-[0.3em] uppercase text-[10px]">Medical
+                                    Excellence</span>
                             </div>
                             <h1 class="text-4xl font-extrabold text-darkGreen leading-tight tracking-tighter">
                                 Clinical <br><span class="italic font-serif text-primary">Service Modules</span>
@@ -100,13 +126,14 @@
                         </div>
 
                         <nav class="flex-1 overflow-y-auto custom-scrollbar pr-4 space-y-3" id="service-menu">
-                            </nav>
+                        </nav>
                     </div>
                 </div>
 
                 <div class="lg:col-span-8">
                     <div class="content-scroll ">
-                        <div id="service-display" class="bg-white rounded-[2rem] p-5 md:p-20 lg:p-10 shadow-[0_32px_64px_-15px_rgba(0,0,0,0.05)] border border-white min-h-[80vh] ">
+                        <div id="service-display"
+                            class="bg-white rounded-[2rem] p-5 md:p-20 lg:p-10 shadow-[0_32px_64px_-15px_rgba(0,0,0,0.05)] border border-white min-h-[80vh] ">
                         </div>
                     </div>
                 </div>
@@ -119,88 +146,121 @@
         const services = {
             obstetrics: {
                 title: 'Comprehensive <span class="text-primary italic">Obstetrics</span>',
-                desc: 'Obstetrics is the medical specialty focused on care during pregnancy, childbirth, and the postpartum period. Providing holistic maternity care from pre-conception to postnatal stages ensures the safety of both mother and newborn.',
+                desc: 'Comprehensive care throughout pregnancy, labor, and the postpartum period, focused on the health and safety of both mother and baby. Services include routine antenatal check-ups, detailed fetal growth scans, anomaly screening, blood investigations, and continuous monitoring to ensure a smooth pregnancy journey. Personalized birth planning and timely medical interventions are provided whenever required.',
                 img: 'https://i.pinimg.com/736x/ef/22/d3/ef22d3a50204dda4e82798c44dc9180e.jpg',
-                details: 'Our approach focuses on biological safety and psychological support. We use advanced ultrasound monitoring to track fetal development and maternal wellness, preparing you for a safe delivery journey.',
-                list: ['Antenatal Care & Screenings', 'Painless Labor (Epidural)', 'Postnatal Recovery Protocols', 'Lactation & Breastfeeding Support']
+                details: 'Prenatal care involves scheduled ultrasounds to assess fetal development, non-stress tests to monitor the baby’s heart rate, and careful evaluation of maternal health parameters such as blood pressure and glucose levels. During labor, options include natural vaginal delivery, assisted delivery (vacuum or forceps), or Caesarean section when medically indicated. Pain-relief methods such as epidural anesthesia, active labor management, and immediate newborn assessment and support are integrated into every individualized care plan to ensure safety, comfort, and optimal outcomes.',
+                list: [
+                    'Antenatal Care & Comprehensive Screenings',
+                    'Fetal Monitoring & Growth Assessment',
+                    'Painless Labor (Epidural Option)',
+                    'Postnatal Recovery & Lactation Support'
+                ]
             },
             'high-risk': {
                 title: 'High-Risk <span class="text-primary italic">Obstetrics Specialist</span>',
-                desc: 'A high-risk pregnancy is one that requires extra monitoring due to potential complications. This includes placental disorders like Placenta Praevia and pre-existing medical conditions.',
+                desc: 'Specialized care for pregnancies complicated by maternal medical conditions, placental abnormalities, or fetal concerns. Close monitoring, advanced imaging, and evidence-based interventions are implemented to reduce risks and ensure the safest possible outcome for both mother and baby.',
                 img: 'https://images.unsplash.com/photo-1584515933487-779824d29309?auto=format&fit=crop&w=600&h=800',
-                details: 'We specialize in managing hypertensive disorders, gestational diabetes, and multiple gestations (twins). Our neonatal support system is ready 24/7 for immediate intervention if required.',
-                list: ['Fetal Heart Monitoring', 'Gestational Hypertension Care', 'Diabetes Management', 'Preterm Labor Prevention']
+                details: 'Management includes frequent growth scans, Doppler studies, and continuous fetal heart monitoring to assess well-being. Conditions such as gestational hypertension, diabetes, placenta previa, or preterm labor are managed through medication protocols, lifestyle guidance, and timely hospitalization when required. Corticosteroids may be administered for fetal lung maturity in preterm cases. Delivery planning is carefully coordinated, often involving anesthetists and neonatologists, to ensure immediate newborn support and maternal safety.',
+                list: [
+                    'Advanced Fetal Surveillance',
+                    'Gestational Hypertension & Preeclampsia Care',
+                    'Diabetes in Pregnancy Management',
+                    'Preterm Labor Prevention Protocols'
+                ]
             },
+
             robotic: {
                 title: 'Robotic-Assisted <span class="text-primary italic">Surgery</span>',
-                desc: 'The pinnacle of surgical precision. Robotic hysterectomies and myomectomies offer minimal scarring and 3D high-definition visualization for complex procedures.',
+                desc: 'State-of-the-art minimally invasive surgery performed using robotic technology that enhances precision, control, and visualization. Small incisions allow robotic instruments and a high-definition 3D camera to perform complex procedures with exceptional accuracy.',
                 img: 'https://images.unsplash.com/photo-1579684385127-1ef15d508118?auto=format&fit=crop&w=600&h=800',
-                details: 'By using robotic arms that mimic a surgeon’s movements with greater dexterity, we ensure less blood loss, lower risk of infection, and a significantly faster hospital discharge.',
-                list: ['3D Vision Surgical Precision', 'Robotic Hysterectomy', 'Complex Fibroid Excision', 'Enhanced Surgical Dexterity']
+                details: 'After creating small keyhole incisions and establishing a safe working space within the abdomen, robotic arms controlled from a surgical console replicate the surgeon’s hand movements with enhanced dexterity. Procedures such as robotic hysterectomy, myomectomy, and complex endometriosis excision are performed with minimal tissue trauma. Benefits include reduced blood loss, smaller scars, lower infection risk, shorter hospital stay, and faster recovery compared to conventional open surgery.',
+                list: [
+                    '3D High-Definition Visualization',
+                    'Robotic Hysterectomy',
+                    'Complex Fibroid & Endometriosis Surgery',
+                    'Precision with Minimal Tissue Trauma'
+                ]
             },
+
             laparoscopic: {
                 title: 'Advanced <span class="text-primary italic">Laparoscopy</span>',
-                desc: 'Minimally invasive keyhole surgeries replace large incisions with small ports, ensuring cosmetic integrity and rapid healing for various gynecological issues.',
+                desc: 'Minimally invasive “keyhole” surgery performed through small abdominal incisions using a laparoscope and specialized instruments. It is widely used for diagnosing and treating various gynecological conditions with faster recovery and minimal discomfort.',
                 img: 'https://images.unsplash.com/photo-1579684385127-1ef15d508118?auto=format&fit=crop&w=600&h=800',
-                details: 'We utilize advanced optics to perform "scarless" surgeries for ovarian cysts and ectopic pregnancies. Most patients are back to their daily routine within a few days.',
-                list: ['Keyhole Hysterectomy', 'Ovarian Cystectomy', 'Ectopic Pregnancy Support', 'Endometrial Ablation']
+                details: 'Under general anesthesia, a controlled pneumoperitoneum is created to allow safe visualization of pelvic organs. A high-definition camera guides precise surgical steps such as cyst removal, treatment of endometriosis, ectopic pregnancy management, or hysterectomy. Compared to traditional open surgery, laparoscopy offers less postoperative pain, minimal scarring, shorter hospitalization, and quicker return to daily activities.',
+                list: [
+                    'Total Laparoscopic Hysterectomy',
+                    'Ovarian Cystectomy',
+                    'Ectopic Pregnancy Management',
+                    'Endometriosis & Adhesion Treatment'
+                ]
             },
+
             infertility: {
                 title: 'Infertility <span class="text-primary italic">Solutions</span>',
-                desc: 'Fertility issues can be complex. We offer compassionaate, evidence-based treatments and fertility-enhancing surgeries to help you build your family.',
+                desc: 'Comprehensive diagnostic evaluation and personalized treatment plans designed to identify and address the underlying causes of infertility in both partners. A structured and stepwise approach improves the chances of successful conception.',
                 img: 'https://i.pinimg.com/736x/4b/58/b9/4b58b931127f1fdf2e29cfe2041aab9f.jpg',
-                details: 'From ovulation induction to checking tubal patency, we investigate every biological factor. Our surgical interventions aim to correct uterine anomalies that may hinder conception.',
-                list: ['Ovulation Induction', 'Tubal Patency Tests', 'Uterine Septum Correction', 'Follicular Monitoring']
+                details: 'Evaluation includes hormonal profiling, ovulation tracking, ultrasound follicular monitoring, semen analysis, and tubal patency tests such as hysterosalpingography. Treatment options range from ovulation induction and cycle monitoring to intrauterine insemination (IUI) and minimally invasive surgical correction of uterine or tubal abnormalities. When required, patients are guided toward advanced assisted reproductive techniques with continuous counseling and emotional support throughout the journey.',
+                list: [
+                    'Ovulation Induction & Cycle Monitoring',
+                    'Tubal Patency & Uterine Evaluation',
+                    'Surgical Fertility Enhancement',
+                    'IUI Guidance & Assisted Reproductive Support'
+                ]
             },
             cosmetic: {
                 title: 'Cosmetic <span class="text-primary italic">Gynecology</span>',
-                desc: 'Restorative and aesthetic procedures focusing on both functional improvement and patient confidence. These procedures restore comfort and symmetry.',
+                desc: 'Advanced procedures designed to restore both function and aesthetic confidence of the intimate area. Treatments such as labioplasty, vaginal tightening, and energy-based laser therapies are performed with precision, privacy, and patient comfort as top priorities. Most procedures are minimally invasive and completed as day-care surgeries.',
                 img: 'https://images.unsplash.com/photo-1606811841689-23dfddce3e95?auto=format&fit=crop&w=600&h=800',
-                details: 'Addressing concerns like post-delivery laxity or functional discomfort, we use both surgical and laser-based technologies to rejuvenate and restore the intimate area.',
-                list: ['Vaginal Rejuvenation', 'Labiaplasty', 'Perineoplasty', 'Laser Tightening']
-            }
-            ,
+                details: 'The process begins with a confidential consultation to understand personal goals and functional concerns. Depending on the need, procedures may involve careful tissue reshaping, perineal repair, or collagen-stimulating laser treatments. These interventions improve tone, elasticity, and comfort. Most patients resume light activities within a few days, with complete healing typically achieved over a few weeks under guided aftercare.',
+                list: ['Vaginal Rejuvenation', 'Labiaplasty & Reshaping', 'Perineoplasty Repair', 'Laser-Based Tightening Therapies']
+            },
+
             'general-gyn': {
                 title: 'General <span class="text-primary italic">Gynecology</span>',
-                desc: 'Comprehensive outpatient gynecological care including routine screenings, menstrual disorders, and hormonal health management.',
+                desc: 'Comprehensive outpatient care addressing routine examinations, preventive screenings, menstrual concerns, infections, and hormonal imbalances. Focused on early detection, timely treatment, and long-term reproductive health maintenance.',
                 img: 'https://images.unsplash.com/photo-1638202993928-7267aad84c31?auto=format&fit=crop&w=600&h=800',
-                details: 'We provide contraception counseling, HPV and cervical screening, management of abnormal uterine bleeding and pelvic pain with conservative and evidence-based approaches.',
-                list: ['Routine Pap Smear & HPV Screening', 'Menstrual Disorder Management', 'Contraception Counseling', 'Pelvic Pain Evaluation']
+                details: 'Services include Pap smears, HPV testing, colposcopy-guided biopsies, endometrial sampling, and minor office procedures performed under local anesthesia. Detailed evaluation of irregular bleeding, pelvic pain, or recurrent infections is followed by tailored medical or minimally invasive management plans to ensure effective and lasting relief.',
+                list: ['Routine Pap Smear & HPV Screening', 'Menstrual Disorder Management', 'Contraception Counseling', 'Comprehensive Pelvic Evaluation']
             },
+
             'surgical-gyn': {
                 title: 'Surgical <span class="text-primary italic">Gynecology</span>',
-                desc: 'Advanced gynecological surgery for conditions requiring operative intervention, performed with safety and minimal invasiveness.',
+                desc: 'Operative management for fibroids, ovarian cysts, endometriosis, and complex pelvic disorders using modern surgical techniques. Each procedure is carefully planned with preoperative assessment and optimized recovery pathways.',
                 img: 'https://images.unsplash.com/photo-1551076805-e1869033e561?auto=format&fit=crop&w=600&h=800',
-                details: 'From myomectomy and hysterectomy to complex pelvic reconstructions, our surgical practice emphasizes precision, haemostasis, and fast recovery.',
-                list: ['Hysterectomy (Minimally Invasive)', 'Myomectomy', 'Pelvic Reconstructive Surgery', 'Adhesiolysis']
+                details: 'Depending on the complexity, surgery may be performed laparoscopically, robotically, or via open approach. Preoperative optimization, meticulous surgical technique, blood-loss control, and enhanced recovery protocols reduce complications and promote faster healing. Postoperative follow-up ensures long-term health stability.',
+                list: ['Minimally Invasive Hysterectomy', 'Myomectomy for Fibroids', 'Pelvic Reconstructive Procedures', 'Adhesion & Endometriosis Surgery']
             },
+
             hysteroscopy: {
                 title: 'Hysteroscopy <span class="text-primary italic">Procedures</span>',
-                desc: 'Diagnostic and operative hysteroscopy for uterine cavity evaluation and treatment of intrauterine pathologies.',
+                desc: 'A minimally invasive, camera-guided procedure used to directly visualize and treat conditions inside the uterine cavity. Commonly performed for abnormal bleeding, infertility evaluation, and removal of intrauterine growths.',
                 img: 'https://images.unsplash.com/photo-1581594693702-fbdc51b2763b?auto=format&fit=crop&w=600&h=800',
-                details: 'We use high-definition hysteroscopes for polypectomy, fibroid resection (submucosal), and evaluation of abnormal uterine bleeding with same-day recovery when possible.',
-                list: ['Diagnostic Hysteroscopy', 'Polypectomy', 'Submucous Fibroid Resection', 'Endometrial Sampling']
+                details: 'A thin hysteroscope is gently introduced through the cervix into the uterus, allowing high-definition visualization without external incisions. Polyps, submucous fibroids, adhesions, or septa can be removed during the same procedure. Most cases are completed as day-care surgeries with minimal discomfort and rapid recovery.',
+                list: ['Diagnostic Hysteroscopy', 'Polypectomy', 'Submucous Fibroid Resection', 'Endometrial & Uterine Evaluation']
             },
+
             emergency: {
                 title: 'Emergency <span class="text-primary italic">Surgeries</span>',
-                desc: 'Rapid-response surgical care for obstetric and gynecological emergencies to protect maternal and fetal health.',
+                desc: 'Rapid-response surgical interventions for life-threatening obstetric and gynecological emergencies. Immediate stabilization and decisive action are prioritized to protect maternal health and preserve reproductive function whenever possible.',
                 img: 'https://images.unsplash.com/photo-1516549655169-df83a0774514?auto=format&fit=crop&w=600&h=800',
-                details: 'Our team provides 24/7 management of ectopic pregnancy, hemorrhage control, emergency cesarean section and stabilization for critically ill patients.',
-                list: ['Ectopic Pregnancy Management', 'Postpartum Hemorrhage Control', 'Emergency Cesarean Section', 'Acute Pelvic Hemorrhage']
+                details: 'Emergency management includes swift clinical assessment, resuscitation, blood transfusion support, and urgent operative care such as emergency Caesarean section, surgery for ruptured ectopic pregnancy, or control of severe pelvic hemorrhage. Coordinated teamwork ensures timely, safe, and effective intervention during critical situations.',
+                list: ['Ectopic Pregnancy Surgery', 'Postpartum Hemorrhage Control', 'Emergency Cesarean Delivery', 'Acute Pelvic Bleeding Management']
             },
+
             menopausal: {
                 title: 'Menopausal <span class="text-primary italic">Clinic</span>',
-                desc: 'Holistic care for menopausal transition addressing symptoms, bone health, and individualized hormone therapy when appropriate.',
+                desc: 'Dedicated care for women transitioning through menopause, focusing on symptom relief, hormonal balance, bone strength, and cardiovascular health. Personalized treatment plans are developed after thorough evaluation.',
                 img: 'https://images.unsplash.com/photo-1573497620053-ea5300f94f21?auto=format&fit=crop&w=600&h=800',
-                details: 'We offer symptom management, cardiovascular and bone risk assessment, lifestyle interventions and guidance on safe use of hormone replacement therapy.',
-                list: ['Symptom Management', 'Bone Density & Osteoporosis Care', 'Cardiovascular Risk Screening', 'Hormone Therapy Counseling']
+                details: 'Assessment includes hormone evaluation, bone density testing, metabolic screening, and lifestyle review. Management options range from non-hormonal therapies and nutritional guidance to supervised hormone replacement therapy when appropriate. Regular monitoring ensures safety, comfort, and improved quality of life.',
+                list: ['Hot Flash & Symptom Relief', 'Bone Density & Osteoporosis Care', 'Heart Health Screening', 'Hormone Replacement Counseling']
             },
+
             counselling: {
                 title: 'Counselling <span class="text-primary italic">Services</span>',
-                desc: 'Supportive counselling for fertility, pregnancy decision-making, and emotional wellbeing throughout reproductive care.',
+                desc: 'Confidential and compassionate counselling services supporting women and families through fertility decisions, pregnancy journeys, and emotional health challenges related to reproductive care.',
                 img: 'images/owner.jpg',
-                details: 'Our counselling includes pre-conception guidance, perinatal mental health support, and shared decision-making for complex care pathways.',
-                list: ['Pre-conception Counselling', 'Perinatal Mental Health Support', 'Fertility Decision Support', 'Patient Education & Shared Decision-Making']
+                details: 'Sessions focus on informed decision-making, stress management, and emotional resilience. Services include pre-conception counselling, pregnancy planning guidance, support after pregnancy loss, and coordination with mental health specialists when required. The aim is to empower patients with clarity, confidence, and emotional strength throughout their healthcare journey.',
+                list: ['Pre-conception Guidance', 'Perinatal Emotional Support', 'Fertility & Treatment Counselling', 'Patient Education & Shared Decisions']
             }
         };
 
@@ -210,7 +270,7 @@
         function initNav() {
             // Include all original keys from your prompt
             const allKeys = ['obstetrics', 'high-risk', 'general-gyn', 'surgical-gyn', 'robotic', 'laparoscopic', 'hysteroscopy', 'emergency', 'infertility', 'menopausal', 'counselling', 'cosmetic'];
-            
+
             allKeys.forEach(key => {
                 const btn = document.createElement('button');
                 btn.className = 'service-link w-full text-left p-5 rounded-2xl flex items-center justify-between transition-all duration-300 group';
@@ -247,7 +307,7 @@
                     <div class="grid md:grid-cols-2 gap-10">
                         <div class="space-y-4">
                             <h4 class="text-xs font-black uppercase tracking-widest text-primary">Procedural Depth</h4>
-                            <p class="text-sm text-slateText/80 leading-relaxed">${data.details || 'Advanced protocols tailored to individual patient needs for optimal recovery and health outcomes.'}</p>
+                            <p class="text-sm text-slateText/80 leading-relaxed text-justify">${data.details || 'Advanced protocols tailored to individual patient needs for optimal recovery and health outcomes.'}</p>
                         </div>
                         <div class="space-y-4">
                             <h4 class="text-xs font-black uppercase tracking-widest text-primary">Clinical Objectives</h4>
@@ -270,7 +330,7 @@
                     </div>
                     <div class="flex items-center gap-4">
                         <a href="index.html?service=${key}#contact" class="px-6 py-3 bg-primary text-white rounded-2xl font-bold shadow hover:opacity-90 transition-all">Book Appointment</a>
-                        <a target="_blank" href="https://wa.me/919676138576?text=${encodeURIComponent('Hi Dr Rajini, I want to book an appointment for ' + key)}" class="px-6 py-3 bg-white border border-primary text-primary rounded-2xl font-bold shadow hover:bg-primary/5 transition-all">WhatsApp</a>
+                        <a target="_blank" href="https://wa.me/919866430994?text=${encodeURIComponent('Hi Dr Rajini, I want to book an appointment for ' + key)}" class="px-6 py-3 bg-white border border-primary text-primary rounded-2xl font-bold shadow hover:bg-primary/5 transition-all">WhatsApp</a>
                     </div>
                 </div>
             `;
@@ -290,4 +350,5 @@
         };
     </script>
 </body>
+
 </html>
